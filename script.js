@@ -99,12 +99,12 @@ function generateCards() {
             <div class="card-inner">
                 <div class="card-front">
                     <h2>${word.russian}</h2>
+                    <button class="audio-btn" data-word="${word.german}" aria-label="Pronounce ${word.german}">🔊</button>
                     <button class="arrow-btn" data-word-id="${wordId}" aria-label="Add to dictionary">→</button>
                 </div>
                 <div class="card-back">
                     <h2>${word.german}${pluralHtml}</h2>
                     <p>${word.english}</p>
-                    <button class="audio-btn" data-word="${word.german}" aria-label="Pronounce ${word.german}">🔊</button>
                     <button class="examples-btn" data-word="${word.russian}" aria-label="Show examples">📝</button>
                 </div>
             </div>
@@ -218,12 +218,12 @@ function updateDictionaryDisplay() {
                 <div class="card-inner">
                     <div class="card-front">
                         <h2>${item.russian}</h2>
+                        <button class="audio-btn" data-word="${item.german}" aria-label="Pronounce ${item.german}">🔊</button>
                         <button class="remove-btn" data-word-id="${item.wordId}">✕</button>
                     </div>
                     <div class="card-back">
                         <h2>${item.german}${pluralHtml}</h2>
                         <p>${item.english}</p>
-                        <button class="audio-btn" data-word="${item.german}" aria-label="Pronounce ${item.german}">🔊</button>
                         <button class="examples-btn" data-word="${item.russian}" aria-label="Show examples">📝</button>
                     </div>
                 </div>
