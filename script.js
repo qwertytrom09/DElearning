@@ -823,5 +823,51 @@ function initializeApp() {
     });
 }
 
+// Header buttons functionality
+function initializeHeaderButtons() {
+    const headerButtons = document.querySelectorAll('.header-btn');
+
+    headerButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const action = this.getAttribute('data-action');
+
+            if (action === 'schreiben') {
+                showEmailWritingTips();
+            } else if (action === 'sprechen') {
+                // Future functionality for speaking
+                alert('Sprechen functionality coming soon!');
+            } else if (action === 'wortschatz') {
+                // Return to vocabulary view
+                const emailContainer = document.querySelector('.email-writing-container');
+                if (emailContainer) {
+                    emailContainer.remove();
+                }
+
+                // Show vocabulary elements
+                document.querySelector('.topic-nav').style.display = '';
+                document.querySelector('header p').style.display = '';
+
+                // Show the active topic cards
+                const activeTopicBtn = document.querySelector('.topic-btn.active');
+                if (activeTopicBtn) {
+                    const topic = activeTopicBtn.getAttribute('data-topic');
+                    const selectedContainer = document.querySelector(`.topic-${topic}`);
+                    if (selectedContainer) {
+                        selectedContainer.classList.add('active');
+                    }
+                }
+            }
+        });
+    });
+}
+
+function showEmailWritingTips() {
+    // Navigate to the standalone email writing page
+    window.location.href = 'email-writing.html';
+}
+
 // Start the app
-document.addEventListener('DOMContentLoaded', loadVocabulary);
+document.addEventListener('DOMContentLoaded', function() {
+    loadVocabulary();
+    initializeHeaderButtons();
+});

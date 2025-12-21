@@ -1,0 +1,25 @@
+# Greetings
+Формальное приветствие|Liebe/r [Name]|Formal greeting||Liebe/r Frau Müller,|Дорогая госпожа Мюллер,|Sehr geehrte Damen und Herren,|Уважаемые дамы и господа,
+Очень формальное приветствие|Sehr geehrte/r [Name]|Very formal greeting||Sehr geehrter Herr Professor Schmidt,|Уважаемый господин профессор Шмидт,|Sehr geehrte Frau Dr. Weber,|Уважаемая госпожа доктор Вебер,
+Неформальное приветствие|Hallo [Name]|Informal greeting||Hallo Anna,|Привет Анна,|Liebe Freunde,|Дорогие друзья,
+
+# Opening Phrases
+Я пишу вам, потому что...|Ich schreibe Ihnen, weil...|I'm writing to you because...||Ich schreibe Ihnen, weil ich eine Frage habe.|Я пишу вам, потому что у меня есть вопрос.|Ich schreibe Ihnen bezüglich unseres letzten Gesprächs.|Я пишу вам относительно нашего последнего разговора.|Ich schreibe Ihnen, um Ihnen mitzuteilen, dass...|Я пишу вам, чтобы сообщить вам, что...
+Благодарю за ваш ответ|Vielen Dank für Ihre Antwort|Thank you for your reply||Vielen Dank für Ihre schnelle Antwort.|Благодарю за ваш быстрый ответ.|Vielen Dank für Ihre Rückmeldung.|Благодарю за вашу обратную связь.|Vielen Dank für Ihre Hilfe.|Благодарю за вашу помощь.
+Относительно...|Bezüglich...|Regarding...||Bezüglich unseres Termins am Freitag...|Относительно нашей встречи в пятницу...|Bezüglich Ihres Angebots...|Относительно вашего предложения...|Bezüglich der letzten E-Mail...|Относительно последнего письма...
+
+# Main Content
+Я хотел бы...|Ich würde gerne...|I would like to...||Ich würde gerne einen Termin vereinbaren.|Я хотел бы договориться о встрече.|Ich würde gerne mehr Informationen erhalten.|Я хотел бы получить больше информации.|Ich würde gerne Ihr Angebot besprechen.|Я хотел бы обсудить ваше предложение.|Ich würde gerne an dem Projekt teilnehmen.|Я хотел бы участвовать в проекте.
+Не могли бы вы...|Könnten Sie bitte...|Could you please...||Könnten Sie bitte die Unterlagen senden?|Не могли бы вы отправить документы?|Könnten Sie bitte Rückmeldung geben?|Не могли бы вы дать обратную связь?|Könnten Sie bitte einen Termin vorschlagen?|Не могли бы вы предложить встречу?|Könnten Sie bitte auf meine E-Mail antworten?|Не могли бы вы ответить на мое письмо?
+Я прошу о...|Ich bitte um...|I request...||Ich bitte um Bestätigung bis morgen.|Я прошу о подтверждении до завтра.|Ich bitte um Ihre Unterstützung.|Я прошу о вашей поддержке.|Ich bitte um Entschuldigung für die Verzögerung.|Я прошу извинения за задержку.|Ich bitte um Ihre Meinung zu diesem Thema.|Я прошу о вашем мнении по этому вопросу.
+
+# Closing Phrases
+С дружеским приветом|Mit freundlichen Grüßen|Kind regards||Mit freundlichen Grüßen,|С дружеским приветом,|Freundliche Grüße,|Дружеский привет,
+С наилучшими пожеланиями|Beste Grüße|Best wishes||Beste Grüße,|С наилучшими пожеланиями,|Herzliche Grüße,|Сердечный привет,
+С уважением|Mit freundlichem Gruß|With kind regards||Mit freundlichem Gruß,|С уважением,|Hochachtungsvoll,|С глубоким уважением,
+
+# Useful Vocabulary
+Вложение|die Anlage|attachment||In der Anlage finden Sie...|Во вложении вы найдете...|Die Anlagen enthalten wichtige Dokumente.|Вложения содержат важные документы.
+Встреча, срок|der Termin|appointment, deadline||Ich schlage folgenden Termin vor.|Я предлагаю следующую встречу.|Der Termin muss eingehalten werden.|Срок должен быть соблюден.
+Обратная связь|die Rückmeldung|feedback||Ich bitte um Rückmeldung.|Я прошу о обратной связи.|Vielen Dank für Ihre Rückmeldung.|Большое спасибо за вашу обратную связь.
+Документы|die Unterlagen|documents||Bitte senden Sie die Unterlagen.|Пожалуйста, отправьте документы.|Die Unterlagen sind vollständig.|Документы полные.

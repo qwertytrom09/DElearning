@@ -19,16 +19,40 @@ header {
 }
 
 header .header-content {
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     text-align: center;
 }
 
 /* Burger Container */
 .burger-container {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    /* No longer needs positioning since it's in flex */
+}
+
+/* Header Buttons */
+.header-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.header-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.header-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
 }
 
 header h1 {
@@ -109,7 +133,23 @@ header p {
 
 .cards-container.active {
     display: grid;
+    animation: fadeInUp 0.8s ease-out;
+    animation-fill-mode: both;
 }
+
+/* Staggered card animations */
+.cards-container.active .card:nth-child(1) { animation-delay: 0.1s; }
+.cards-container.active .card:nth-child(2) { animation-delay: 0.2s; }
+.cards-container.active .card:nth-child(3) { animation-delay: 0.3s; }
+.cards-container.active .card:nth-child(4) { animation-delay: 0.4s; }
+.cards-container.active .card:nth-child(5) { animation-delay: 0.5s; }
+.cards-container.active .card:nth-child(6) { animation-delay: 0.6s; }
+.cards-container.active .card:nth-child(7) { animation-delay: 0.7s; }
+.cards-container.active .card:nth-child(8) { animation-delay: 0.8s; }
+.cards-container.active .card:nth-child(9) { animation-delay: 0.9s; }
+.cards-container.active .card:nth-child(10) { animation-delay: 1.0s; }
+.cards-container.active .card:nth-child(11) { animation-delay: 1.1s; }
+.cards-container.active .card:nth-child(12) { animation-delay: 1.2s; }
 
 /* Card styles */
 .card {
@@ -117,6 +157,20 @@ header p {
     perspective: 1000px;
     height: 240px;
     cursor: pointer;
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .card-inner {
@@ -139,49 +193,109 @@ header p {
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    border-radius: 18px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 1.5rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
 }
 
 .card-front {
     background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
     color: #333;
+    border: 2px solid rgba(52, 152, 219, 0.1);
+}
+
+.card-front:hover {
+    border-color: rgba(52, 152, 219, 0.3);
+    transform: translateY(-2px);
 }
 
 .card-back {
     background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
     color: white;
     transform: rotateY(180deg);
+    border: 2px solid rgba(255, 107, 107, 0.3);
 }
 
-/* Article-based card backgrounds */
+.card-back:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: rotateY(180deg) translateY(-2px);
+}
+
+/* Article-based card backgrounds and borders */
 .article-der .card-back {
     background: linear-gradient(135deg, #3498db 0%, #5dade2 100%);
+    border-color: rgba(52, 152, 219, 0.5);
+}
+
+.article-der .card-front {
+    border-color: rgba(52, 152, 219, 0.2);
+}
+
+.article-der .card-front:hover {
+    border-color: rgba(52, 152, 219, 0.4);
 }
 
 .article-die .card-back {
     background: linear-gradient(135deg, #e74c3c 0%, #ec7063 100%);
+    border-color: rgba(231, 76, 60, 0.5);
+}
+
+.article-die .card-front {
+    border-color: rgba(231, 76, 60, 0.2);
+}
+
+.article-die .card-front:hover {
+    border-color: rgba(231, 76, 60, 0.4);
 }
 
 .article-das .card-back {
     background: linear-gradient(135deg, #27ae60 0%, #58d68d 100%);
+    border-color: rgba(39, 174, 96, 0.5);
 }
 
+.article-das .card-front {
+    border-color: rgba(39, 174, 96, 0.2);
+}
+
+.article-das .card-front:hover {
+    border-color: rgba(39, 174, 96, 0.4);
+}
+
+/* Enhanced card styling for German-Russian vocabulary */
 .card-front h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-bottom: 0.5rem;
     color: #2c3e50;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.card-front h2::after {
+    content: "🇷🇺";
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    opacity: 0.7;
 }
 
 .card-back h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-bottom: 0.5rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.card-back h2::after {
+    content: "🇩🇪";
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+    opacity: 0.9;
 }
 
 .card-front p,
@@ -336,6 +450,106 @@ header p {
 .example-item .russian {
     color: #e74c3c;
     font-style: italic;
+}
+
+/* New modal styles for email examples */
+.examples-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4000;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-content .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #666;
+    line-height: 1;
+}
+
+.modal-content .close-btn:hover {
+    color: #333;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+.examples-list .example-item {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+}
+
+.examples-list .example-item .german {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.examples-list .example-item .russian {
+    color: #e74c3c;
+    font-style: italic;
+}
+
+.speak-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.speak-btn:hover {
+    opacity: 1;
+    transform: scale(1.2);
 }
 
 @keyframes pulse {
@@ -800,6 +1014,317 @@ header p {
 .complete-test:active,
 .restart-test:active {
     transform: translateY(0);
+}
+
+/* Email Writing Tips Styles - Enhanced */
+.email-writing-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.email-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.email-header h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.email-header p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.back-to-vocab-btn {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    letter-spacing: 0.5px;
+}
+
+.back-to-vocab-btn:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.25) 100%);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+}
+
+.back-to-vocab-btn:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+.email-section {
+    margin-bottom: 4rem;
+    animation: fadeInUp 0.8s ease-out;
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
+    padding: 2rem;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.email-section:nth-child(2) { animation-delay: 0.3s; }
+.email-section:nth-child(3) { animation-delay: 0.4s; }
+.email-section:nth-child(4) { animation-delay: 0.5s; }
+.email-section:nth-child(5) { animation-delay: 0.6s; }
+
+/* Background images for different email sections */
+.email-section:nth-child(1) {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(41, 128, 185, 0.15) 100%);
+    background-size: 100px 100px;
+    background-position: right 20px bottom 20px, center;
+    background-repeat: no-repeat, repeat;
+}
+
+.email-section:nth-child(2) {
+    background: linear-gradient(135deg, rgba(155, 89, 182, 0.1) 0%, rgba(142, 68, 173, 0.15) 100%);
+    background-size: 80px 80px;
+    background-position: left 20px top 20px, center;
+    background-repeat: no-repeat, repeat;
+}
+
+.email-section:nth-child(3) {
+    background: linear-gradient(135deg, rgba(230, 126, 34, 0.1) 0%, rgba(211, 84, 0, 0.15) 100%);
+    background-size: 90px 90px;
+    background-position: right 30px top 30px, center;
+    background-repeat: no-repeat, repeat;
+}
+
+.email-section:nth-child(4) {
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(192, 57, 43, 0.15) 100%);
+    background-size: 70px 70px;
+    background-position: left 30px bottom 30px, center;
+    background-repeat: no-repeat, repeat;
+}
+
+.email-section:nth-child(5) {
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, rgba(39, 174, 96, 0.15) 100%);
+    background-size: 100px 100px;
+    background-position: center, center;
+    background-repeat: no-repeat, repeat;
+}
+
+.email-section h3 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.email-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.8) 100%);
+    border-radius: 2px;
+}
+
+.email-tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.email-tip-card {
+    background-color: transparent;
+    perspective: 1200px;
+    height: 220px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.email-tip-card:hover {
+    transform: translateY(-8px);
+}
+
+.email-tip-card .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.email-tip-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.email-tip-card .card-front,
+.email-tip-card .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 18px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.email-tip-card .card-front {
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    color: #333;
+    border: 2px solid rgba(52, 152, 219, 0.2);
+}
+
+.email-tip-card .card-front:hover {
+    border-color: rgba(52, 152, 219, 0.4);
+    transform: translateY(-2px);
+}
+
+.email-tip-card .card-back {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: rotateY(180deg);
+    border: 2px solid rgba(102, 126, 234, 0.3);
+}
+
+.email-tip-card .card-back:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: rotateY(180deg) translateY(-2px);
+}
+
+.email-tip-front h4 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.email-tip-front h4::after {
+    content: "🇩🇪";
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+    opacity: 0.8;
+}
+
+.email-tip-front p {
+    font-size: 1rem;
+    opacity: 0.8;
+    color: #666;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.email-tip-front p::after {
+    content: "🇷🇺";
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+    opacity: 0.7;
+}
+
+.email-tip-back {
+    text-align: left;
+    width: 100%;
+    padding: 0.5rem 0;
+}
+
+.email-tip-back p {
+    margin: 0.4rem 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.email-tip-back strong {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    font-weight: 700;
+}
+
+/* Enhanced mobile responsiveness for email tips */
+@media (max-width: 768px) {
+    .email-writing-container {
+        padding: 1rem;
+    }
+
+    .email-tips-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .email-tip-card {
+        height: 200px;
+    }
+
+    .email-header h2 {
+        font-size: 2rem;
+    }
+
+    .email-section h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Responsive design for email tips */
+@media (max-width: 768px) {
+    .email-writing-container {
+        padding: 1rem;
+    }
+
+    .email-tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .email-tip-card {
+        height: 180px;
+    }
+
+    .email-header h2 {
+        font-size: 1.5rem;
+    }
 }
 
 /* Responsive test design */
