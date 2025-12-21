@@ -1,0 +1,81 @@
+# Format: Russian|German|English|Plural_ending|Examples
+# Environment Topic
+Изменение климата|Der Klimawandel|Climate change||Der Klimawandel bedroht unsere Zukunft.|Wir müssen den Klimawandel stoppen.
+Загрязнение окружающей среды|Die Umweltverschmutzung|Environmental pollution||Die Umweltverschmutzung ist ein großes Problem.|Wir müssen die Umweltverschmutzung reduzieren.
+Биоразнообразие|Die Biodiversität|Biodiversity||Die Biodiversität ist wichtig für unser Ökosystem.|Der Verlust der Biodiversität ist alarmierend.
+Стратегия устойчивости|Die Nachhaltigkeitsstrategie|Sustainability strategy|-ien|Die Nachhaltigkeitsstrategie umfasst verschiedene Maßnahmen.|Wir entwickeln eine neue Nachhaltigkeitsstrategie.
+Экологическая катастрофа|Die ökologische Katastrophe|Ecological catastrophe|-en|Eine ökologische Katastrophe droht uns.|Die ökologischen Katastrophen nehmen zu.
+Устойчивое развитие|Die nachhaltige Entwicklung|Sustainable development||Die nachhaltige Entwicklung ist wichtig für die Zukunft.|Wir brauchen eine Strategie für nachhaltige Entwicklung.
+Глобальное потепление|Die globale Erwärmung|Global warming||Die globale Erwärmung führt zu extremen Wetterereignissen.|Die globale Erwärmung bedroht unsere Umwelt.
+Возобновляемая энергия|Die erneuerbare Energie|Renewable energy|-en|Die erneuerbaren Energien sind umweltfreundlich.|Wir fördern die Nutzung erneuerbarer Energien.
+Парниковый эффект|Der Treibhauseffekt|Greenhouse effect||Der Treibhauseffekt verursacht die globale Erwärmung.|Wir müssen den Treibhauseffekt reduzieren.
+Экологическая ответственность|Die Umweltverantwortung|Environmental responsibility||Die Umweltverantwortung liegt bei jedem Einzelnen.|Unternehmen müssen mehr Umweltverantwortung übernehmen.
+Лесное хозяйство|Die Forstwirtschaft|Forestry||Die Forstwirtschaft ist wichtig für den Umweltschutz.|Die moderne Forstwirtschaft ist nachhaltig.
+Водные ресурсы|Die Wasserressourcen|Water resources||Die Wasserressourcen müssen geschützt werden.|Der Wasserverbrauch belastet die Wasserressourcen.
+Почвенная эрозия|Die Bodenerosion|Soil erosion||Die Bodenerosion zerstört fruchtbares Land.|Wir bekämpfen die Bodenerosion durch Aufforstung.
+Экологический баланс|Das ökologische Gleichgewicht|Ecological balance||Das ökologische Gleichgewicht ist gestört.|Wir müssen das ökologische Gleichgewicht wiederherstellen.
+Возобновляемая энергия|Die erneuerbare Energie|Renewable energy|-en|Die erneuerbaren Energien sind umweltfreundlich.|Wir fördern die Nutzung erneuerbarer Energien.
+
+# Society Topic
+Социальное неравенство|Die soziale Ungleichheit|Social inequality||Die soziale Ungleichheit ist ein ernstes Problem.|Wir kämpfen gegen soziale Ungleichheit.
+Интеграция|Die Integration|Integration||Die Integration von Migranten ist wichtig.|Die erfolgreiche Integration braucht Zeit.
+Дискриминация|Die Diskriminierung|Discrimination||Die Diskriminierung ist gesetzlich verboten.|Wir bekämpfen jede Form von Diskriminierung.
+Равенство возможностей|Die Chancengleichheit|Equal opportunities||Die Chancengleichheit muss für alle gelten.|Die Chancengleichheit ist ein Grundrecht.
+Эмансипация|Die Emanzipation|Emancipation||Die Emanzipation der Frau war ein langer Prozess.|Die Emanzipation brachte viele Veränderungen.
+Социальная мобильность|Die soziale Mobilität|Social mobility||Die soziale Mobilität ist in unserer Gesellschaft eingeschränkt.|Bildung ermöglicht soziale Mobilität.
+Социальное обеспечение|Die soziale Sicherung|Social security||Das soziale Sicherungssystem muss reformiert werden.|Die soziale Sicherung hilft den Bedürftigen.
+Гендерное равенство|Die Geschlechtergleichheit|Gender equality||Die Geschlechtergleichheit ist ein wichtiges Ziel.|Wir arbeiten für mehr Geschlechtergleichheit.
+Социальная сплоченность|Der soziale Zusammenhalt|Social cohesion||Der soziale Zusammenhalt stärkt die Gemeinschaft.|Die soziale Zusammenhalt ist in Krisenzeiten besonders wichtig.
+Бедность|Die Armut|Poverty||Die Armut ist ein globales Problem.|Wir bekämpfen die Armut durch Bildung.
+Социальный капитал|Das soziale Kapital|Social capital||Der soziale Kapital ist wertvoll für die Gesellschaft.|Netzwerke bauen sozialen Kapital auf.
+Образовательное неравенство|Die Bildungsungerechtigkeit|Educational inequality||Die Bildungsungerechtigkeit behindert die Entwicklung.|Wir müssen die Bildungsungerechtigkeit bekämpfen.
+Семейная политика|Die Familienpolitik|Family policy||Die Familienpolitik unterstützt Eltern und Kinder.|Die moderne Familienpolitik ist vielfältig.
+Миграционная политика|Die Migrationspolitik|Migration policy||Die Migrationspolitik muss human bleiben.|Europa braucht eine gemeinsame Migrationspolitik.
+
+# Culture Topic
+Культурная идентичность|Die kulturelle Identität|Cultural identity|-en|Die kulturelle Identität ist sehr wichtig.|Die kulturellen Identitäten bereichern unsere Gesellschaft.
+Мультикультурализм|Die Multikulturalität|Multiculturalism||Die Multikulturalität ist eine Stärke Europas.|Die Multikulturalität fördert den Austausch.
+Культурные изменения|Der Kulturwandel|Cultural change||Der Kulturwandel verläuft langsam.|Der digitale Kulturwandel ist unaufhaltsam.
+Сохранение традиций|Die Traditionspflege|Preservation of traditions||Die Traditionspflege ist wichtig für die Identität.|Die Traditionspflege verbindet Generationen.
+Межкультурная компетентность|Die interkulturelle Kompetenz|Intercultural competence|-en|Die interkulturelle Kompetenz ist gefragt.|Die interkulturellen Kompetenzen entwickeln sich durch Erfahrung.
+Культурное наследие|Das kulturelle Erbe|Cultural heritage||Das kulturelle Erbe muss bewahrt werden.|Das kulturelle Erbe bereichert unsere Identität.
+Языковое разнообразие|Die Sprachenvielfalt|Linguistic diversity||Die Sprachenvielfalt ist ein Reichtum Europas.|Wir fördern die Sprachenvielfalt in der EU.
+Культурный обмен|Der Kulturaustausch|Cultural exchange||Der Kulturaustausch fördert das Verständnis.|Internationale Kulturaustausch ist wichtig.
+Фольклор|Der Folklore|Folklore||Der Folklore erzählt Geschichten unserer Vorfahren.|Der deutsche Folklore ist vielfältig.
+Искусство и культура|Kunst und Kultur|Arts and culture||Kunst und Kultur prägen unsere Gesellschaft.|Die Förderung von Kunst und Kultur ist wichtig.
+Культурная интеграция|Die kulturelle Integration|Cultural integration||Die kulturelle Integration braucht Zeit.|Erfolgreiche kulturelle Integration bereichert alle.
+Традиционные ценности|Die traditionellen Werte|Traditional values||Die traditionellen Werte verbinden Generationen.|Wir achten die traditionellen Werte unserer Kultur.
+Культурное образование|Die Kulturbildung|Cultural education||Die Kulturbildung entwickelt Kreativität.|Kulturbildung ist Teil der Allgemeinbildung.
+Музеи и галереи|Museen und Galerien|Museums and galleries||Museen und Galerien zeigen unsere Geschichte.|Der Besuch von Museen und Galerien bildet.
+
+# Technology Topic
+Искусственный интеллект|Die künstliche Intelligenz|Artificial intelligence||Die künstliche Intelligenz revolutioniert viele Bereiche.|Die Entwicklung der künstlichen Intelligenz schreitet voran.
+Конфиденциальность данных|Die Datenprivatsphäre|Data privacy||Die Datenprivatsphäre muss geschützt werden.|Die Datenprivatsphäre ist ein Grundrecht.
+Автоматизация|Die Automatisierung|Automation||Die Automatisierung verändert die Arbeitswelt.|Die Automatisierung bringt Vor- und Nachteile.
+Волна цифровизации|Die Digitalisierungswelle|Digitalization wave||Die Digitalisierungswelle erfasst alle Lebensbereiche.|Die Digitalisierungswelle bringt neue Möglichkeiten.
+Кибербезопасность|Die Cybersicherheit|Cybersecurity||Die Cybersicherheit ist von größter Bedeutung.|Die Cybersicherheit muss ständig aktualisiert werden.
+Блокчейн|Die Blockchain|Blockchain||Die Blockchain ist die Basis für Kryptowährungen.|Die Blockchain-Technologie revolutioniert Finanzwesen.
+Интернет вещей|Das Internet der Dinge|Internet of Things||Das Internet der Dinge verbindet alle Geräte.|Das Internet der Dinge macht unser Leben komfortabler.
+Виртуальная реальность|Die virtuelle Realität|Virtual reality||Die virtuelle Realität ermöglicht neue Erfahrungen.|Die virtuelle Realität wird in der Bildung eingesetzt.
+Большие данные|Big Data|Big Data||Big Data hilft bei der Entscheidungsfindung.|Die Analyse von Big Data ist sehr komplex.
+Облачные вычисления|Cloud Computing|Cloud computing||Cloud Computing ermöglicht flexible Arbeitsweise.|Cloud Computing ist kosteneffizient.
+Машинное обучение|Das maschinelle Lernen|Machine learning||Das maschinelle Lernen verbessert Algorithmen.|Das maschinelle Lernen erkennt Muster in Daten.
+Робототехника|Die Robotik|Robotics||Die Robotik automatisiert viele Arbeitsprozesse.|Die Robotik entwickelt sich rasant.
+Квантовые вычисления|Das Quantencomputing|Quantum computing||Das Quantencomputing löst komplexe Probleme.|Das Quantencomputing ist die Zukunft der Informatik.
+Технологический прогресс|Der technologische Fortschritt|Technological progress||Der technologische Fortschritt verändert unsere Welt.|Der technologische Fortschritt bringt neue Möglichkeiten.
+
+# Politics Topic
+Демократия|Die Demokratie|Democracy||Die Demokratie ist das beste Regierungssystem.|Die Demokratie braucht aktive Bürger.
+Права человека|Die Menschenrechte|Human rights||Die Menschenrechte müssen universal gelten.|Die Verteidigung der Menschenrechte ist wichtig.
+Глобализация|Die Globalisierung|Globalization||Die Globalisierung verbindet die Welt.|Die Globalisierung bringt Chancen und Risiken.
+Маргинализация|Die Marginalisierung|Marginalization||Die Marginalisierung bestimmter Gruppen muss verhindert werden.|Die Marginalisierung führt zu sozialen Spannungen.
+Отчуждение|Die Entfremdung|Alienation||Die Entfremdung vom Arbeitsprozess ist ein Problem.|Die Entfremdung in der modernen Gesellschaft nimmt zu.
+Политическая стабильность|Die politische Stabilität|Political stability||Die politische Stabilität ist wichtig für die Wirtschaft.|Die politische Stabilität fördert Investitionen.
+Международные отношения|Die internationalen Beziehungen|International relations||Die internationalen Beziehungen sind komplex.|Die internationalen Beziehungen beeinflussen die Politik.
+Экономическая политика|Die Wirtschaftspolitik|Economic policy||Die Wirtschaftspolitik bestimmt die Entwicklung.|Die Wirtschaftspolitik muss nachhaltig sein.
+Конституция|Die Verfassung|Constitution||Die Verfassung ist das Grundgesetz.|Die Verfassung schützt die Bürgerrechte.
+Парламент|Das Parlament|Parliament||Das Parlament beschließt die Gesetze.|Das Parlament repräsentiert das Volk.
+Избирательная система|Das Wahlsystem|Electoral system||Das Wahlsystem bestimmt die Regierungsbildung.|Das Wahlsystem muss demokratisch sein.
+Политические партии|Die politischen Parteien|Political parties||Die politischen Parteien vertreten verschiedene Interessen.|Die politischen Parteien konkurrieren um die Macht.
+Гражданское общество|Die Zivilgesellschaft|Civil society||Die Zivilgesellschaft ist aktiv in der Demokratie.|Die Zivilgesellschaft kontrolliert die Regierung.
+Государственное управление|Die Staatsverwaltung|Public administration||Die Staatsverwaltung organisiert die öffentlichen Dienste.|Die Staatsverwaltung muss effizient arbeiten.
