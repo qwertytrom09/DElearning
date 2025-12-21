@@ -90,12 +90,12 @@ function generateEmailWritingCards() {
             sectionHtml += `
                     <div class="email-tip-card" data-section="${sectionKey}" data-index="${index}">
                         <div class="card-front">
-                            <h4>${tip.german}</h4>
-                            <p>${tip.russian}</p>
+                            <h4>${tip.russian}</h4>
+                            <p>${tip.german}</p>
                         </div>
                         <div class="card-back">
-                            <h4>${tip.german}</h4>
-                            <p>${tip.russian}</p>
+                            <h4>${tip.russian}</h4>
+                            <p>${tip.german}</p>
             `;
 
             if (tip.examples && tip.examples.length > 0) {
@@ -103,8 +103,8 @@ function generateEmailWritingCards() {
                 tip.examples.forEach(example => {
                     sectionHtml += `
                         <div class="example-item">
-                            <div class="german">${example.german}</div>
                             <div class="russian">${example.russian}</div>
+                            <div class="german">${example.german}</div>
                         </div>
                     `;
                 });
@@ -155,12 +155,12 @@ function showExamplesModal(tip) {
     modal.innerHTML = `
         <div class="modal-content">
             <span class="close-btn">&times;</span>
-            <h3>Examples for: ${tip.german}</h3>
+            <h3>Examples for: ${tip.russian}</h3>
             <div class="examples-list">
                 ${tip.examples.map(example => `
                     <div class="example-item">
-                        <div class="german">${example.german} <button class="speak-btn" data-text="${example.german.replace(/[.,]$/, '')}">🔊</button></div>
                         <div class="russian">${example.russian}</div>
+                        <div class="german">${example.german} <button class="speak-btn" data-text="${example.german.replace(/[.,]$/, '')}">🔊</button></div>
                     </div>
                 `).join('')}
             </div>

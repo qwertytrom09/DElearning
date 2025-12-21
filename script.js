@@ -595,17 +595,24 @@ function initializeApp() {
 
     dictionaryBtn.addEventListener('click', function() {
         menuDropdown.classList.remove('active');
+        // Shuffle dictionary words each time it opens
+        dictionary.sort(() => Math.random() - 0.5);
+        updateDictionaryDisplay();
         dictionaryOverlay.classList.add('active');
         initializeDictionaryCards();
     });
 
     closeDictionary.addEventListener('click', function() {
         dictionaryOverlay.classList.remove('active');
+        // Reset all cards to show Russian (front) side when exiting dictionary
+        document.querySelectorAll('.card.flipped').forEach(card => card.classList.remove('flipped'));
     });
 
     dictionaryOverlay.addEventListener('click', function(event) {
         if (event.target === dictionaryOverlay) {
             dictionaryOverlay.classList.remove('active');
+            // Reset all cards to show Russian (front) side when exiting dictionary
+            document.querySelectorAll('.card.flipped').forEach(card => card.classList.remove('flipped'));
         }
     });
 
