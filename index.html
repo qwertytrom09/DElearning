@@ -8,7 +8,20 @@
 </head>
 <body>
     <header>
-        <h1>Russian to German Vocabulary</h1>
+        <div class="header-content">
+            <div class="burger-container">
+                <button class="burger-menu" aria-label="Open menu">☰</button>
+                <!-- Burger Menu Dropdown -->
+                <div class="menu-dropdown">
+                    <h2>Menu</h2>
+                    <div class="menu-options">
+                        <button class="menu-option" id="dictionary-btn">My Dictionary</button>
+                        <button class="menu-option" id="test-btn">Practice Test</button>
+                    </div>
+                </div>
+            </div>
+            <h1>Russian to German Vocabulary</h1>
+        </div>
         <p>Choose a topic, click on cards to see German translations, 🔊 to hear pronunciation, or 📝 to see example phrases</p>
         <nav class="topic-nav">
             <button class="topic-btn active" data-topic="environment">Umwelt</button>
@@ -18,6 +31,48 @@
             <button class="topic-btn" data-topic="politics">Politik</button>
         </nav>
     </header>
+
+    <!-- Dictionary Overlay -->
+    <div class="dictionary-overlay">
+        <div class="dictionary-content">
+            <button class="close-dictionary">×</button>
+            <h2>My Dictionary</h2>
+            <div class="dictionary-cards">
+                <!-- Dictionary cards will be added here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Test Overlay -->
+    <div class="test-overlay">
+        <div class="test-content">
+            <button class="close-test">×</button>
+            <h2>Practice Test</h2>
+            <p>Click on a Russian word, then click on its German translation.</p>
+            <div class="test-container">
+                <div class="test-column">
+                    <h3>Russian Words</h3>
+                    <div class="russian-words">
+                        <!-- Russian words will be added here -->
+                    </div>
+                </div>
+                <div class="test-column">
+                    <h3>German Words</h3>
+                    <div class="german-words">
+                        <!-- German words will be added here -->
+                    </div>
+                </div>
+            </div>
+            <div class="test-progress">
+                <span class="correct-count">0</span> / <span class="total-count">0</span> correct
+                <span class="mistakes-count">0</span> mistakes
+            </div>
+            <div class="test-controls">
+                <button class="complete-test" style="display: none;">Complete Test</button>
+                <button class="restart-test" style="display: none;">Restart Test</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Environment Topic -->
     <div class="cards-container topic-environment active">
