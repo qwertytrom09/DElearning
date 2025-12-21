@@ -16,8 +16,6 @@ header {
     text-align: center;
     padding: 2rem 1rem;
     color: white;
-    position: relative;
-    z-index: 1;
 }
 
 header .header-content {
@@ -159,6 +157,19 @@ header p {
     background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
     color: white;
     transform: rotateY(180deg);
+}
+
+/* Article-based card backgrounds */
+.article-der .card-back {
+    background: linear-gradient(135deg, #3498db 0%, #5dade2 100%);
+}
+
+.article-die .card-back {
+    background: linear-gradient(135deg, #e74c3c 0%, #ec7063 100%);
+}
+
+.article-das .card-back {
+    background: linear-gradient(135deg, #27ae60 0%, #58d68d 100%);
 }
 
 .card-front h2 {
@@ -406,13 +417,13 @@ header p {
 /* Menu dropdown */
 .menu-dropdown {
     position: absolute;
-    top: 100%;
-    left: 0;
+    top: 100px;
+    left: 20px;
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     min-width: 200px;
-    z-index: 5000;
+    z-index: 100000 !important;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);

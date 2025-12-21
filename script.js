@@ -85,7 +85,17 @@ function generateCards() {
         topics[topic].forEach(word => {
             const pluralHtml = word.plural ? `<br><small>(Die ${word.plural})</small>` : '';
             const wordId = `${topic}-${word.russian.replace(/\s+/g, '-').toLowerCase()}`;
-            html += `        <div class="card" data-word-id="${wordId}">
+            // Determine article class
+            const germanLower = word.german.toLowerCase();
+            let articleClass = '';
+            if (germanLower.startsWith('der ')) {
+                articleClass = 'article-der';
+            } else if (germanLower.startsWith('die ')) {
+                articleClass = 'article-die';
+            } else if (germanLower.startsWith('das ')) {
+                articleClass = 'article-das';
+            }
+            html += `        <div class="card ${articleClass}" data-word-id="${wordId}">
             <div class="card-inner">
                 <div class="card-front">
                     <h2>${word.russian}</h2>
@@ -193,8 +203,18 @@ function updateDictionaryDisplay() {
 
     dictionary.forEach(item => {
         const pluralHtml = item.plural ? `<br><small>(Die ${item.plural})</small>` : '';
+        // Determine article class
+        const germanLower = item.german.toLowerCase();
+        let articleClass = '';
+        if (germanLower.startsWith('der ')) {
+            articleClass = 'article-der';
+        } else if (germanLower.startsWith('die ')) {
+            articleClass = 'article-die';
+        } else if (germanLower.startsWith('das ')) {
+            articleClass = 'article-das';
+        }
         const cardHtml = `
-            <div class="card" data-word-id="${item.wordId}">
+            <div class="card ${articleClass}" data-word-id="${item.wordId}">
                 <div class="card-inner">
                     <div class="card-front">
                         <h2>${item.russian}</h2>
