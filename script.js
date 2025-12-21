@@ -672,11 +672,13 @@ function initializeApp() {
             }
         }
 
-        // Limit to 10 words for the test
-        const testWordsPool = availableWords.slice(0, Math.min(10, availableWords.length));
-        testWords = [...testWordsPool];
+        // Use all available words for the test
+        testWords = [...availableWords];
 
-        // Shuffle the German words
+        // Thoroughly shuffle the test words
+        testWords.sort(() => Math.random() - 0.5);
+
+        // Shuffle the German words separately for additional mixing
         const germanWords = testWords.map(word => word.german).sort(() => Math.random() - 0.5);
 
         // Display Russian words
