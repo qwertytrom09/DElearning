@@ -85,12 +85,10 @@ function generateEmailWritingCards() {
                             <div class="card-front">
                                 <h4>${tip.russian}</h4>
                                 <p>${tip.german}</p>
-                                ${tip.examples && tip.examples.length > 0 ? '<button class="examples-btn" data-tip-index="' + index + '">📚 Examples</button>' : ''}
                             </div>
                             <div class="card-back">
                                 <h4>${tip.russian}</h4>
                                 <p>${tip.german}</p>
-                                ${tip.examples && tip.examples.length > 0 ? '<button class="examples-btn" data-tip-index="' + index + '">📚 Examples</button>' : ''}
                             </div>
                         </div>
             `;
@@ -115,19 +113,8 @@ function initializeEmailWritingCards() {
     const emailCards = document.querySelectorAll('.email-tip-card');
     emailCards.forEach(card => {
         card.addEventListener('click', function(e) {
-            // Prevent flip if clicking on examples button
-            if (e.target.closest('.examples-btn')) return;
-            
-        });
-    });
-
-    // Initialize examples buttons
-    const examplesBtns = document.querySelectorAll('.examples-btn');
-    examplesBtns.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const tipIndex = this.getAttribute('data-tip-index');
-            const sectionKey = this.closest('.email-tip-card').getAttribute('data-section');
+            const tipIndex = this.getAttribute('data-index');
+            const sectionKey = this.getAttribute('data-section');
             const tip = emailTipsSections[sectionKey][parseInt(tipIndex)];
             showExamplesModal(tip);
         });
