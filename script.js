@@ -849,6 +849,8 @@ function updateDictionaryDisplay() {
     if (startSelectedTestBtn) {
         startSelectedTestBtn.addEventListener('click', startSelectedTest);
     }
+
+
 }
 
 function startSelectedTest() {
@@ -1538,6 +1540,8 @@ function showEmailWritingTips() {
     // Navigate to the standalone email writing page
     window.location.href = 'email-writing.html';
 }
+
+
 
 // Start the app
 document.addEventListener('DOMContentLoaded', function() {

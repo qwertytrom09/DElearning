@@ -42,7 +42,7 @@ function initializeAchievements() {
         // Hidden achievements (not visible until unlocked)
         { id: 'dedicated_learner', name: 'Dedicated Learner', description: 'Complete 100 total tests', threshold: 100, type: 'test_total', icon: '🎓', hidden: true },
         { id: 'perfection_master', name: 'Perfection Master', description: 'Complete 100 perfect tests', threshold: 100, type: 'test', icon: '💎', hidden: true },
-        { id: 'audio_enthusiast_extreme', name: 'Audio Enthusiast Extreme', description: 'Listen to 500 German words', threshold: 500, type: 'listening', icon: '🎧🔥', hidden: true },
+        { id: 'audio_enthusiast_extreme', name: 'Audio Enthusiast Extreme', description: 'Listen to 500 German words', threshold: 500, type: 'listening', icon: '🎧', hidden: true },
         { id: 'example_master', name: 'Example Master', description: 'View 100 word examples', threshold: 100, type: 'examples', icon: '�', hidden: true }
     ];
 }
@@ -368,6 +368,8 @@ function trackSentenceListened() {
     saveAchievements();
     checkAchievements();
 }
+
+
 
 // Initialize achievements system when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
