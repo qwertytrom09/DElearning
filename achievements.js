@@ -1,15 +1,49 @@
 // Achievements system - separate file for better code organization
 
+// Global achievement tracking variables
+let listeningCount = 0;
+let perfectTestsCount = 0;
+let totalTestsCount = 0;
+let examplesViewedCount = 0;
+let sentencesListenedCount = 0;
+
 // Achievement definitions
 function initializeAchievements() {
     achievements = [
-        { id: 'first_words', name: 'First Steps', description: 'Add your first 5 words to the dictionary', threshold: 5, icon: '🌱' },
-        { id: 'growing_vocabulary', name: 'Growing Vocabulary', description: 'Reach 10 words in your dictionary', threshold: 10, icon: '📚' },
-        { id: 'vocabulary_builder', name: 'Vocabulary Builder', description: 'Collect 25 words in your dictionary', threshold: 25, icon: '🏗️' },
-        { id: 'word_master', name: 'Word Master', description: 'Achieve 50 words in your dictionary', threshold: 50, icon: '🎓' },
-        { id: 'linguistic_expert', name: 'Linguistic Expert', description: 'Master 100 words in your dictionary', threshold: 100, icon: '🧠' },
-        { id: 'german_scholar', name: 'German Scholar', description: 'Reach 200 words in your dictionary', threshold: 200, icon: '🎖️' },
-        { id: 'language_virtuoso', name: 'Language Virtuoso', description: 'Collect 500 words in your dictionary', threshold: 500, icon: '🏆' }
+        // Vocabulary achievements
+        { id: 'word_master', name: 'Word Master', description: 'Achieve 50 words in your dictionary', threshold: 50, type: 'vocabulary', icon: '🎓' },
+        { id: 'polyglot_initiate', name: 'Polyglot Initiate', description: 'Master 75 words in your dictionary', threshold: 75, type: 'vocabulary', icon: '🌍' },
+        { id: 'linguistic_expert', name: 'Linguistic Expert', description: 'Master 100 words in your dictionary', threshold: 100, type: 'vocabulary', icon: '🧠' },
+        { id: 'language_enthusiast', name: 'Language Enthusiast', description: 'Reach 150 words in your dictionary', threshold: 150, type: 'vocabulary', icon: '💡' },
+        { id: 'german_scholar', name: 'German Scholar', description: 'Reach 200 words in your dictionary', threshold: 200, type: 'vocabulary', icon: '🎖️' },
+        { id: 'german_master', name: 'German Master', description: 'Collect 300 words in your dictionary', threshold: 300, type: 'vocabulary', icon: '👑' },
+        { id: 'language_virtuoso', name: 'Language Virtuoso', description: 'Collect 500 words in your dictionary', threshold: 500, type: 'vocabulary', icon: '🏆' },
+        { id: 'ultimate_scholar', name: 'Ultimate Scholar', description: 'Achieve linguistic mastery with 1000 words', threshold: 1000, type: 'vocabulary', icon: '⭐' },
+
+        // Listening achievements
+        { id: 'audio_enthusiast', name: 'Audio Enthusiast', description: 'Listen to 50 German words', threshold: 50, type: 'listening', icon: '🎧' },
+        { id: 'listening_expert', name: 'Listening Expert', description: 'Listen to 100 German words', threshold: 100, type: 'listening', icon: '👂' },
+        { id: 'sound_master', name: 'Sound Master', description: 'Listen to 250 German words', threshold: 250, type: 'listening', icon: '🔈' },
+
+        // Test achievements
+        { id: 'first_perfect_test', name: 'Perfect Score!', description: 'Complete a test with zero mistakes', threshold: 1, type: 'test', icon: '🎯' },
+        { id: 'test_beginner', name: 'Test Beginner', description: 'Complete your first test', threshold: 1, type: 'test_total', icon: '📝' },
+        { id: 'quiz_master', name: 'Quiz Master', description: 'Complete 25 tests', threshold: 25, type: 'test_total', icon: '📊' },
+        { id: 'assessment_pro', name: 'Assessment Pro', description: 'Complete 50 tests', threshold: 50, type: 'test_total', icon: '📈' },
+        { id: 'test_champion', name: 'Test Champion', description: 'Complete 5 perfect tests', threshold: 5, type: 'test', icon: '🏅' },
+        { id: 'perfectionist', name: 'Perfectionist', description: 'Complete 10 perfect tests', threshold: 10, type: 'test', icon: '💎' },
+        { id: 'accuracy_ace', name: 'Accuracy Ace', description: 'Complete 25 perfect tests', threshold: 25, type: 'test', icon: '🎪' },
+        { id: 'flawless_scholar', name: 'Flawless Scholar', description: 'Complete 50 perfect tests', threshold: 50, type: 'test', icon: '👑' },
+
+        // Learning achievements
+        { id: 'example_explorer', name: 'Example Explorer', description: 'View 20 word examples', threshold: 20, type: 'examples', icon: '📖' },
+        { id: 'sentence_master', name: 'Sentence Master', description: 'Listen to 50 example sentences', threshold: 50, type: 'examples', icon: '🎵' },
+
+        // Hidden achievements (not visible until unlocked)
+        { id: 'dedicated_learner', name: 'Dedicated Learner', description: 'Complete 100 total tests', threshold: 100, type: 'test_total', icon: '🎓', hidden: true },
+        { id: 'perfection_master', name: 'Perfection Master', description: 'Complete 100 perfect tests', threshold: 100, type: 'test', icon: '💎', hidden: true },
+        { id: 'audio_enthusiast_extreme', name: 'Audio Enthusiast Extreme', description: 'Listen to 500 German words', threshold: 500, type: 'listening', icon: '🎧🔥', hidden: true },
+        { id: 'example_master', name: 'Example Master', description: 'View 100 word examples', threshold: 100, type: 'examples', icon: '�', hidden: true }
     ];
 }
 
@@ -18,24 +52,77 @@ function loadAchievements() {
     if (saved) {
         unlockedAchievements = new Set(JSON.parse(saved));
     }
+
+    // Load achievement tracking data
+    const trackingData = localStorage.getItem('germanVocabularyAchievementTracking');
+    if (trackingData) {
+        const data = JSON.parse(trackingData);
+        listeningCount = data.listeningCount || 0;
+        perfectTestsCount = data.perfectTestsCount || 0;
+        totalTestsCount = data.totalTestsCount || 0;
+        examplesViewedCount = data.examplesViewedCount || 0;
+        sentencesListenedCount = data.sentencesListenedCount || 0;
+    }
 }
 
 function saveAchievements() {
     localStorage.setItem('germanVocabularyAchievements', JSON.stringify([...unlockedAchievements]));
+
+    // Save achievement tracking data
+    const trackingData = {
+        listeningCount,
+        perfectTestsCount,
+        totalTestsCount,
+        examplesViewedCount,
+        sentencesListenedCount
+    };
+    localStorage.setItem('germanVocabularyAchievementTracking', JSON.stringify(trackingData));
 }
 
 function checkAchievements() {
-    const wordCount = dictionary.length;
     let newAchievements = [];
     let majorAchievements = [];
 
     achievements.forEach(achievement => {
-        if (!unlockedAchievements.has(achievement.id) && wordCount >= achievement.threshold) {
+        if (unlockedAchievements.has(achievement.id)) return; // Already unlocked
+
+        let thresholdMet = false;
+        let currentValue = 0;
+
+        switch (achievement.type) {
+            case 'vocabulary':
+                currentValue = dictionary.length;
+                thresholdMet = currentValue >= achievement.threshold;
+                break;
+            case 'listening':
+                currentValue = listeningCount;
+                thresholdMet = currentValue >= achievement.threshold;
+                break;
+            case 'test':
+                currentValue = perfectTestsCount;
+                thresholdMet = currentValue >= achievement.threshold;
+                break;
+            case 'test_total':
+                currentValue = totalTestsCount;
+                thresholdMet = currentValue >= achievement.threshold;
+                break;
+            case 'examples':
+                if (achievement.id === 'example_explorer') {
+                    currentValue = examplesViewedCount;
+                    thresholdMet = currentValue >= achievement.threshold;
+                } else if (achievement.id === 'sentence_master') {
+                    currentValue = sentencesListenedCount;
+                    thresholdMet = currentValue >= achievement.threshold;
+                }
+                break;
+        }
+
+        if (thresholdMet) {
             unlockedAchievements.add(achievement.id);
             newAchievements.push(achievement);
 
-            // Consider achievements with 50+ words as major milestones
-            if (achievement.threshold >= 50) {
+            // Consider vocabulary achievements with 50+ words as major milestones
+            if (achievement.type === 'vocabulary' && achievement.threshold >= 50) {
                 majorAchievements.push(achievement);
             }
         }
@@ -95,13 +182,15 @@ function createAchievementsSection() {
         <div class="achievements-grid">
             ${achievements.map(achievement => {
                 const isUnlocked = unlockedAchievements.has(achievement.id);
+                const isSecret = ['dedicated_learner', 'perfection_master', 'audio_enthusiast_extreme', 'example_master'].includes(achievement.id);
+                const secretClass = isSecret ? ' secret' : '';
                 return `
-                    <div class="achievement-card ${isUnlocked ? 'unlocked' : 'locked'}">
+                    <div class="achievement-card ${isUnlocked ? 'unlocked' : 'locked'}${secretClass}">
                         <div class="achievement-icon">${isUnlocked ? achievement.icon : '🔒'}</div>
                         <div class="achievement-info">
-                            <h4>${achievement.name}</h4>
-                            <p>${achievement.description}</p>
-                            <small>${achievement.threshold} words required</small>
+                            <h4>${achievement.name}${isSecret && isUnlocked ? ' ✨' : isSecret ? ' 🔒' : ''}</h4>
+                            <p>${isSecret && !isUnlocked ? '???' : achievement.description}</p>
+                            <small>${isSecret && !isUnlocked ? '??? required' : `${achievement.threshold} required`}</small>
                         </div>
                     </div>
                 `;
@@ -129,22 +218,57 @@ function updateAchievementsDisplay() {
 
     achievements.forEach(achievement => {
         const isUnlocked = unlockedAchievements.has(achievement.id);
+
+        // Show all achievements, but mark secret ones visually
+
+        // Get current progress value based on achievement type
+        let currentValue = 0;
+        switch (achievement.type) {
+            case 'vocabulary':
+                currentValue = dictionary.length;
+                break;
+            case 'listening':
+                currentValue = listeningCount;
+                break;
+            case 'test':
+                currentValue = perfectTestsCount;
+                break;
+            case 'test_total':
+                currentValue = totalTestsCount;
+                break;
+            case 'examples':
+                if (achievement.id === 'example_explorer') {
+                    currentValue = examplesViewedCount;
+                } else if (achievement.id === 'sentence_master') {
+                    currentValue = sentencesListenedCount;
+                }
+                break;
+        }
+
+        const progressPercent = Math.min((currentValue / achievement.threshold) * 100, 100);
         const achievementCard = document.createElement('div');
         achievementCard.className = `achievement-showcase-card ${isUnlocked ? 'unlocked' : 'locked'}`;
+
+        // Add special styling for secret achievements
+        const isSecret = ['dedicated_learner', 'perfection_master', 'audio_enthusiast_extreme', 'example_master'].includes(achievement.id);
+        const secretClass = isSecret ? ' secret' : '';
+        const justUnlockedClass = isSecret && isUnlocked ? ' just-unlocked' : '';
 
         achievementCard.innerHTML = `
             <div class="achievement-showcase-icon">${isUnlocked ? achievement.icon : '🔒'}</div>
             <div class="achievement-showcase-content">
-                <h4>${achievement.name}</h4>
-                <p>${achievement.description}</p>
+                <h4>${achievement.name}${isSecret && isUnlocked ? ' ✨' : isSecret ? ' 🔒' : ''}</h4>
+                <p>${isSecret && !isUnlocked ? '???' : achievement.description}</p>
                 <div class="achievement-progress">
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: ${Math.min((dictionary.length / achievement.threshold) * 100, 100)}%"></div>
+                        <div class="progress-fill" style="width: ${progressPercent}%"></div>
                     </div>
-                    <span class="progress-text">${Math.min(dictionary.length, achievement.threshold)}/${achievement.threshold}</span>
+                    <span class="progress-text">${isSecret && !isUnlocked ? '???/???' : `${Math.min(currentValue, achievement.threshold)}/${achievement.threshold}`}</span>
                 </div>
             </div>
         `;
+
+        achievementCard.className += secretClass + justUnlockedClass;
 
     achievementsShowcase.appendChild(achievementCard);
 });
@@ -212,6 +336,37 @@ function showCelebrationScreen(majorAchievements) {
             }, 500);
         }
     }, 8000);
+}
+
+// Achievement tracking functions
+function trackListening() {
+    listeningCount++;
+    saveAchievements();
+    checkAchievements();
+}
+
+function trackPerfectTest() {
+    perfectTestsCount++;
+    saveAchievements();
+    checkAchievements();
+}
+
+function trackTotalTest() {
+    totalTestsCount++;
+    saveAchievements();
+    checkAchievements();
+}
+
+function trackExamplesViewed() {
+    examplesViewedCount++;
+    saveAchievements();
+    checkAchievements();
+}
+
+function trackSentenceListened() {
+    sentencesListenedCount++;
+    saveAchievements();
+    checkAchievements();
 }
 
 // Initialize achievements system when DOM is ready

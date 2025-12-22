@@ -665,6 +665,21 @@ function updateTestProgress() {
 }
 
 function closeTest() {
+    // Track total test completion
+    if (testWords.length > 0) {
+        if (typeof trackTotalTest === 'function') {
+            trackTotalTest();
+        }
+    }
+
+    // Check for perfect test achievement before closing
+    if (correctMatches === testWords.length && mistakeCount === 0 && testWords.length > 0) {
+        // Track perfect test achievement
+        if (typeof trackPerfectTest === 'function') {
+            trackPerfectTest();
+        }
+    }
+
     const testOverlay = document.querySelector('.test-overlay');
     testOverlay.classList.remove('active');
     selectedRussianWord = null;
@@ -962,6 +977,10 @@ function handleAudioClick(event) {
     const word = button.getAttribute('data-word');
     if (!word) return;
     speakWord(word, button);
+    // Track listening achievement
+    if (typeof trackListening === 'function') {
+        trackListening();
+    }
 }
 
 function speakWord(word, button) {
@@ -1122,6 +1141,10 @@ function handleExamplesClick(event) {
     const word = button.getAttribute('data-word');
     if (!word || !examplesData[word]) return;
     showExamplesModal(word, examplesData[word]);
+    // Track examples viewed achievement
+    if (typeof trackExamplesViewed === 'function') {
+        trackExamplesViewed();
+    }
 }
 
 function showExamplesModal(word, examples) {
@@ -1180,6 +1203,10 @@ function handleSentenceAudioClick(event) {
     const sentence = button.getAttribute('data-sentence');
     if (!sentence) return;
     speakSentence(sentence, button);
+    // Track sentence listening achievement
+    if (typeof trackSentenceListened === 'function') {
+        trackSentenceListened();
+    }
 }
 
 function initializeApp() {
@@ -1480,6 +1507,7 @@ function resetAllProgress() {
     // Clear localStorage
     localStorage.removeItem('germanVocabularyDictionary');
     localStorage.removeItem('germanVocabularyAchievements');
+    localStorage.removeItem('germanVocabularyAchievementTracking');
 
     // Reset global variables
     dictionary = [];
