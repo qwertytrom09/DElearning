@@ -10,6 +10,14 @@ let selectedRussianWord = null;
 let testWords = [];
 let correctMatches = 0;
 let mistakeCount = 0;
+let currentPages = {
+    environment: 1,
+    society: 1,
+    culture: 1,
+    technology: 1,
+    politics: 1
+};
+const PAGE_SIZE = 21;
 
 function toggleDateSelection(date) {
     const btn = document.querySelector(`.select-date-btn[data-date="${date}"]`);
@@ -190,15 +198,14 @@ function generateCards() {
         const container = document.createElement('div');
         container.className = `cards-container ${className}${active}`;
 
-        // Use DocumentFragment for better performance
-        const fragment = document.createDocumentFragment();
+        // Add pagination controls
+        const paginationDiv = createPagination(topic, topics[topic].length, PAGE_SIZE);
+        container.appendChild(paginationDiv);
 
-        topics[topic].forEach(word => {
-            const card = createCardElement(word, topic);
-            fragment.appendChild(card);
-        });
-
-        container.appendChild(fragment);
+        // Populate if active
+        if (topic === 'environment') {
+            populateContainer(container, topics[topic], currentPages[topic], PAGE_SIZE, topic);
+        }
 
         // Replace existing container
         const existingContainer = document.querySelector(`.${className}`);
@@ -208,6 +215,8 @@ function generateCards() {
             document.body.appendChild(container);
         }
     });
+
+    updateTopicButtons();
 }
 
 function createCardElement(word, topic) {
@@ -277,6 +286,150 @@ function createCardElement(word, topic) {
     card.appendChild(cardInner);
 
     return card;
+}
+
+function populateContainer(container, words, page, pageSize, topic) {
+    // Clear existing cards
+    const existingCards = container.querySelectorAll('.card');
+    existingCards.forEach(card => card.remove());
+
+    const start = (page - 1) * pageSize;
+    const end = start + pageSize;
+    const wordsToShow = words.slice(start, end);
+
+    const fragment = document.createDocumentFragment();
+    wordsToShow.forEach(word => {
+        const card = createCardElement(word, topic);
+        fragment.appendChild(card);
+    });
+
+    // Insert before pagination
+    const pagination = container.querySelector('.pagination-controls');
+    container.insertBefore(fragment, pagination);
+}
+
+function createPagination(topic, totalWords, pageSize) {
+    const totalPages = Math.ceil(totalWords / pageSize);
+    const div = document.createElement('div');
+    div.className = 'pagination-controls';
+
+    const prevBtn = document.createElement('button');
+    prevBtn.textContent = 'Previous';
+    prevBtn.className = 'pagination-btn prev-btn';
+    prevBtn.disabled = currentPages[topic] === 1;
+    prevBtn.addEventListener('click', () => changePage(topic, currentPages[topic] - 1, pageSize));
+
+    const pageInfo = document.createElement('span');
+    pageInfo.className = 'page-info';
+    pageInfo.textContent = `${currentPages[topic]} / ${totalPages}`;
+
+    const nextBtn = document.createElement('button');
+    nextBtn.textContent = 'Next';
+    nextBtn.className = 'pagination-btn next-btn';
+    nextBtn.disabled = currentPages[topic] === totalPages;
+    nextBtn.addEventListener('click', () => changePage(topic, currentPages[topic] + 1, pageSize));
+
+    div.appendChild(prevBtn);
+    div.appendChild(pageInfo);
+    div.appendChild(nextBtn);
+
+    return div;
+}
+
+function changePage(topic, newPage, pageSize) {
+    currentPages[topic] = newPage;
+    const container = document.querySelector(`.topic-${topic}`);
+    populateContainer(container, window.vocabularyData[topic], newPage, pageSize, topic);
+    updatePagination(container, topic, window.vocabularyData[topic].length, pageSize);
+    updateTopicButtons();
+
+    // Reinitialize cards for the new page
+    initializeCardsForContainer(container);
+    initializeAudioButtonsForContainer(container);
+    initializeExamplesButtonsForContainer(container);
+    initializeArrowButtonsForContainer(container);
+    hideDictionaryWords();
+}
+
+function updatePagination(container, topic, totalWords, pageSize) {
+    const totalPages = Math.ceil(totalWords / pageSize);
+    const pageInfo = container.querySelector('.page-info');
+    pageInfo.textContent = `${currentPages[topic]} / ${totalPages}`;
+
+    const prevBtn = container.querySelector('.prev-btn');
+    prevBtn.disabled = currentPages[topic] === 1;
+
+    const nextBtn = container.querySelector('.next-btn');
+    nextBtn.disabled = currentPages[topic] === totalPages;
+}
+
+function updateTopicButtons() {
+    Object.keys(window.vocabularyData).forEach(topic => {
+        const totalPages = Math.ceil(window.vocabularyData[topic].length / PAGE_SIZE);
+        const btn = document.querySelector(`.topic-btn[data-topic="${topic}"]`);
+        const baseText = {
+            'environment': 'Umwelt',
+            'society': 'Gesellschaft',
+            'culture': 'Kultur',
+            'technology': 'Technologie',
+            'politics': 'Politik'
+        }[topic];
+        btn.textContent = `${baseText} (${currentPages[topic]}/${totalPages})`;
+    });
+}
+
+function initializeCardsForContainer(container) {
+    const cards = container.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.addEventListener('click', function() {
+            this.classList.toggle('flipped');
+        });
+        card.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                this.classList.toggle('flipped');
+            }
+        });
+        card.setAttribute('tabindex', '0');
+    });
+}
+
+function initializeAudioButtonsForContainer(container) {
+    const audioButtons = container.querySelectorAll('.audio-btn');
+    audioButtons.forEach(button => {
+        button.addEventListener('click', handleAudioClick);
+    });
+}
+
+function initializeExamplesButtonsForContainer(container) {
+    const examplesButtons = container.querySelectorAll('.examples-btn');
+    examplesButtons.forEach(button => {
+        button.addEventListener('click', handleExamplesClick);
+    });
+}
+
+function initializeArrowButtonsForContainer(container) {
+    const arrowButtons = container.querySelectorAll('.arrow-btn');
+    arrowButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.stopPropagation();
+            const wordId = this.getAttribute('data-word-id');
+            const card = this.closest('.card');
+            const russian = card.querySelector('.card-front h2').textContent;
+            const german = card.querySelector('.card-back h2').textContent.split('<br>')[0];
+            const english = card.querySelector('.card-back p').textContent;
+            const plural = card.querySelector('.card-back h2 small') ?
+                card.querySelector('.card-back h2 small').textContent.replace('(Die ', '').replace(')', '') : '';
+
+            addToDictionary(wordId, {
+                russian,
+                german,
+                english,
+                plural
+            });
+            this.style.display = 'none';
+        });
+    });
 }
 
 // Dictionary functions
@@ -513,6 +666,12 @@ function updateDictionaryDisplay() {
         return;
     }
 
+    // Add total word count
+    const totalCountContainer = document.createElement('div');
+    totalCountContainer.className = 'total-words-count';
+    totalCountContainer.innerHTML = `<h2>Total words: ${dictionary.length}</h2>`;
+    dictionaryCards.appendChild(totalCountContainer);
+
     // Group dictionary items by date
     const groupedByDate = new Map();
     dictionary.forEach(item => {
@@ -541,7 +700,7 @@ function updateDictionaryDisplay() {
 
         const dateHeading = document.createElement('h3');
         dateHeading.className = 'date-header';
-        dateHeading.textContent = `Added: ${date}`;
+        dateHeading.textContent = `Added: ${date} (${items.length} word${items.length === 1 ? '' : 's'})`;
 
         const selectBtn = document.createElement('button');
         selectBtn.className = 'select-date-btn';
@@ -810,6 +969,11 @@ function initializeApp() {
             const selectedContainer = document.querySelector(`.topic-${topic}`);
             if (selectedContainer) {
                 selectedContainer.classList.add('active');
+                // Populate if not populated
+                if (!selectedContainer.querySelector('.card')) {
+                    populateContainer(selectedContainer, window.vocabularyData[topic], currentPages[topic], PAGE_SIZE, topic);
+                    updatePagination(selectedContainer, topic, window.vocabularyData[topic].length, PAGE_SIZE);
+                }
             }
         });
     });
