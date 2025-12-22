@@ -33,6 +33,7 @@
             <h2>Menu</h2>
             <div class="menu-options">
                 <button class="menu-option" id="dictionary-btn">My Dictionary</button>
+                <button class="menu-option" id="achievements-btn">Achievements</button>
                 <button class="menu-option" id="test-btn">Practice Test</button>
             </div>
         </div>
@@ -80,6 +81,34 @@
         </div>
     </div>
 
+    <!-- Achievements Overlay -->
+    <div class="achievements-overlay">
+        <div class="achievements-content">
+            <button class="close-achievements">×</button>
+            <h2>My Achievements</h2>
+            <div class="achievements-stats">
+                <div class="stat-item">
+                    <div class="stat-number" id="total-words-stat">0</div>
+                    <div class="stat-label">Total Words</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="unlocked-achievements-stat">0</div>
+                    <div class="stat-label">Achievements Unlocked</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="achievement-progress-stat">0%</div>
+                    <div class="stat-label">Progress</div>
+                </div>
+            </div>
+            <div class="achievements-showcase">
+                <!-- Achievements will be added here -->
+            </div>
+            <div class="achievements-actions">
+                <button class="reset-progress-btn" id="reset-progress-btn">Reset All Progress</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Environment Topic -->
     <div class="cards-container topic-environment active">
         <!-- Cards will be generated dynamically -->
@@ -106,5 +135,6 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="achievements.js"></script>
 </body>
 </html>
