@@ -6,7 +6,6 @@ let voicesLoaded = false;
 
 // Load email writing tips and initialize
 async function loadEmailWritingTips() {
-    console.log('loadEmailWritingTips called');
     try {
         // Initialize speech synthesis voices
         initializeVoices();
@@ -14,15 +13,11 @@ async function loadEmailWritingTips() {
             speechSynthesis.onvoiceschanged = initializeVoices;
         }
 
-        console.log('Fetching email-writing.txt...');
         const response = await fetch('./email-writing.txt');
         const text = await response.text();
-        console.log('Email writing text loaded, length:', text.length);
         parseEmailWritingTips(text);
-        console.log('Parsed email tips sections:', Object.keys(emailTipsSections));
         generateEmailWritingCards();
         initializeEmailWritingCards();
-        console.log('Email writing cards initialized');
     } catch (error) {
         console.error('Error loading email writing tips:', error);
     }
@@ -73,12 +68,9 @@ function generateEmailWritingCards() {
     }
     container.innerHTML = '';
 
-    console.log('Generating cards for sections:', Object.keys(emailTipsSections));
-
     Object.keys(emailTipsSections).forEach(sectionKey => {
         const sectionName = sectionKey.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
         const sectionData = emailTipsSections[sectionKey];
-        console.log(`Section ${sectionKey}: ${sectionData.length} cards`);
 
         let sectionHtml = `
             <div class="email-section">
@@ -203,11 +195,6 @@ function initializeVoices() {
             );
         }
         voicesLoaded = true;
-        if (germanVoice) {
-            console.log('German voice loaded for email writing:', germanVoice.name);
-        } else {
-            console.log('No German voice found for email writing, will use fallback');
-        }
     }
 }
 
@@ -234,3 +221,5 @@ window.loadEmailWritingTips = loadEmailWritingTips;
 
 // Initialize email writing when the script loads (for standalone use)
 document.addEventListener('DOMContentLoaded', loadEmailWritingTips);
+
+

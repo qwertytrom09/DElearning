@@ -305,6 +305,15 @@ header p {
     font-style: italic;
 }
 
+.date-added {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    font-style: normal;
+    margin-top: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
 /* Audio and Examples button styles */
 .audio-btn {
     position: absolute;
@@ -747,19 +756,136 @@ header p {
 
 /* Dictionary cards */
 .dictionary-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     margin-top: 1rem;
 }
 
+.date-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0 1rem 0;
+    padding: 0.5rem 1rem;
+    background: rgba(52, 152, 219, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(52, 152, 219, 0.2);
+}
+
+.date-header-container.selected {
+    background: rgba(46, 204, 113, 0.1);
+    border-color: rgba(46, 204, 113, 0.3);
+}
+
 .date-header {
-    margin: 1.5rem 0 0.5rem 0;
     color: #2c3e50;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.select-date-btn {
+    background: rgba(52, 152, 219, 0.8);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.select-date-btn:hover {
+    background: rgba(52, 152, 219, 1);
+    transform: scale(1.05);
+}
+
+.select-date-btn.selected {
+    background: rgba(46, 204, 113, 0.8);
+}
+
+.select-date-btn.selected:hover {
+    background: rgba(46, 204, 113, 1);
+}
+
+.date-group-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.selected-dates-container {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(52, 152, 219, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(52, 152, 219, 0.2);
+    text-align: center;
+}
+
+.selected-dates-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.selected-count {
     font-size: 1.1rem;
     font-weight: bold;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 0.3rem;
+    color: #2c3e50;
+}
+
+.start-selected-test-btn {
+    background: rgba(46, 204, 113, 0.8);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.start-selected-test-btn:hover:not(:disabled) {
+    background: rgba(46, 204, 113, 1);
+    transform: scale(1.05);
+}
+
+.start-selected-test-btn:disabled {
+    background: rgba(149, 165, 166, 0.5);
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Responsive design for dictionary date groups */
+@media (max-width: 768px) {
+    .date-group-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .dictionary-cards .card {
+        height: 220px;
+    }
+
+    .dictionary-cards .card-front h2,
+    .dictionary-cards .card-back h2 {
+        font-size: 1.3rem;
+    }
+
+    .selected-dates-info {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .start-selected-test-btn {
+        width: 100%;
+    }
 }
 
 .dictionary-item {
@@ -1325,6 +1451,82 @@ header p {
     .email-header h2 {
         font-size: 1.5rem;
     }
+}
+
+/* Loading and Error States */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    backdrop-filter: blur(5px);
+}
+
+.loading-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+}
+
+.error-content {
+    background: #e74c3c;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 300px;
+}
+
+.error-icon {
+    font-size: 1.5rem;
+}
+
+.error-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto;
+    line-height: 1;
+}
+
+.error-close:hover {
+    opacity: 0.8;
 }
 
 /* Responsive test design */
