@@ -529,21 +529,15 @@ header p {
 
 .examples-list .example-item {
     margin: 1rem 0;
-    padding: 1rem;
-    background: #f8f9fa;
+    padding: 0;
+    background: transparent;
     border-radius: 8px;
-    border-left: 4px solid #3498db;
+    border: none;
 }
 
-.examples-list .example-item .german {
-    font-weight: bold;
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
-}
-
-.examples-list .example-item .russian {
-    color: #e74c3c;
-    font-style: italic;
+.examples-list .example-card {
+    margin: 0;
+    height: 160px;
 }
 
 .speak-btn {
@@ -1410,6 +1404,161 @@ header p {
     font-weight: 700;
 }
 
+/* Example cards styling */
+.examples-section {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.examples-section.hidden {
+    display: none;
+}
+
+.examples-section h5 {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.examples-btn {
+    background: rgba(46, 204, 113, 0.9);
+    border: 2px solid rgba(46, 204, 113, 0.5);
+    border-radius: 20px;
+    width: 120px;
+    height: 35px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    color: white;
+    margin: 0.5rem auto 0;
+}
+
+.examples-btn:hover {
+    background: rgba(46, 204, 113, 1);
+    border-color: rgba(46, 204, 113, 1);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.examples-btn:active {
+    transform: scale(0.95);
+}
+
+.example-card {
+    background-color: transparent;
+    perspective: 1000px;
+    height: 150px;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.example-card:hover {
+    transform: translateY(-3px);
+}
+
+.example-card .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.example-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.example-card .card-front,
+.example-card .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.example-card .card-front {
+    background: linear-gradient(135deg, #e8f5e8 0%, #f1f8e9 100%);
+    color: #2c3e50;
+    border: 2px solid rgba(46, 204, 113, 0.2);
+}
+
+.example-card .card-front:hover {
+    border-color: rgba(46, 204, 113, 0.4);
+    transform: translateY(-1px);
+}
+
+.example-card .card-back {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    color: white;
+    transform: rotateY(180deg);
+    border: 2px solid rgba(39, 174, 96, 0.3);
+}
+
+.example-card .card-back:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: rotateY(180deg) translateY(-1px);
+}
+
+.russian-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #27ae60;
+}
+
+.german-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.speak-btn {
+    background: rgba(52, 152, 219, 0.9);
+    border: 2px solid rgba(52, 152, 219, 0.5);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.speak-btn:hover {
+    background: rgba(52, 152, 219, 1);
+    border-color: rgba(52, 152, 219, 1);
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.speak-btn:active {
+    transform: scale(0.95);
+}
+
 /* Enhanced mobile responsiveness for email tips */
 @media (max-width: 768px) {
     .email-writing-container {
@@ -1431,6 +1580,21 @@ header p {
 
     .email-section h3 {
         font-size: 1.5rem;
+    }
+
+    .example-card {
+        height: 130px;
+    }
+
+    .russian-text,
+    .german-text {
+        font-size: 1rem;
+    }
+
+    .speak-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
     }
 }
 

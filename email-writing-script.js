@@ -81,30 +81,23 @@ function generateEmailWritingCards() {
         sectionData.forEach((tip, index) => {
             sectionHtml += `
                     <div class="email-tip-card" data-section="${sectionKey}" data-index="${index}">
-                        <div class="card-front">
-                            <h4>${tip.russian}</h4>
-                            <p>${tip.german}</p>
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h4>${tip.russian}</h4>
+                                <p>${tip.german}</p>
+                                ${tip.examples && tip.examples.length > 0 ? '<button class="examples-btn" data-tip-index="' + index + '">📚 Examples</button>' : ''}
+                            </div>
+                            <div class="card-back">
+                                <h4>${tip.russian}</h4>
+                                <p>${tip.german}</p>
+                                ${tip.examples && tip.examples.length > 0 ? '<button class="examples-btn" data-tip-index="' + index + '">📚 Examples</button>' : ''}
+                            </div>
                         </div>
-                        <div class="card-back">
-                            <h4>${tip.russian}</h4>
-                            <p>${tip.german}</p>
             `;
 
-            if (tip.examples && tip.examples.length > 0) {
-                sectionHtml += '<div class="examples-section"><h5>Examples:</h5>';
-                tip.examples.forEach(example => {
-                    sectionHtml += `
-                        <div class="example-item">
-                            <div class="russian">${example.russian}</div>
-                            <div class="german">${example.german}</div>
-                        </div>
-                    `;
-                });
-                sectionHtml += '</div>';
-            }
+
 
             sectionHtml += `
-                        </div>
                     </div>
             `;
         });
@@ -121,13 +114,22 @@ function generateEmailWritingCards() {
 function initializeEmailWritingCards() {
     const emailCards = document.querySelectorAll('.email-tip-card');
     emailCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const sectionKey = this.getAttribute('data-section');
-            const index = parseInt(this.getAttribute('data-index'));
-            const tip = emailTipsSections[sectionKey][index];
-            if (tip.examples && tip.examples.length > 0) {
-                showExamplesModal(tip);
-            }
+        card.addEventListener('click', function(e) {
+            // Prevent flip if clicking on examples button
+            if (e.target.closest('.examples-btn')) return;
+            
+        });
+    });
+
+    // Initialize examples buttons
+    const examplesBtns = document.querySelectorAll('.examples-btn');
+    examplesBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const tipIndex = this.getAttribute('data-tip-index');
+            const sectionKey = this.closest('.email-tip-card').getAttribute('data-section');
+            const tip = emailTipsSections[sectionKey][parseInt(tipIndex)];
+            showExamplesModal(tip);
         });
     });
 
@@ -151,8 +153,17 @@ function showExamplesModal(tip) {
             <div class="examples-list">
                 ${tip.examples.map(example => `
                     <div class="example-item">
-                        <div class="russian">${example.russian}</div>
-                        <div class="german">${example.german} <button class="speak-btn" data-text="${example.german.replace(/[.,]$/, '')}">🔊</button></div>
+                        <div class="example-card">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <div class="russian-text">${example.russian}</div>
+                                    <button class="speak-btn" data-text="${example.german.replace(/[.,]$/, '')}">🔊</button>
+                                </div>
+                                <div class="card-back">
+                                    <div class="german-text">${example.german}</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 `).join('')}
             </div>
@@ -172,9 +183,20 @@ function showExamplesModal(tip) {
         }
     });
 
+    // Initialize example cards in modal
+    const exampleCards = modal.querySelectorAll('.example-card');
+    exampleCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            e.stopPropagation();
+            this.classList.toggle('flipped');
+        });
+    });
+
     // Add speak functionality
-    modal.querySelectorAll('.speak-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
+    const speakBtns = modal.querySelectorAll('.speak-btn');
+    speakBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
             speakText(this.getAttribute('data-text'));
         });
     });
@@ -221,5 +243,3 @@ window.loadEmailWritingTips = loadEmailWritingTips;
 
 // Initialize email writing when the script loads (for standalone use)
 document.addEventListener('DOMContentLoaded', loadEmailWritingTips);
-
-
