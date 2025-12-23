@@ -130,13 +130,26 @@ function checkAchievements() {
 
     if (newAchievements.length > 0) {
         saveAchievements();
-        showAchievementNotification(newAchievements);
 
-        // Show celebration screen for major achievements
+        // Show achievements one by one with delays
+        if (newAchievements.length === 1) {
+            // Single achievement - show immediately
+            showAchievementNotification([newAchievements[0]]);
+        } else {
+            // Multiple achievements - show sequentially
+            newAchievements.forEach((achievement, index) => {
+                setTimeout(() => {
+                    showAchievementNotification([achievement]);
+                }, index * 2500); // 2.5 second delay between each notification
+            });
+        }
+
+        // Show celebration screen for major achievements after all notifications
         if (majorAchievements.length > 0) {
+            const celebrationDelay = newAchievements.length * 2500 + 1000; // Wait for all notifications + 1 second
             setTimeout(() => {
                 showCelebrationScreen(majorAchievements);
-            }, 2000); // Wait for notification to finish
+            }, celebrationDelay);
         }
     }
 }

@@ -485,7 +485,7 @@ header p {
     background: white;
     border-radius: 15px;
     padding: 2rem;
-    max-width: 600px;
+    max-width: 900px;
     max-height: 80vh;
     overflow-y: auto;
     position: relative;
@@ -537,7 +537,7 @@ header p {
 
 .examples-list .example-card {
     margin: 0;
-    height: 160px;
+    height: 280px;
 }
 
 .speak-btn {
@@ -1583,7 +1583,7 @@ header p {
     }
 
     .example-card {
-        height: 130px;
+        height: 250px;
     }
 
     .russian-text,

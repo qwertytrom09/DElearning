@@ -21,3 +21,13 @@
 Встреча, срок||||Ich schlage folgenden Termin vor.|Я предлагаю следующую встречу.|Der Termin muss eingehalten werden.|Срок должен быть соблюден.
 Обратная связь||||Ich bitte um Rückmeldung.|Я прошу о обратной связи.|Vielen Dank für Ihre Rückmeldung.|Большое спасибо за вашу обратную связь.
 Документы||||Bitte senden Sie die Unterlagen.|Пожалуйста, отправьте документы.|Die Unterlagen sind vollständig.|Документы полные.
+
+# Useful Phrases
+Пожалуйста, сообщите мне, каков дальнейший порядок действий по данному вопросу.||||Bitte teilen Sie mir mit, wie in dieser Angelegenheit weiter verfahren wird.|Пожалуйста, сообщите мне, каков дальнейший порядок действий по данному вопросу.
+Я был бы рад получить своевременную обратную связь.||||Ich würde mich über eine zeitnahe Rückmeldung freuen.|Я был бы рад получить своевременную обратную связь.
+Если вам понадобится дополнительная информация, я к вашим услугам.||||Falls Sie weitere Informationen benötigen, stehe ich Ihnen gerne zur Verfügung.|Если вам понадобится дополнительная информация, я к вашим услугам.
+Прошу вашего понимания по поводу этой задержки.||||Ich bitte um Ihr Verständnis für diese Verzögerung.|Прошу вашего понимания по поводу этой задержки.
+С удовольствием обсудим это в личной беседе.||||Gerne bespreche ich dies in einem persönlichen Gespräch.|С удовольствием обсудим это в личной беседе.
+Заранее благодарю за вашу поддержку.||||Ich bedanke mich im Voraus für Ihre Unterstützung.|Заранее благодарю за вашу поддержку.
+Пожалуйста, не стесняйтесь связаться со мной по вопросам.||||Bitte zögern Sie nicht, mich bei Fragen zu kontaktieren.|Пожалуйста, не стесняйтесь связаться со мной по вопросам.
+Подтверждаю получение вашего письма.||||Ich bestätige den Erhalt Ihrer E-Mail.|Подтверждаю получение вашего письма.
