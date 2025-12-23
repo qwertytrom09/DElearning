@@ -19,7 +19,7 @@ let currentPages = {
     technology: 1,
     politics: 1
 };
-const PAGE_SIZE = 21;
+const PAGE_SIZE = 12;
 
 function toggleDateSelection(date) {
     const btn = document.querySelector(`.select-date-btn[data-date="${date}"]`);
