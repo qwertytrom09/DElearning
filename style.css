@@ -765,6 +765,13 @@ header p {
     background: rgba(52, 152, 219, 0.1);
     border-radius: 8px;
     border: 1px solid rgba(52, 152, 219, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.date-header-container:hover {
+    background: rgba(52, 152, 219, 0.15);
+    border-color: rgba(52, 152, 219, 0.3);
 }
 
 .date-header-container.selected {
@@ -772,11 +779,30 @@ header p {
     border-color: rgba(46, 204, 113, 0.3);
 }
 
+.date-header-container.selected:hover {
+    background: rgba(46, 204, 113, 0.15);
+    border-color: rgba(46, 204, 113, 0.4);
+}
+
 .date-header {
     color: #2c3e50;
     font-size: 1.3rem;
     font-weight: bold;
     margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.date-header::before {
+    content: '▶';
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+    color: #666;
+}
+
+.date-header-container.expanded .date-header::before {
+    transform: rotate(90deg);
 }
 
 .select-date-btn {
@@ -809,6 +835,15 @@ header p {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.date-group-cards.expanded {
+    max-height: 2000px; /* Large enough to accommodate content */
+    opacity: 1;
 }
 
 .selected-dates-container {

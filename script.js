@@ -747,6 +747,7 @@ function updateDictionaryDisplay() {
         const dateGroupContainer = document.createElement('div');
         dateGroupContainer.className = 'date-group-cards';
         dateGroupContainer.setAttribute('data-date', date);
+        dateGroupContainer.style.display = 'none'; // Initially hide
 
         // Add cards for this date
         items.forEach(item => {
@@ -850,6 +851,31 @@ function updateDictionaryDisplay() {
         startSelectedTestBtn.addEventListener('click', startSelectedTest);
     }
 
+    // Add event listeners for date header expansion/collapse
+    document.querySelectorAll('.date-header-container').forEach(container => {
+        container.addEventListener('click', function(event) {
+            // Don't toggle if clicking on the select button
+            if (event.target.classList.contains('select-date-btn')) return;
+
+            const date = this.getAttribute('data-date');
+            const dateGroupCards = document.querySelector(`.date-group-cards[data-date="${date}"]`);
+
+            if (dateGroupCards) {
+                const isExpanded = this.classList.contains('expanded');
+                if (isExpanded) {
+                    // Collapse
+                    this.classList.remove('expanded');
+                    dateGroupCards.style.display = 'none';
+                    dateGroupCards.classList.remove('expanded');
+                } else {
+                    // Expand
+                    this.classList.add('expanded');
+                    dateGroupCards.style.display = 'grid';
+                    dateGroupCards.classList.add('expanded');
+                }
+            }
+        });
+    });
 
 }
 
