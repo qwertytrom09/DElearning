@@ -31,3 +31,23 @@
 Заранее благодарю за вашу поддержку.||||Ich bedanke mich im Voraus für Ihre Unterstützung.|Заранее благодарю за вашу поддержку.
 Пожалуйста, не стесняйтесь связаться со мной по вопросам.||||Bitte zögern Sie nicht, mich bei Fragen zu kontaktieren.|Пожалуйста, не стесняйтесь связаться со мной по вопросам.
 Подтверждаю получение вашего письма.||||Ich bestätige den Erhalt Ihrer E-Mail.|Подтверждаю получение вашего письма.
+
+# Formal Complaints
+Я пишу, чтобы выразить свое недовольство||||Ich schreibe Ihnen, um mein Missfallen auszudrücken.|Я пишу, чтобы выразить свое недовольство.|Ich schreibe Ihnen bezüglich eines Problems.|Я пишу вам относительно проблемы.|Ich muss Ihnen mitteilen, dass ich unzufrieden bin.|Я должен сообщить вам, что я недоволен.
+К сожалению, я вынужден пожаловаться на...||||Leider muss ich mich über... beschweren.|К сожалению, я вынужден пожаловаться на...|Es tut mir leid, aber ich bin mit... nicht zufrieden.|Мне жаль, но я не удовлетворен...|Ich bin enttäuscht von der Qualität.|Я разочарован качеством.
+Несмотря на неоднократные обращения||||Trotz mehrerer Anfragen...|Несмотря на неоднократные обращения...|Nach wiederholten Versuchen...|После повторных попыток...|Obwohl ich mehrmals nachgefragt habe...|Хотя я неоднократно спрашивал...
+
+# Job Applications
+Я подаю заявку на вакансию||||Ich bewerbe mich um die Stelle als...|Я подаю заявку на вакансию...|Ich interessiere mich für die Position als...|Я интересуюсь позицией...|Ich möchte mich für die Stelle bewerben.|Я хочу подать заявку на вакансию.
+Мои квалификации||||Meine Qualifikationen umfassen...|Мои квалификации включают...|Ich bringe folgende Erfahrungen mit...|Я привожу следующий опыт...|Meine Kenntnisse in diesem Bereich sind...|Мои знания в этой области...
+Я приложил(а) свое резюме||||Anbei sende ich Ihnen meinen Lebenslauf.|Я приложил(а) свое резюме.|Meine Bewerbungsunterlagen finden Sie im Anhang.|Мои документы для подачи заявки находятся во вложении.|Ich habe meine Referenzen beigefügt.|Я приложил(а) свои рекомендации.
+
+# Thank-You Notes
+Я хотел(а) бы выразить благодарность||||Ich möchte Ihnen meinen Dank aussprechen.|Я хотел(а) бы выразить благодарность.|Vielen Dank für Ihre Unterstützung.|Большое спасибо за вашу поддержку.|Ich bin Ihnen sehr dankbar.|Я вам очень благодарен(а).
+Ваша помощь была неоценима||||Ihre Hilfe war unschätzbar.|Ваша помощь была неоценима.|Ohne Ihre Unterstützung wäre das nicht möglich gewesen.|Без вашей поддержки это не было бы возможно.|Ich schätze Ihre Bemühungen sehr.|Я очень ценю ваши усилия.
+Я с нетерпением жду возможности||||Ich freue mich auf die Möglichkeit...|Я с нетерпением жду возможности...|Ich bin gespannt auf unsere zukünftige Zusammenarbeit.|Я с нетерпением жду нашего будущего сотрудничества.|Ich hoffe auf eine positive Antwort.|Я надеюсь на положительный ответ.
+
+# Business Email Templates
+Запрос информации||||Ich bitte Sie um Informationen zu...|Я прошу вас о информации о...|Können Sie mir Details zu... mitteilen?|Можете ли вы сообщить мне детали о...|Ich benötige weitere Informationen über...|Мне нужны дополнительные сведения о...
+Подтверждение встречи||||Hiermit bestätige ich unseren Termin am...|Этим я подтверждаю нашу встречу...|Der Termin ist für mich notiert.|Встреча отмечена у меня.|Ich freue mich auf unser Treffen.|Я с нетерпением жду нашей встречи.
+Изменение планов||||Leider muss ich unseren Termin verschieben.|К сожалению, я должен перенести нашу встречу.|Aufgrund von... muss ich absagen.|Из-за... я должен отменить.|Ich schlage als Alternative vor...|Я предлагаю в качестве альтернативы...

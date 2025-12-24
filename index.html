@@ -15,6 +15,7 @@
             <div class="burger-container">
                 <button class="burger-menu" aria-label="Open menu">☰</button>
             </div>
+
             <h1>Russian to German Vocabulary</h1>
             <div class="header-buttons">
                 <button class="header-btn" data-action="sprechen">Sprechen</button>
@@ -29,9 +30,31 @@
             <button class="topic-btn" data-topic="technology">Technologie</button>
             <button class="topic-btn" data-topic="politics">Politik</button>
         </nav>
+        <div class="search-filter-container">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search all vocabulary...">
+                <button id="clear-search">×</button>
+            </div>
+            <div class="filter-container">
+                <select id="difficulty-filter">
+                    <option value="all">All Levels</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+                <select id="tag-filter">
+                    <option value="all">All Tags</option>
+                    <option value="nouns">Nouns</option>
+                    <option value="verbs">Verbs</option>
+                    <option value="adjectives">Adjectives</option>
+                    <option value="common">Common</option>
+                    <option value="business">Business</option>
+                </select>
+            </div>
+        </div>
         <div class="menu-dropdown">
             <h2>Menu</h2>
-            <div class="menu-options">
+        <div class="menu-options">
                 <button class="menu-option" id="dictionary-btn">My Dictionary</button>
                 <button class="menu-option" id="achievements-btn">Achievements</button>
                 <button class="menu-option" id="test-btn">Practice Test</button>
@@ -55,7 +78,7 @@
         <div class="test-content">
             <button class="close-test">×</button>
             <h2>Practice Test</h2>
-            <p>Click on a Russian word, then click on its German translation.</p>
+            <p>Click 🔊 to hear German pronunciation, then click on a Russian word and match it to its German translation.</p>
             <div class="test-container">
                 <div class="test-column">
                     <h3>Russian Words</h3>
@@ -108,6 +131,8 @@
             </div>
         </div>
     </div>
+
+
 
     <!-- Environment Topic -->
     <div class="cards-container topic-environment active">

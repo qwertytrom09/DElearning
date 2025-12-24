@@ -13,6 +13,14 @@ let mistakeCount = 0;
 let expandedDateGroups = new Set();
 
 
+
+// Search and filter variables
+let currentSearchTerm = '';
+let currentDifficultyFilter = 'all';
+let currentTagFilter = 'all';
+let allCardsData = [];
+
+
 let currentPages = {
     environment: 1,
     society: 1,
@@ -147,10 +155,12 @@ function parseVocabulary(text) {
                 const german = parts[1].trim();
                 const english = parts[2].trim();
                 const plural = parts.length > 3 ? parts[3].trim() : '';
+                const difficulty = parts.length > 4 ? parts[4].trim() : 'intermediate';
+                const tags = parts.length > 5 ? parts[5].trim().split(',').map(tag => tag.trim()) : ['common'];
                 let examples = [];
 
-                // Parse examples (pairs of German|Russian)
-                for (let i = 4; i < parts.length; i += 2) {
+                // Parse examples (pairs of German|Russian) starting from index 6
+                for (let i = 6; i < parts.length; i += 2) {
                     if (parts[i] && parts[i+1]) {
                         examples.push({
                             german: parts[i].trim().replace(/\.$/, '') + '.',
@@ -164,6 +174,8 @@ function parseVocabulary(text) {
                     german,
                     english,
                     plural,
+                    difficulty,
+                    tags,
                     examples
                 });
             }
@@ -426,13 +438,13 @@ function initializeArrowButtonsForContainer(container) {
             const plural = card.querySelector('.card-back h2 small') ?
                 card.querySelector('.card-back h2 small').textContent.replace('(Die ', '').replace(')', '') : '';
 
-            addToDictionary(wordId, {
-                russian,
-                german,
-                english,
-                plural
-            });
-            this.style.display = 'none';
+                addToDictionary(wordId, {
+                    russian,
+                    german,
+                    english,
+                    plural
+                });
+                this.style.display = 'none';
         });
     });
 }
@@ -557,7 +569,19 @@ function startTest() {
     testWords.forEach(word => {
         const wordElement = document.createElement('div');
         wordElement.className = 'test-word russian-word';
-        wordElement.textContent = word.russian;
+
+        // Create text node for Russian word
+        const textNode = document.createTextNode(word.russian + ' ');
+        wordElement.appendChild(textNode);
+
+        // Create audio button
+        const audioBtn = document.createElement('button');
+        audioBtn.className = 'test-audio-btn';
+        audioBtn.setAttribute('data-word', word.german);
+        audioBtn.textContent = '🔊';
+        audioBtn.addEventListener('click', handleAudioClick);
+        wordElement.appendChild(audioBtn);
+
         wordElement.setAttribute('data-german', word.german);
         wordElement.addEventListener('click', selectRussianWord);
         russianWordsContainer.appendChild(wordElement);
@@ -586,6 +610,9 @@ function startTest() {
 
 function selectRussianWord(event) {
     const wordElement = event.target;
+
+    // If clicking on audio button, don't select
+    if (event.target.classList.contains('test-audio-btn')) return;
 
     // If a Russian word was already selected, deselect it
     if (selectedRussianWord) {
@@ -680,6 +707,8 @@ function closeTest() {
             trackPerfectTest();
         }
     }
+
+
 
     const testOverlay = document.querySelector('.test-overlay');
     testOverlay.classList.remove('active');
@@ -930,7 +959,19 @@ function startSelectedTest() {
     testWords.forEach(word => {
         const wordElement = document.createElement('div');
         wordElement.className = 'test-word russian-word';
-        wordElement.textContent = word.russian;
+
+        // Create text node for Russian word
+        const textNode = document.createTextNode(word.russian + ' ');
+        wordElement.appendChild(textNode);
+
+        // Create audio button
+        const audioBtn = document.createElement('button');
+        audioBtn.className = 'test-audio-btn';
+        audioBtn.setAttribute('data-word', word.german);
+        audioBtn.textContent = '🔊';
+        audioBtn.addEventListener('click', handleAudioClick);
+        wordElement.appendChild(audioBtn);
+
         wordElement.setAttribute('data-german', word.german);
         wordElement.addEventListener('click', selectRussianWord);
         russianWordsContainer.appendChild(wordElement);
@@ -1259,6 +1300,9 @@ function initializeApp() {
     const topicButtons = document.querySelectorAll('.topic-btn');
     const cardContainers = document.querySelectorAll('.cards-container');
 
+    // Initialize search and filters after vocabulary is loaded
+    initializeSearchAndFilters();
+
     // Try to initialize voices immediately and also on voiceschanged event
     initializeVoices();
     if ('speechSynthesis' in window && speechSynthesis.onvoiceschanged !== undefined) {
@@ -1276,6 +1320,14 @@ function initializeApp() {
     topicButtons.forEach(button => {
         button.addEventListener('click', function() {
             const topic = this.getAttribute('data-topic');
+
+            // If currently searching, clear search first
+            if (currentSearchTerm) {
+                document.getElementById('search-input').value = '';
+                currentSearchTerm = '';
+                applyFilters();
+            }
+
             topicButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
             cardContainers.forEach(container => {
@@ -1586,6 +1638,169 @@ function showEmailWritingTips() {
 }
 
 
+
+// Search and filter functions
+function initializeSearchAndFilters() {
+    const searchInput = document.getElementById('search-input');
+    const clearSearchBtn = document.getElementById('clear-search');
+    const difficultyFilter = document.getElementById('difficulty-filter');
+    const tagFilter = document.getElementById('tag-filter');
+
+    // Check if vocabulary data is loaded
+    if (!window.vocabularyData) {
+        console.warn('Vocabulary data not loaded yet, retrying in 100ms...');
+        setTimeout(initializeSearchAndFilters, 100);
+        return;
+    }
+
+    // Initialize allCardsData
+    allCardsData = [];
+    Object.keys(window.vocabularyData).forEach(topic => {
+        window.vocabularyData[topic].forEach((word, index) => {
+            allCardsData.push({
+                ...word,
+                topic: topic,
+                originalIndex: index
+            });
+        });
+    });
+
+    // Search functionality
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            currentSearchTerm = this.value.toLowerCase().trim();
+            applyFilters();
+        });
+    }
+
+    if (clearSearchBtn) {
+        clearSearchBtn.addEventListener('click', function() {
+            searchInput.value = '';
+            currentSearchTerm = '';
+            applyFilters();
+        });
+    }
+
+    // Filter functionality
+    if (difficultyFilter) {
+        difficultyFilter.addEventListener('change', function() {
+            currentDifficultyFilter = this.value;
+            applyFilters();
+        });
+    }
+
+    if (tagFilter) {
+        tagFilter.addEventListener('change', function() {
+            currentTagFilter = this.value;
+            applyFilters();
+        });
+    }
+}
+
+function applyFilters() {
+    let filteredCards = [...allCardsData];
+
+    // Apply search filter
+    if (currentSearchTerm) {
+        filteredCards = filteredCards.filter(card =>
+            card.russian.toLowerCase().includes(currentSearchTerm) ||
+            card.german.toLowerCase().includes(currentSearchTerm) ||
+            card.english.toLowerCase().includes(currentSearchTerm)
+        );
+    }
+
+    // Apply difficulty filter
+    if (currentDifficultyFilter !== 'all') {
+        filteredCards = filteredCards.filter(card => card.difficulty === currentDifficultyFilter);
+    }
+
+    // Apply tag filter
+    if (currentTagFilter !== 'all') {
+        filteredCards = filteredCards.filter(card => card.tags.includes(currentTagFilter));
+    }
+
+    // Update display
+    updateFilteredCards(filteredCards);
+}
+
+function updateFilteredCards(filteredCards) {
+    // Clear all topic containers
+    document.querySelectorAll('.cards-container').forEach(container => {
+        const existingCards = container.querySelectorAll('.card');
+        existingCards.forEach(card => card.remove());
+        const noResults = container.querySelector('.no-results');
+        if (noResults) noResults.remove();
+        container.classList.remove('active');
+    });
+
+    if (filteredCards.length === 0) {
+        // Show no results message in active container
+        const activeContainer = document.querySelector('.cards-container.active');
+        if (activeContainer) {
+            const noResults = document.createElement('div');
+            noResults.className = 'no-results';
+            noResults.innerHTML = '<p>No words match your search criteria.</p>';
+            activeContainer.insertBefore(noResults, activeContainer.querySelector('.pagination-controls'));
+            activeContainer.classList.add('active');
+        }
+        return;
+    }
+
+    // Group by topic
+    const groupedByTopic = {};
+    filteredCards.forEach(card => {
+        if (!groupedByTopic[card.topic]) {
+            groupedByTopic[card.topic] = [];
+        }
+        groupedByTopic[card.topic].push(card);
+    });
+
+    if (currentSearchTerm) {
+        // When searching, show all topics that have results
+        Object.keys(groupedByTopic).forEach(topic => {
+            const container = document.querySelector(`.topic-${topic}`);
+            if (container && groupedByTopic[topic].length > 0) {
+                const fragment = document.createDocumentFragment();
+                groupedByTopic[topic].forEach(word => {
+                    const card = createCardElement(word, topic);
+                    fragment.appendChild(card);
+                });
+                const pagination = container.querySelector('.pagination-controls');
+                container.insertBefore(fragment, pagination);
+                container.classList.add('active');
+
+                // Reinitialize card functionality
+                initializeCardsForContainer(container);
+                initializeAudioButtonsForContainer(container);
+                initializeExamplesButtonsForContainer(container);
+                initializeArrowButtonsForContainer(container);
+                hideDictionaryWords();
+            }
+        });
+    } else {
+        // Normal topic view
+        const activeTopic = document.querySelector('.topic-btn.active').getAttribute('data-topic');
+        const activeContainer = document.querySelector(`.topic-${activeTopic}`);
+
+        if (activeContainer && groupedByTopic[activeTopic]) {
+            const fragment = document.createDocumentFragment();
+            groupedByTopic[activeTopic].forEach(word => {
+                const card = createCardElement(word, activeTopic);
+                fragment.appendChild(card);
+            });
+            const pagination = activeContainer.querySelector('.pagination-controls');
+            activeContainer.insertBefore(fragment, pagination);
+            activeContainer.classList.add('active');
+
+            // Reinitialize card functionality
+            initializeCardsForContainer(activeContainer);
+            initializeAudioButtonsForContainer(activeContainer);
+            initializeExamplesButtonsForContainer(activeContainer);
+            initializeArrowButtonsForContainer(activeContainer);
+            hideDictionaryWords();
+        }
+    }
+}
 
 // Start the app
 document.addEventListener('DOMContentLoaded', function() {

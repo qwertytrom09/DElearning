@@ -30,6 +30,8 @@ header .header-content {
     /* No longer needs positioning since it's in flex */
 }
 
+
+
 /* Header Buttons */
 .header-buttons {
     display: flex;
@@ -1090,6 +1092,36 @@ header p {
 
 .test-word.wrong-flash {
     animation: wrong-flash 0.5s ease-in-out;
+}
+
+/* Test Audio Button */
+.test-audio-btn {
+    background: rgba(52, 152, 219, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    margin-left: 0.5rem;
+}
+
+.test-audio-btn:hover {
+    background: rgba(52, 152, 219, 1);
+    transform: scale(1.1);
+}
+
+.test-audio-btn:active {
+    transform: scale(0.9);
+}
+
+.test-audio-btn.playing {
+    background: rgba(39, 174, 96, 0.9);
+    animation: pulse 1s infinite;
 }
 
 @keyframes wrong-flash {
@@ -2830,4 +2862,92 @@ header p {
     .confetti {
         font-size: 1.2rem;
     }
+}
+
+/* Search and Filter Controls */
+.search-filter-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    position: relative;
+}
+
+.search-container input {
+    flex: 1;
+    padding: 0.75rem 2.5rem 0.75rem 1rem;
+    border: 2px solid rgba(52, 152, 219, 0.3);
+    border-radius: 25px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.search-container input:focus {
+    outline: none;
+    border-color: rgba(52, 152, 219, 0.8);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.search-container #clear-search {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #666;
+    padding: 0.25rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.search-container #clear-search:hover {
+    background: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+}
+
+.filter-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.filter-container select {
+    padding: 0.75rem 1rem;
+    border: 2px solid rgba(52, 152, 219, 0.3);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.filter-container select:focus {
+    outline: none;
+    border-color: rgba(52, 152, 219, 0.8);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.filter-container select:hover {
+    border-color: rgba(52, 152, 219, 0.5);
+}
+
+/* No Results Message */
+.no-results {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+    font-style: italic;
 }
