@@ -10,6 +10,7 @@ let selectedRussianWord = null;
 let testWords = [];
 let correctMatches = 0;
 let mistakeCount = 0;
+let expandedDateGroups = new Set();
 
 
 let currentPages = {
@@ -689,6 +690,12 @@ function closeTest() {
 }
 
 function updateDictionaryDisplay() {
+    // Store currently expanded date groups before recreating HTML
+    const currentlyExpanded = new Set();
+    document.querySelectorAll('.date-header-container.expanded').forEach(container => {
+        currentlyExpanded.add(container.getAttribute('data-date'));
+    });
+
     const dictionaryCards = document.querySelector('.dictionary-cards');
     dictionaryCards.innerHTML = '';
 
@@ -850,6 +857,17 @@ function updateDictionaryDisplay() {
     if (startSelectedTestBtn) {
         startSelectedTestBtn.addEventListener('click', startSelectedTest);
     }
+
+    // Restore expanded state
+    currentlyExpanded.forEach(date => {
+        const container = document.querySelector(`.date-header-container[data-date="${date}"]`);
+        const dateGroupCards = document.querySelector(`.date-group-cards[data-date="${date}"]`);
+        if (container && dateGroupCards) {
+            container.classList.add('expanded');
+            dateGroupCards.style.display = 'grid';
+            dateGroupCards.classList.add('expanded');
+        }
+    });
 
     // Add event listeners for date header expansion/collapse
     document.querySelectorAll('.date-header-container').forEach(container => {
