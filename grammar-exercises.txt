@@ -1,0 +1,135 @@
+# Grammar Exercises Format
+# Word Order: words|correctOrder|translation
+# Preposition: sentence|options|correctAnswer|explanation
+
+# Word Order Exercises - Basic Sentences
+WORD_ORDER|Ich gehe ins Kino.|Ich gehe ins Kino.|Я иду в кино
+WORD_ORDER|Die Katze sitzt auf dem Tisch.|Die Katze sitzt auf dem Tisch.|Кошка сидит на столе
+WORD_ORDER|Wir lernen Deutsch seit zwei Jahren.|Wir lernen Deutsch seit zwei Jahren.|Мы учим немецкий уже два года
+WORD_ORDER|Das Buch liegt neben dem Computer.|Das Buch liegt neben dem Computer.|Книга лежит рядом с компьютером
+WORD_ORDER|Sie arbeitet als Lehrerin in Berlin.|Sie arbeitet als Lehrerin in Berlin.|Она работает учительницей в Берлине
+WORD_ORDER|Er trinkt Kaffee am Morgen.|Er trinkt Kaffee am Morgen.|Он пьёт кофе утром
+WORD_ORDER|Die Kinder spielen im Park.|Die Kinder spielen im Park.|Дети играют в парке
+WORD_ORDER|Wir fahren mit dem Zug nach München.|Wir fahren mit dem Zug nach München.|Мы едем на поезде в Мюнхен
+WORD_ORDER|Die Sonne scheint heute.|Die Sonne scheint heute.|Сегодня светит солнце
+WORD_ORDER|Ich esse gerne Pizza.|Ich esse gerne Pizza.|Я люблю есть пиццу
+
+# Word Order Exercises - Questions
+WORD_ORDER|Wie heißt du?|Wie heißt du?|Как тебя зовут?
+WORD_ORDER|Wo wohnst du?|Wo wohnst du?|Где ты живёшь?
+WORD_ORDER|Was machst du?|Was machst du?|Что ты делаешь?
+WORD_ORDER|Wann kommst du?|Wann kommst du?|Когда ты придёшь?
+WORD_ORDER|Warum lernst du Deutsch?|Warum lernst du Deutsch?|Почему ты учишь немецкий?
+WORD_ORDER|Wie geht es dir?|Wie geht es dir?|Как у тебя дела?
+WORD_ORDER|Was kostet das?|Was kostet das?|Сколько это стоит?
+WORD_ORDER|Wo ist der Bahnhof?|Wo ist der Bahnhof?|Где находится вокзал?
+WORD_ORDER|Wie spät ist es?|Wie spät ist es?|Который час?
+WORD_ORDER|Wer ist das?|Wer ist das?|Кто это?
+
+# Word Order Exercises - Time Expressions
+WORD_ORDER|Ich stehe jeden Morgen um sechs Uhr auf.|Ich stehe jeden Morgen um sechs Uhr auf.|Я встаю каждый день в шесть часов утра
+WORD_ORDER|Sie arbeitet montags bis freitags.|Sie arbeitet montags bis freitags.|Она работает с понедельника по пятницу
+WORD_ORDER|Wir fahren im Sommer in Urlaub.|Wir fahren im Sommer in Urlaub.|Мы едем в отпуск летом
+WORD_ORDER|Er kommt nächste Woche.|Er kommt nächste Woche.|Он придёт на следующей неделе
+WORD_ORDER|Das Konzert findet am Samstag statt.|Das Konzert findet am Samstag statt.|Концерт состоится в субботу
+WORD_ORDER|Ich war gestern im Kino.|Ich war gestern im Kino.|Я был вчера в кино
+WORD_ORDER|Morgen fahren wir nach Berlin.|Morgen fahren wir nach Berlin.|Завтра мы поедем в Берлин
+WORD_ORDER|Letztes Jahr habe ich Deutsch gelernt.|Letztes Jahr habe ich Deutsch gelernt.|В прошлом году я учил немецкий
+WORD_ORDER|Jeden Tag esse ich Frühstück.|Jeden Tag esse ich Frühstück.|Каждый день я ем завтрак
+WORD_ORDER|Diese Woche arbeite ich viel.|Diese Woche arbeite ich viel.|На этой неделе я много работаю
+
+# Word Order Exercises - Modal Verbs
+WORD_ORDER|Ich muss jetzt gehen.|Ich muss jetzt gehen.|Мне нужно сейчас уйти
+WORD_ORDER|Du kannst gut kochen.|Du kannst gut kochen.|Ты умеешь хорошо готовить
+WORD_ORDER|Sie will nach Hause.|Sie will nach Hause.|Она хочет пойти домой
+WORD_ORDER|Wir sollen früh aufstehen.|Wir sollen früh aufstehen.|Мы должны рано вставать
+WORD_ORDER|Er darf nicht rauchen.|Er darf nicht rauchen.|Он не имеет права курить
+WORD_ORDER|Ihr mögt Schokolade.|Ihr mögt Schokolade.|Вы любите шоколад
+WORD_ORDER|Ich mag keinen Kaffee.|Ich mag keinen Kaffee.|Я не люблю кофе
+WORD_ORDER|Du musst deine Hausaufgaben machen.|Du musst deine Hausaufgaben machen.|Ты должен делать свои домашние задания
+WORD_ORDER|Sie kann sehr gut singen.|Sie kann sehr gut singen.|Она умеет очень хорошо петь
+WORD_ORDER|Wir wollen ins Kino gehen.|Wir wollen ins Kino gehen.|Мы хотим пойти в кино
+
+# Word Order Exercises - Separable Verbs
+WORD_ORDER|Ich stehe früh auf.|Ich stehe früh auf.|Я рано встаю
+WORD_ORDER|Sie räumt ihr Zimmer auf.|Sie räumt ihr Zimmer auf.|Она убирает свою комнату
+WORD_ORDER|Wir fahren mit dem Auto weg.|Wir fahren mit dem Auto weg.|Мы уезжаем на машине
+WORD_ORDER|Er schaltet den Computer an.|Er schaltet den Computer an.|Он включает компьютер
+WORD_ORDER|Du ziehst die Schuhe aus.|Du ziehst die Schuhe aus.|Ты снимаешь обувь
+WORD_ORDER|Sie macht das Licht aus.|Sie macht das Licht aus.|Она выключает свет
+WORD_ORDER|Wir laden die Gäste ein.|Wir laden die Gäste ein.|Мы приглашаем гостей
+WORD_ORDER|Er gibt den Schlüssel ab.|Er gibt den Schlüssel ab.|Он сдаёт ключ
+WORD_ORDER|Ich höre Musik an.|Ich höre Musik an.|Я слушаю музыку
+WORD_ORDER|Sie ruft ihre Mutter an.|Sie ruft ihre Mutter an.|Она звонит своей матери
+
+# Preposition Exercises - Location
+PREPOSITION|Das Buch liegt ___ dem Tisch.|auf,unter,neben,in|auf|auf = on (horizontal surface)
+PREPOSITION|Ich wohne ___ Berlin.|auf,unter,neben,in|in|in = in (cities)
+PREPOSITION|Das Bild hängt ___ der Wand.|auf,unter,an,neben|an|an = on/against (vertical surface)
+PREPOSITION|Wir fahren ___ Urlaub.|auf,im,in,nach|in|in = on (vacation)
+PREPOSITION|Das Auto steht ___ der Garage.|auf,unter,neben,in|in|in = in (enclosed space)
+PREPOSITION|Ich arbeite ___ einem Büro.|auf,unter,neben,in|in|in = in (office/room)
+PREPOSITION|Die Katze springt ___ den Baum.|auf,unter,an,neben|auf|auf = onto (movement)
+PREPOSITION|Er kommt ___ Deutschland.|auf,unter,an,aus|aus|aus = from (countries)
+PREPOSITION|Wir sitzen ___ dem Restaurant.|auf,unter,an,im|im|im = in (restaurant)
+PREPOSITION|Das Geschenk liegt ___ dem Tisch.|auf,unter,an,neben|auf|auf = on (gift on table)
+PREPOSITION|Die Blumen stehen ___ dem Fenster.|auf,unter,an,neben|auf|auf = on (flowers on windowsill)
+PREPOSITION|Das Kind spielt ___ dem Garten.|auf,unter,an,im|im|im = in (garden)
+PREPOSITION|Die Uhr hängt ___ der Wand.|auf,unter,an,neben|an|an = on (wall)
+PREPOSITION|Wir wohnen ___ dem Land.|auf,unter,an,auf|auf|auf = in/on (countryside)
+PREPOSITION|Der Hund liegt ___ dem Boden.|auf,unter,an,neben|auf|auf = on (floor)
+PREPOSITION|Sie arbeitet ___ München.|auf,unter,an,in|in|in = in (Munich)
+PREPOSITION|Das Museum befindet sich ___ dem Stadtzentrum.|auf,unter,an,im|im|im = in (city center)
+PREPOSITION|Die Schule steht ___ dem Park.|auf,unter,an,neben|neben|neben = next to (park)
+PREPOSITION|Er wartet ___ der Bushaltestelle.|auf,unter,an,an|an|an = at (bus stop)
+
+# Preposition Exercises - Direction
+PREPOSITION|Wir fahren ___ den Urlaub.|auf,im,in,nach|in|in = on (vacation)
+PREPOSITION|Das Flugzeug fliegt ___ Frankfurt.|auf,unter,an,nach|nach|nach = to (Frankfurt)
+PREPOSITION|Sie geht ___ die Schule.|auf,unter,an,in|in|in = to (school)
+PREPOSITION|Er kommt ___ Hause.|auf,unter,an,nach|nach|nach = home
+PREPOSITION|Wir laufen ___ den Park.|auf,unter,an,in|in|in = into (park)
+PREPOSITION|Das Auto fährt ___ die Stadt.|auf,unter,an,in|in|in = into (city)
+PREPOSITION|Sie zieht ___ den Mantel.|auf,unter,an,an|an|an = on (coat)
+PREPOSITION|Er geht ___ Arbeit.|auf,unter,an,zur|zur|zur = to (work)
+PREPOSITION|Wir fahren ___ Deutschland.|auf,unter,an,nach|nach|nach = to (Germany)
+PREPOSITION|Das Schiff fährt ___ See.|auf,unter,an,in|in|in = to (sea)
+PREPOSITION|Sie geht ___ den Supermarkt.|auf,unter,an,in|in|in = to (supermarket)
+PREPOSITION|Er fliegt ___ die USA.|auf,unter,an,in|in|in = to (USA)
+PREPOSITION|Wir wandern ___ die Berge.|auf,unter,an,in|in|in = into (mountains)
+PREPOSITION|Das Paket geht ___ Berlin.|auf,unter,an,nach|nach|nach = to (Berlin)
+PREPOSITION|Sie zieht ___ die Jacke.|auf,unter,an,an|an|an = on (jacket)
+
+# Preposition Exercises - Time
+PREPOSITION|Ich komme ___ fünf Minuten.|auf,unter,an,in|in|in = in (five minutes)
+PREPOSITION|Wir treffen uns ___ dem Abend.|auf,unter,an,am|am|am = in the (evening)
+PREPOSITION|Das Konzert findet ___ Samstag statt.|auf,unter,an,am|am|am = on (Saturday)
+PREPOSITION|Er arbeitet ___ den Tag.|auf,unter,an,am|am|am = during the (day)
+PREPOSITION|Sie ruft ___ der Nacht an.|auf,unter,an,in|in|in = during the (night)
+PREPOSITION|Wir fahren ___ den Sommer.|auf,unter,an,im|im|im = in (summer)
+PREPOSITION|Das Festival ist ___ dem Winter.|auf,unter,an,im|im|im = in (winter)
+PREPOSITION|Ich bin ___ 1990 geboren.|auf,unter,an,im|im|im = in (1990)
+PREPOSITION|Er kommt ___ einer Stunde.|auf,unter,an,in|in|in = in (one hour)
+PREPOSITION|Wir essen ___ dem Mittag.|auf,unter,an,zum|zum|zum = at (noon)
+PREPOSITION|Das Meeting ist ___ 14 Uhr.|auf,unter,an,um|um|um = at (2 PM)
+PREPOSITION|Sie arbeitet ___ Montag bis Freitag.|auf,unter,an,von|von|von = from (Monday to Friday)
+PREPOSITION|Das Geschäft öffnet ___ 9 Uhr.|auf,unter,an,um|um|um = at (9 AM)
+PREPOSITION|Wir feiern ___ dem Wochenende.|auf,unter,an,am|am|am = at the (weekend)
+PREPOSITION|Er schläft ___ der Nacht.|auf,unter,an,in|in|in = during the (night)
+
+# Preposition Exercises - Other Uses
+PREPOSITION|Ich interessiere mich ___ Musik.|auf,unter,an,für|für|für = for (music)
+PREPOSITION|Sie wartet ___ ihren Freund.|auf,unter,an,auf|auf|auf = for (friend)
+PREPOSITION|Wir sprechen ___ Deutsch.|auf,unter,an,auf|auf|auf = in (German)
+PREPOSITION|Er arbeitet ___ einer Bank.|auf,unter,an,bei|bei|bei = at (bank)
+PREPOSITION|Das Geschenk ist ___ mich.|auf,unter,an,für|für|für = for (me)
+PREPOSITION|Sie kommt ___ dem Flugzeug.|auf,unter,an,mit|mit|mit = by (plane)
+PREPOSITION|Wir fahren ___ dem Rad.|auf,unter,an,mit|mit|mit = by (bicycle)
+PREPOSITION|Er lernt ___ der Schule.|auf,unter,an,in|in|in = at (school)
+PREPOSITION|Das Haus gehört ___ meinen Eltern.|auf,unter,an,meinen|meinen|meinen = to (my parents)
+PREPOSITION|Sie denkt ___ ihre Familie.|auf,unter,an,an|an|an = about (her family)
+PREPOSITION|Wir lachen ___ den Witz.|auf,unter,an,über|über|über = about (the joke)
+PREPOSITION|Er freut sich ___ das Geschenk.|auf,unter,an,auf|auf|auf = about (the gift)
+PREPOSITION|Das Auto fährt ___ 100 km/h.|auf,unter,an,mit|mit|mit = at (100 km/h)
+PREPOSITION|Sie telefoniert ___ ihrer Mutter.|auf,unter,an,mit|mit|mit = with (her mother)
+PREPOSITION|Wir spielen ___ dem Computer.|auf,unter,an,am|am|am = on (computer)

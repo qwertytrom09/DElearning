@@ -57,7 +57,7 @@
         <div class="menu-options">
                 <button class="menu-option" id="dictionary-btn">My Dictionary</button>
                 <button class="menu-option" id="achievements-btn">Achievements</button>
-                <button class="menu-option" id="test-btn">Practice Test</button>
+                <button class="menu-option" id="test-selection-btn">Practice Tests</button>
             </div>
         </div>
     </header>
@@ -132,7 +132,35 @@
         </div>
     </div>
 
+    <!-- Test Selection Overlay -->
+    <div class="test-selection-overlay">
+        <div class="test-selection-content">
+            <button class="close-test-selection">×</button>
+            <h2>Choose Your Practice Test</h2>
+            <p>Select the type of exercise you want to practice:</p>
+            <div class="test-type-grid">
+                <div class="test-type-card" data-test-type="matching">
+                    <div class="test-type-icon">🔗</div>
+                    <h3>Word Matching</h3>
+                    <p>Match Russian words to their German translations</p>
+                    <button class="start-test-btn" data-test-type="matching">Start Test</button>
+                </div>
 
+                <div class="test-type-card" data-test-type="word-order">
+                    <div class="test-type-icon">🔀</div>
+                    <h3>Word Order</h3>
+                    <p>Arrange words to form correct German sentences</p>
+                    <button class="start-test-btn" data-test-type="word-order">Start Exercise</button>
+                </div>
+                <div class="test-type-card" data-test-type="preposition">
+                    <div class="test-type-icon">📍</div>
+                    <h3>Prepositions</h3>
+                    <p>Choose the correct preposition for each sentence</p>
+                    <button class="start-test-btn" data-test-type="preposition">Start Exercise</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Environment Topic -->
     <div class="cards-container topic-environment active">
