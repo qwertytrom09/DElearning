@@ -1,4 +1,5 @@
 # Greetings
+## Formal Greetings
 Очень формальное приветствие||||Sehr geehrter Herr Professor Schmidt,|Уважаемый господин профессор Шмидт,|Sehr geehrte Frau Dr. Weber,|Уважаемая госпожа доктор Вебер,|Sehr geehrte Damen und Herren,|Уважаемые дамы и господа,
 
 # Opening Phrases
@@ -51,3 +52,76 @@
 Запрос информации||||Ich bitte Sie um Informationen zu...|Я прошу вас о информации о...|Können Sie mir Details zu... mitteilen?|Можете ли вы сообщить мне детали о...|Ich benötige weitere Informationen über...|Мне нужны дополнительные сведения о...
 Подтверждение встречи||||Hiermit bestätige ich unseren Termin am...|Этим я подтверждаю нашу встречу...|Der Termin ist für mich notiert.|Встреча отмечена у меня.|Ich freue mich auf unser Treffen.|Я с нетерпением жду нашей встречи.
 Изменение планов||||Leider muss ich unseren Termin verschieben.|К сожалению, я должен перенести нашу встречу.|Aufgrund von... muss ich absagen.|Из-за... я должен отменить.|Ich schlage als Alternative vor...|Я предлагаю в качестве альтернативы...
+
+# Beschwerde
+
+## Ich beschwere mich
+
+### Einleitung
+К сожалению, я должен(на) указать, что доставка была выполнена с опозданием.||||Leider muss ich darauf hinweisen, dass die Lieferung verspätet erfolgt ist.|К сожалению, я должен(на) указать, что доставка была выполнена с опозданием.
+К сожалению, следует указать, что из-за этого возникли значительные неудобства.||||Bedauerlicherweise ist darauf hinzuweisen, dass dadurch erhebliche Unannehmlichkeiten entstanden sind.|К сожалению, следует указать, что из-за этого возникли значительные неудобства.
+Хочу обратить Ваше внимание на то, что …||||Ich möchte Sie darauf aufmerksam machen, dass …|Хочу обратить Ваше внимание на то, что …
+
+### Beschreibung der Probleme
+Продукт / услуга не соответствует ожиданиям.||||Das Produkt / die Dienstleistung entspricht nicht den Erwartungen.|Продукт / услуга не соответствует ожиданиям.
+К этому добавляется, что … , что особенно проблематично.||||Hinzu kommt, dass … , was besonders problematisch ist.|К этому добавляется, что … , что особенно проблематично.
+Это значительно осложнило мои планы.||||Dies hat meine Planung erheblich erschwert.|Это значительно осложнило мои планы.
+
+### Bitte um Lösung
+Поэтому прошу Вас проверить ситуацию и предложить решение.||||Ich möchte Sie daher bitten, den Sachverhalt zu prüfen und mir eine Lösung vorzuschlagen.|Поэтому прошу Вас проверить ситуацию и предложить решение.
+Поэтому прошу Вас проверить ситуацию.||||Ich möchte Sie daher bitten, den Sachverhalt zu prüfen.|Поэтому прошу Вас проверить ситуацию.
+Пожалуйста, сообщите, как будет решаться данный вопрос.||||Bitte teilen Sie mir mit, wie in dieser Angelegenheit weiter verfahren wird.|Пожалуйста, сообщите, как будет решаться данный вопрос.
+Буду признателен(на) за соответствующее предложение решения.||||Ich wäre Ihnen dankbar für einen entsprechenden Lösungsvorschlag.|Буду признателен(на) за соответствующее предложение решения.
+
+### Abschluss
+Заранее благодарю за Ваш ответ.||||Vielen Dank im Voraus für Ihre Rückmeldung.|Заранее благодарю за Ваш ответ.
+Надеюсь на скорое прояснение ситуации.||||Ich hoffe auf eine zeitnahe Klärung.|Надеюсь на скорое прояснение ситуации.
+
+
+## Antwort auf Beschwerde
+
+### Einleitung
+Спасибо за Ваше сообщение. Нам жаль, что возникли неудобства.||||Vielen Dank für Ihre Nachricht. Wir bedauern, dass es zu Unannehmlichkeiten gekommen ist.|Спасибо за Ваше сообщение. Нам жаль, что возникли неудобства.
+
+### Reaktion / Bestätigung des Problems
+Мы проверили ситуацию и установили, что …||||Wir haben den Sachverhalt geprüft und festgestellt, dass … entstanden ist/sind.|Мы проверили ситуацию и установили, что …
+К сожалению, произошла ошибка / недоразумение.||||Leider kam es zu einem Missverständnis / Fehler.|К сожалению, произошла ошибка / недоразумение.
+После проверки ситуации следует констатировать, что из-за технических проблем произошло …||||Nach Prüfung des Sachverhalts ist festzustellen, dass es aufgrund technischer Probleme zu … gekommen ist.|После проверки ситуации следует констатировать, что из-за технических проблем произошло …
+
+### Häufige Probleme
+задержки в процессе / выполнении||||Verzögerungen im Ablauf|задержки в процессе / выполнении
+сбои в системе||||Störungen im System|сбои в системе
+ошибки при обработке||||Fehler bei der Verarbeitung|
+ухудшение качества услуги / работы||||Beeinträchtigung der Leistung|
+прерывание связи||||unterbrochene Kommunikation|
+неудачная обработка запроса||||nicht erfolgreiche Bearbeitung der Anfrage|
+проблемы с передачей данных||||Probleme bei der Datenübertragung|
+неожиданные сбои||||unerwartete Ausfälle|
+задержанные ответы||||Verzögerte Rückmeldungen|
+неполадки ПО / оборудования||||Funktionsstörungen der Software / Hardware|
+
+### Lösung / Angebot
+Поэтому мы хотели бы предложить следующее решение.||||Wir möchten Ihnen daher folgende Lösung anbieten.|Поэтому мы хотели бы предложить следующее решение.
+Мы хотели бы предложить следующее решение: …||||Wir möchten Ihnen folgende Lösung anbieten: …|Мы хотели бы предложить следующее решение: …
+В качестве компенсации мы предлагаем Вам …||||Als Entschädigung bieten wir Ihnen … an.|В качестве компенсации мы предлагаем Вам …
+Мы хотели бы предложить Вам в качестве компенсации …||||Wir möchten Ihnen als Entschädigung … anbieten.|Мы хотели бы предложить Вам в качестве компенсации …
+В целях возмещения ущерба мы предлагаем Вам …||||Zur Wiedergutmachung bieten wir Ihnen … an.|В целях возмещения ущерба мы предлагаем Вам …
+
+### Entschädigung
+скидку||||einen Preisnachlass|
+частичный возврат средств||||eine teilweise Rückerstattung|
+ваучер / сертификат||||einen Gutschein|
+бесплатную замену услуги||||eine kostenfreie Ersatzleistung|
+бесплатное изменение бронирования||||eine kostenlose Umbuchung|
+полный возврат средств||||eine vollständige Rückerstattung|
+продление услуги||||eine Verlängerung der Leistung|
+возмещение понесённых расходов||||eine Erstattung der entstandenen Kosten|
+денежную компенсацию||||eine finanzielle Entschädigung|
+полное возмещение затрат||||eine vollständige Kostenerstattung|
+замену услуги без доплаты||||eine Ersatzleistung ohne zusätzliche Kosten|
+соразмерную компенсацию||||einen angemessenen Ausgleich|
+
+### Abschluss
+Благодарим за Ваше понимание.||||Vielen Dank für Ihr Verständnis.|Благодарим за Ваше понимание.
+Если возникнут дополнительные вопросы, мы с радостью ответим.||||Sollten Sie weitere Fragen haben, stehen wir Ihnen gern zur Verfügung.|Если возникнут дополнительные вопросы, мы с радостью ответим.
+С уважением||||Mit freundlichen Grüßen|С уважением

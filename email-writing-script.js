@@ -26,13 +26,48 @@ async function loadEmailWritingTips() {
 function parseEmailWritingTips(text) {
     const lines = text.split('\n');
     let currentSection = '';
+    let currentSubsection = '';
+    let currentSubsubsection = '';
 
     for (let line of lines) {
         line = line.trim();
-        if (line.startsWith('#')) {
-            if (line.includes('# ')) {
-                currentSection = line.replace('# ', '').toLowerCase().replace(/\s+/g, '-');
-                emailTipsSections[currentSection] = [];
+        if (line.startsWith('### ')) {
+            // Sub-subheading
+            currentSubsubsection = line.replace('### ', '').toLowerCase().replace(/\s+/g, '-');
+            if (!emailTipsSections[currentSection]) {
+                emailTipsSections[currentSection] = {};
+            }
+            if (!emailTipsSections[currentSection][currentSubsection]) {
+                emailTipsSections[currentSection][currentSubsection] = {};
+            }
+            if (!emailTipsSections[currentSection][currentSubsection][currentSubsubsection]) {
+                emailTipsSections[currentSection][currentSubsection][currentSubsubsection] = [];
+            }
+        } else if (line.startsWith('## ')) {
+            // Subheading
+            currentSubsection = line.replace('## ', '').toLowerCase().replace(/\s+/g, '-');
+            currentSubsubsection = '';
+            if (!emailTipsSections[currentSection]) {
+                emailTipsSections[currentSection] = {};
+            }
+            if (!emailTipsSections[currentSection][currentSubsection]) {
+                emailTipsSections[currentSection][currentSubsection] = {};
+            }
+            // Also create a default subsubsection for items without subsubsections
+            if (!emailTipsSections[currentSection][currentSubsection]['']) {
+                emailTipsSections[currentSection][currentSubsection][''] = [];
+            }
+        } else if (line.startsWith('# ')) {
+            // Main heading
+            currentSection = line.replace('# ', '').toLowerCase().replace(/\s+/g, '-');
+            currentSubsection = '';
+            currentSubsubsection = '';
+            if (!emailTipsSections[currentSection]) {
+                emailTipsSections[currentSection] = {};
+            }
+            // Also create a default subsection for items without subsections
+            if (!emailTipsSections[currentSection]['']) {
+                emailTipsSections[currentSection][''] = [];
             }
         } else if (line && !line.startsWith('//') && line.includes('|')) {
             const parts = line.split('|');
@@ -49,12 +84,36 @@ function parseEmailWritingTips(text) {
                         });
                     }
                 }
-                emailTipsSections[currentSection].push({
-                    russian,
-                    german,
-                    english,
-                    examples
-                });
+
+                // Add to current subsubsection, subsection, or main section
+                if (currentSubsubsection && emailTipsSections[currentSection] &&
+                    emailTipsSections[currentSection][currentSubsection] &&
+                    emailTipsSections[currentSection][currentSubsection][currentSubsubsection]) {
+                    emailTipsSections[currentSection][currentSubsection][currentSubsubsection].push({
+                        russian,
+                        german,
+                        english,
+                        examples
+                    });
+                } else if (currentSubsection && emailTipsSections[currentSection] &&
+                          emailTipsSections[currentSection][currentSubsection] &&
+                          emailTipsSections[currentSection][currentSubsection]['']) {
+                    // Add to current subsection if no subsubsection
+                    emailTipsSections[currentSection][currentSubsection][''].push({
+                        russian,
+                        german,
+                        english,
+                        examples
+                    });
+                } else if (emailTipsSections[currentSection] && emailTipsSections[currentSection]['']) {
+                    // Add to main section if no subsection
+                    emailTipsSections[currentSection][''].push({
+                        russian,
+                        german,
+                        english,
+                        examples
+                    });
+                }
             }
         }
     }
@@ -75,35 +134,96 @@ function generateEmailWritingCards() {
         let sectionHtml = `
             <div class="email-section">
                 <h3>${sectionName}</h3>
-                <div class="email-tips-grid">
         `;
 
-        sectionData.forEach((tip, index) => {
-            sectionHtml += `
-                    <div class="email-tip-card" data-section="${sectionKey}" data-index="${index}">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <h4>${tip.russian}</h4>
-                                <p>${tip.german}</p>
+        // Handle subsections
+        Object.keys(sectionData).forEach(subsectionKey => {
+            const subsectionData = sectionData[subsectionKey];
+
+            // Check if subsectionData is an array (old structure) or object (new structure)
+            if (Array.isArray(subsectionData)) {
+                // Old structure: subsectionData is an array of tips
+                if (subsectionData.length > 0) {
+                    // Create a subsection container
+                    sectionHtml += `<div class="subsection-container">`;
+
+                    // Add subsection heading if it's not empty
+                    if (subsectionKey !== '') {
+                        const subsectionName = subsectionKey.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                        sectionHtml += `<h4 class="subsection-heading">${subsectionName}</h4>`;
+                    }
+
+                    sectionHtml += `<div class="email-tips-grid">`;
+
+                    subsectionData.forEach((tip, index) => {
+                        const uniqueIndex = subsectionKey ? `${subsectionKey}-${index}` : index;
+                        sectionHtml += `
+                            <div class="email-tip-card" data-section="${sectionKey}" data-subsection="${subsectionKey}" data-subsubsection="" data-index="${index}">
+                                <div class="card-inner">
+                                    <div class="card-front">
+                                        <h4>${tip.russian}</h4>
+                                        <p>${tip.german}</p>
+                                    </div>
+                                    <div class="card-back">
+                                        <h4>${tip.russian}</h4>
+                                        <p>${tip.german}</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-back">
-                                <h4>${tip.russian}</h4>
-                                <p>${tip.german}</p>
-                            </div>
-                        </div>
-            `;
+                        `;
+                    });
 
+                    sectionHtml += `</div></div>`; // Close subsection-container
+                }
+            } else if (typeof subsectionData === 'object') {
+                // New structure: subsectionData is an object with subsubsections
+                if (subsectionKey !== '') {
+                    const subsectionName = subsectionKey.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                    sectionHtml += `<div class="subsection-container"><h4 class="subsection-heading">${subsectionName}</h4>`;
+                } else {
+                    sectionHtml += `<div class="subsection-container">`;
+                }
 
+                // Handle subsubsections
+                Object.keys(subsectionData).forEach(subsubsectionKey => {
+                    const subsubsectionData = subsectionData[subsubsectionKey];
 
-            sectionHtml += `
-                    </div>
-            `;
+                    if (Array.isArray(subsubsectionData) && subsubsectionData.length > 0) {
+                        // Add subsubsection heading if it's not empty
+                        if (subsubsectionKey !== '') {
+                            const subsubsectionName = subsubsectionKey.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                            sectionHtml += `<h5 class="subsubsection-heading">${subsubsectionName}</h5>`;
+                        }
+
+                        sectionHtml += `<div class="email-tips-grid">`;
+
+                        subsubsectionData.forEach((tip, index) => {
+                            const uniqueIndex = subsubsectionKey ? `${subsubsectionKey}-${index}` : index;
+                            sectionHtml += `
+                                <div class="email-tip-card" data-section="${sectionKey}" data-subsection="${subsectionKey}" data-subsubsection="${subsubsectionKey}" data-index="${index}">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <h4>${tip.russian}</h4>
+                                            <p>${tip.german}</p>
+                                        </div>
+                                        <div class="card-back">
+                                            <h4>${tip.russian}</h4>
+                                            <p>${tip.german}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+
+                        sectionHtml += `</div>`;
+                    }
+                });
+
+                sectionHtml += `</div>`; // Close subsection-container
+            }
         });
 
-        sectionHtml += `
-                </div>
-            </div>
-        `;
+        sectionHtml += `</div>`;
 
         container.insertAdjacentHTML('beforeend', sectionHtml);
     });
@@ -115,7 +235,23 @@ function initializeEmailWritingCards() {
         card.addEventListener('click', function(e) {
             const tipIndex = this.getAttribute('data-index');
             const sectionKey = this.getAttribute('data-section');
-            const tip = emailTipsSections[sectionKey][parseInt(tipIndex)];
+            const subsectionKey = this.getAttribute('data-subsection') || '';
+            const subsubsectionKey = this.getAttribute('data-subsubsection') || '';
+
+            let tip;
+            if (subsubsectionKey && emailTipsSections[sectionKey] &&
+                emailTipsSections[sectionKey][subsectionKey] &&
+                emailTipsSections[sectionKey][subsectionKey][subsubsectionKey]) {
+                // Three-level structure
+                tip = emailTipsSections[sectionKey][subsectionKey][subsubsectionKey][parseInt(tipIndex)];
+            } else if (emailTipsSections[sectionKey] && emailTipsSections[sectionKey][subsectionKey]) {
+                // Two-level structure
+                tip = emailTipsSections[sectionKey][subsectionKey][parseInt(tipIndex)];
+            } else {
+                // Fallback
+                tip = emailTipsSections[sectionKey][''][parseInt(tipIndex)];
+            }
+
             showExamplesModal(tip);
         });
     });
