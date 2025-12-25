@@ -130,3 +130,88 @@
 Принцип демократии|Der Demokratieprinzip|Principle of democracy||Der Demokratieprinzip garantiert die Volkssouveränität.|Принцип демократии гарантирует суверенитет народа.|Der Demokratieprinzip ist unverzichtbar.|Принцип демократии незаменим.
 Избирательная кампания|Die Wahlkampf|Election campaign||Die Wahlkampf mobilisiert die Wähler.|Избирательная кампания мобилизует избирателей.|Eine faire Wahlkampf ist wichtig.|Честная избирательная кампания важна.
 Коалиционное правительство|Die Regierungskoalition|Coalition government||Die Regierungskoalition besteht aus mehreren Parteien.|Коалиционное правительство состоит из нескольких партий.|Die Regierungskoalition muss stabil sein.|Коалиционное правительство должно быть стабильным.
+
+# Food Topic
+Гурманство|Die Feinschmeckerei|Gastronomy||Die Feinschmeckerei ist eine Kunst.|Гурманство является искусством.|Die Feinschmeckerei erfordert feine Sinne.|Гурманство требует тонких чувств.
+Кулинарное искусство|Die Kochkunst|Culinary art||Die Kochkunst verbindet Tradition und Innovation.|Кулинарное искусство соединяет традицию и инновацию.|Die Kochkunst ist kulturell geprägt.|Кулинарное искусство культурно сформировано.
+Ферментированные продукты|Die fermentierten Produkte|Fermented products||Die fermentierten Produkte sind gesund.|Ферментированные продукты полезны.|Die fermentierten Produkte haben eine lange Tradition.|Ферментированные продукты имеют долгую традицию.
+Молекулярная гастрономия|Die Molekularküche|Molecular gastronomy||Die Molekularküche revolutioniert die Küche.|Молекулярная гастрономия революционизирует кухню.|Die Molekularküche ist hochtechnisiert.|Молекулярная гастрономия высокотехнологична.
+Локальные ингредиенты|Die lokalen Zutaten|Local ingredients||Die lokalen Zutaten unterstützen die Regionalität.|Локальные ингредиенты поддерживают региональность.|Die lokalen Zutaten sind frisch und saisonal.|Локальные ингредиенты свежие и сезонные.
+Винодельческая культура|Die Weinbaukultur|Wine culture||Die Weinbaukultur ist tief verwurzelt.|Винодельческая культура глубоко укоренена.|Die Weinbaukultur prägt die Region.|Винодельческая культура формирует регион.
+Кулинарное наследие|Das kulinarische Erbe|Culinary heritage||Das kulinarische Erbe muss bewahrt werden.|Кулинарное наследие должно быть сохранено.|Das kulinarische Erbe ist identitätsstiftend.|Кулинарное наследие формирует идентичность.
+Гастрономический туризм|Der kulinarische Tourismus|Gastronomic tourism||Der kulinarische Tourismus boomt.|Гастрономический туризм процветает.|Der kulinarische Tourismus fördert die Regionalküche.|Гастрономический туризм способствует региональной кухне.
+Сезонные продукты|Die saisonalen Produkte|Seasonal products||Die saisonalen Produkte sind nachhaltig.|Сезонные продукты устойчивы.|Die saisonalen Produkte schmecken intensiver.|Сезонные продукты вкуснее.
+Органическое земледелие|Der ökologische Landbau|Organic farming||Der ökologische Landbau schont die Umwelt.|Органическое земледелие бережет окружающую среду.|Der ökologische Landbau ist ressourcenschonend.|Органическое земледелие экономит ресурсы.
+Кулинарная глобализация|Die kulinarische Globalisierung|Culinary globalization||Die kulinarische Globalisierung bereichert die Küche.|Кулинарная глобализация обогащает кухню.|Die kulinarische Globalisierung führt zu Fusionküchen.|Кулинарная глобализация приводит к фьюжн-кухням.
+Пищевые аллергии|Die Nahrungsmittelallergien|Food allergies||Die Nahrungsmittelallergien nehmen zu.|Пищевые аллергии увеличиваются.|Die Nahrungsmittelallergien erfordern Aufmerksamkeit.|Пищевые аллергии требуют внимания.
+Веганская кухня|Die vegane Küche|Vegan cuisine||Die vegane Küche ist vielfältig.|Веганская кухня разнообразна.|Die vegane Küche ist kreativ.|Веганская кухня креативна.
+Гастрономическая идентичность|Die gastronomische Identität|Gastronomic identity||Die gastronomische Identität prägt Kulturen.|Гастрономическая идентичность формирует культуры.|Die gastronomische Identität ist regional.|Гастрономическая идентичность региональна.
+Кулинарная инновация|Die kulinarische Innovation|Culinary innovation||Die kulinarische Innovation entwickelt neue Techniken.|Кулинарная инновация развивает новые техники.|Die kulinarische Innovation ist experimentell.|Кулинарная инновация экспериментальна.
+Пищевая этика|Die Ernährungsethik|Food ethics||Die Ernährungsethik diskutiert Moral.|Пищевая этика обсуждает мораль.|Die Ernährungsethik ist komplex.|Пищевая этика сложна.
+
+# Travel Topic
+Туристическая инфраструктура|Die touristische Infrastruktur|Tourist infrastructure||Die touristische Infrastruktur muss ausgebaut werden.|Туристическая инфраструктура должна быть расширена.|Die touristische Infrastruktur ist entscheidend für den Tourismus.|Туристическая инфраструктура решающая для туризма.
+Экологичный транспорт|Der umweltfreundliche Verkehr|Eco-friendly transportation||Der umweltfreundliche Verkehr reduziert Emissionen.|Экологичный транспорт сокращает выбросы.|Der umweltfreundliche Verkehr wird gefördert.|Экологичный транспорт поощряется.
+Транспортная мобильность|Die Verkehrsmobilität|Transport mobility||Die Verkehrsmobilität ist wichtig für die Wirtschaft.|Транспортная мобильность важна для экономики.|Die Verkehrsmobilität muss nachhaltig sein.|Транспортная мобильность должна быть устойчивой.
+Авиационная отрасль|Die Luftfahrtbranche|Aviation industry||Die Luftfahrtbranche ist stark reguliert.|Авиационная отрасль сильно регулируется.|Die Luftfahrtbranche erholt sich von der Krise.|Авиационная отрасль восстанавливается от кризиса.
+Железнодорожная инфраструктура|Die Eisenbahninfrastruktur|Railway infrastructure||Die Eisenbahninfrastruktur braucht Investitionen.|Железнодорожная инфраструктура нуждается в инвестициях.|Die Eisenbahninfrastruktur ist europaweit vernetzt.|Железнодорожная инфраструктура объединена по всей Европе.
+Транспортная логистика|Die Verkehrslogistik|Transport logistics||Die Verkehrslogistik optimiert Lieferketten.|Транспортная логистика оптимизирует цепочки поставок.|Die Verkehrslogistik ist komplex.|Транспортная логистика сложна.
+Международные перевозки|Die internationalen Transporte|International transport||Die internationalen Transporte unterliegen strengen Vorschriften.|Международные перевозки подчиняются строгим правилам.|Die internationalen Transporte erfordern Zollformalitäten.|Международные перевозки требуют таможенных формальностей.
+Туристическая глобализация|Die touristische Globalisierung|Tourist globalization||Die touristische Globalisierung erweitert Horizont.|Туристическая глобализация расширяет горизонты.|Die touristische Globalisierung fördert interkulturellen Austausch.|Туристическая глобализация способствует межкультурному обмену.
+Экологический туризм|Der Ökotourismus|Ecotourism||Der Ökotourismus schont die Natur.|Экологический туризм бережет природу.|Der Ökotourismus ist nachhaltig.|Экологический туризм устойчив.
+Транспортная революция|Die Verkehrswende|Transport revolution||Die Verkehrswende fördert Elektromobilität.|Транспортная революция способствует электромобильности.|Die Verkehrswende ist klimafreundlich.|Транспортная революция экологична.
+Международные перевозки|Die internationalen Beförderungen|International transportation||Die internationalen Beförderungen erfordern Visa.|Международные перевозки требуют виз.|Die internationalen Beförderungen sind teuer.|Международные перевозки дороги.
+Туристическая индустрия|Die Tourismusindustrie|Tourism industry||Die Tourismusindustrie ist konjunkturabhängig.|Туристическая индустрия зависит от конъюнктуры.|Die Tourismusindustrie schafft Arbeitsplätze.|Туристическая индустрия создает рабочие места.
+
+# Health & Medicine Topic
+Эпидемиология|Die Epidemiologie|Epidemiology||Die Epidemiologie untersucht Krankheitsmuster.|Эпидемиология изучает паттерны заболеваний.|Die Epidemiologie ist wichtig für die Prävention.|Эпидемиология важна для профилактики.
+Иммунология|Die Immunologie|Immunology||Die Immunologie erforscht das Immunsystem.|Иммунология исследует иммунную систему.|Die Immunologie entwickelt Impfstoffe.|Имунология разрабатывает вакцины.
+Генетика|Die Genetik|Genetics||Die Genetik entschlüsselt den menschlichen Code.|Генетика расшифровывает человеческий код.|Die Genetik revolutioniert die Medizin.|Генетика революционизирует медицину.
+Нейробиология|Die Neurobiologie|Neurobiology||Die Neurobiologie erforscht das Gehirn.|Нейробиология исследует мозг.|Die Neurobiologie erklärt Bewusstsein.|Нейробиология объясняет сознание.
+Психосоматика|Die Psychosomatik|Psychosomatics||Die Psychosomatik verbindet Körper und Seele.|Психосоматика соединяет тело и душу.|Die Psychosomatik behandelt seelische Ursachen.|Психосоматика лечит душевные причины.
+Геронтология|Die Gerontologie|Gerontology||Die Gerontologie erforscht das Altern.|Геронтология исследует старение.|Die Gerontologie entwickelt Anti-Aging-Strategien.|Геронтология разрабатывает стратегии против старения.
+Паллиативная медицина|Die Palliativmedizin|Palliative medicine||Die Palliativmedizin lindert Leid.|Паллиативная медицина облегчает страдания.|Die Palliativmedizin ist menschlich.|Паллиативная медицина человечна.
+Медицинская этика|Die Medizinethik|Medical ethics||Die Medizinethik regelt moralische Fragen.|Медицинская этика регулирует моральные вопросы.|Die Medizinethik ist komplex.|Медицинская этика сложна.
+Кардиология|Die Kardiologie|Cardiology||Die Kardiologie spezialisiert sich auf das Herz.|Кардиология специализируется на сердце.|Die Kardiologie rettet viele Leben.|Кардиология спасает много жизней.
+Онкология|Die Onkologie|Oncology||Die Onkologie bekämpft Krebs.|Онкология борется с раком.|Die Onkologie entwickelt neue Therapien.|Онкология разрабатывает новые терапии.
+Фармакология|Die Pharmakologie|Pharmacology||Die Pharmakologie erforscht Arzneimittel.|Фармакология исследует лекарства.|Die Pharmakologie testet Medikamente.|Фармакология тестирует медикаменты.
+Микробиология|Die Mikrobiologie|Microbiology||Die Mikrobiologie untersucht Mikroorganismen.|Микробиология изучает микроорганизмы.|Die Mikrobiologie ist wichtig für Hygiene.|Микробиология важна для гигиены.
+Вирусология|Die Virologie|Virology||Die Virologie erforscht Viren.|Вирусология исследует вирусы.|Die Virologie entwickelt Antivirenmittel.|Вирусология разрабатывает противовирусные средства.
+
+# Business & Finance Topic
+Корпоративная ответственность|Die Unternehmensverantwortung|Corporate responsibility||Die Unternehmensverantwortung umfasst ESG-Kriterien.|Корпоративная ответственность включает критерии ESG.|Die Unternehmensverantwortung ist strategisch.|Корпоративная ответственность стратегична.
+Финансовая аналитика|Die Finanzanalyse|Financial analysis||Die Finanzanalyse bewertet Investitionen.|Финансовая аналитика оценивает инвестиции.|Die Finanzanalyse ist quantifiziert.|Финансовая аналитика количественна.
+Корпоративное управление|Die Corporate Governance|Corporate governance||Die Corporate Governance sichert Transparenz.|Корпоративное управление обеспечивает прозрачность.|Die Corporate Governance verhindert Missbrauch.|Корпоративное управление предотвращает злоупотребления.
+Рыночные механизмы|Die Marktmechanismen|Market mechanisms||Die Marktmechanismen regulieren das Angebot.|Рыночные механизмы регулируют предложение.|Die Marktmechanismen sind effizient.|Рыночные механизмы эффективны.
+Экономическая теория|Die Wirtschaftstheorie|Economic theory||Die Wirtschaftstheorie erklärt Märkte.|Экономическая теория объясняет рынки.|Die Wirtschaftstheorie ist mathematisch.|Экономическая теория математична.
+Финансовые деривативы|Die Finanzderivate|Financial derivatives||Die Finanzderivate hedgen Risiken.|Финансовые деривативы хеджируют риски.|Die Finanzderivate sind komplex.|Финансовые деривативы сложны.
+Банковское дело|Das Bankwesen|Banking||Das Bankwesen ist stark reguliert.|Банковское дело сильно регулируется.|Das Bankwesen ist systemrelevant.|Банковское дело системно значимо.
+Инвестиционная стратегия|Die Investmentstrategie|Investment strategy||Die Investmentstrategie diversifiziert Risiken.|Инвестиционная стратегия диверсифицирует риски.|Die Investmentstrategie ist langfristig.|Инвестиционная стратегия долгосрочна.
+Финансовые рынки|Die Finanzmärkte|Financial markets||Die Finanzmärkte sind volatil.|Финансовые рынки волатильны.|Die Finanzmärkte reagieren auf Ereignisse.|Финансовые рынки реагируют на события.
+Корпоративные облигации|Die Unternehmensanleihen|Corporate bonds||Die Unternehmensanleihen finanzieren Investitionen.|Корпоративные облигации финансируют инвестиции.|Die Unternehmensanleihen haben Zinsen.|Корпоративные облигации имеют проценты.
+Финансовая устойчивость|Die Finanzstabilität|Financial stability||Die Finanzstabilität ist wichtig für Wirtschaft.|Финансовая устойчивость важна для экономики.|Die Finanzstabilität verhindert Krisen.|Финансовая устойчивость предотвращает кризисы.
+Предпринимательство|Die Unternehmertum|Entrepreneurship||Die Unternehmertum fördert Innovation.|Предпринимательство способствует инновациям.|Die Unternehmertum schafft Arbeitsplätze.|Предпринимательство создает рабочие места.
+Экономический рост|Das Wirtschaftswachstum|Economic growth||Das Wirtschaftswachstum ist messbar.|Экономический рост измерим.|Das Wirtschaftswachstum ist zyklisch.|Экономический рост цикличен.
+
+# Education & Science Topic
+Педагогическая психология|Die pädagogische Psychologie|Educational psychology||Die pädagogische Psychologie optimiert Lernen.|Педагогическая психология оптимизирует обучение.|Die pädagogische Psychologie ist evidenzbasiert.|Педагогическая психология основана на доказательствах.
+Когнитивные науки|Die Kognitionswissenschaften|Cognitive sciences||Die Kognitionswissenschaften erforschen Denken.|Когнитивные науки исследуют мышление.|Die Kognitionswissenschaften sind interdisziplinär.|Когнитивные науки междисциплинарны.
+Образовательная политика|Die Bildungspolitik|Education policy||Die Bildungspolitik bestimmt Zukunft.|Образовательная политика определяет будущее.|Die Bildungspolitik ist investitionsintensiv.|Образовательная политика капиталоемка.
+Научная методология|Die wissenschaftliche Methodik|Scientific methodology||Die wissenschaftliche Methodik sichert Validität.|Научная методология обеспечивает валидность.|Die wissenschaftliche Methodik ist rigoros.|Научная методология строгая.
+Академическая свобода|Die akademische Freiheit|Academic freedom||Die akademische Freiheit ist unverzichtbar.|Академическая свобода незаменима.|Die akademische Freiheit fördert Innovation.|Академическая свобода способствует инновациям.
+Образовательная технология|Die Bildungstechnologie|Educational technology||Die Bildungstechnologie personalisiert Lernen.|Образовательная технология персонализирует обучение.|Die Bildungstechnologie ist digital.|Образовательная технология цифровая.
+Исследовательская этика|Die Forschungstethik|Research ethics||Die Forschungstethik schützt Probanden.|Исследовательская этика защищает испытуемых.|Die Forschungstethik ist bindend.|Исследовательская этика обязательна.
+Образовательная реформа|Die Bildungsreform|Education reform||Die Bildungsreform modernisiert Schulen.|Образовательная реформа модернизирует школы.|Die Bildungsreform ist kontrovers.|Образовательная реформа спорна.
+Научная коммуникация|Die Wissenschaftskommunikation|Science communication||Die Wissenschaftskommunikation vermittelt Wissen.|Научная коммуникация передает знания.|Die Wissenschaftskommunikation ist populär.|Научная коммуникация популярна.
+
+# Arts & Literature Topic
+Литературная критика|Die Literaturkritik|Literary criticism||Die Literaturkritik analysiert Werke.|Литературная критика анализирует произведения.|Die Literaturkritik ist subjektiv.|Литературная критика субъективна.
+Художественная интерпретация|Die künstlerische Interpretation|Artistic interpretation||Die künstlerische Interpretation ist kreativ.|Художественная интерпретация креативна.|Die künstlerische Interpretation ist individuell.|Художественная интерпретация индивидуальна.
+Театральная режиссура|Die Theaterregie|Theater direction||Die Theaterregie interpretiert Stücke.|Театральная режиссура интерпретирует пьесы.|Die Theaterregie ist künstlerisch.|Театральная режиссура художественна.
+Музыкальная композиция|Die musikalische Komposition|Musical composition||Die musikalische Komposition ist kreativ.|Музыкальная композиция креативна.|Die musikalische Komposition ist komplex.|Музыкальная композиция сложна.
+Изобразительное искусство|Die bildende Kunst|Visual arts||Die bildende Kunst umfasst Malerei.|Изобразительное искусство включает живопись.|Die bildende Kunst ist vielfältig.|Изобразительное искусство разнообразно.
+Архитектурная эстетика|Die architektonische Ästhetik|Architectural aesthetics||Die architektonische Ästhetik prägt Städte.|Архитектурная эстетика формирует города.|Die architektonische Ästhetik ist funktional.|Архитектурная эстетика функциональна.
+Культурная антропология|Die Kulturanthropologie|Cultural anthropology||Die Kulturanthropologie erforscht Kulturen.|Культурная антропология исследует культуры.|Die Kulturanthropologie ist ethnologisch.|Культурная антропология этнологична.
+Поэтическая форма|Die poetische Form|Poetic form||Die poetische Form strukturiert Verse.|Поэтическая форма структурирует стихи.|Die poetische Form ist vielfältig.|Поэтическая форма разнообразна.
+Художественная ценность|Der künstlerische Wert|Artistic value||Der künstlerische Wert ist subjektiv.|Художественная ценность субъективна.|Der künstlerische Wert entwickelt sich.|Художественная ценность развивается.
+Литературный жанр|Die literarische Gattung|Literary genre||Die literarische Gattung bestimmt Form.|Литературный жанр определяет форму.|Die literarische Gattung ist traditionell.|Литературный жанр традиционен.

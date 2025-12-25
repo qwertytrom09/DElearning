@@ -62,74 +62,75 @@ WORD_ORDER|Er gibt den Schlüssel ab.|Er gibt den Schlüssel ab.|Он сдаёт
 WORD_ORDER|Ich höre Musik an.|Ich höre Musik an.|Я слушаю музыку
 WORD_ORDER|Sie ruft ihre Mutter an.|Sie ruft ihre Mutter an.|Она звонит своей матери
 
-# Preposition Exercises - Location
-PREPOSITION|Das Buch liegt ___ dem Tisch.|auf,unter,neben,in|auf|auf = on (horizontal surface)
-PREPOSITION|Ich wohne ___ Berlin.|auf,unter,neben,in|in|in = in (cities)
-PREPOSITION|Das Bild hängt ___ der Wand.|auf,unter,an,neben|an|an = on/against (vertical surface)
-PREPOSITION|Wir fahren ___ Urlaub.|auf,im,in,nach|in|in = on (vacation)
-PREPOSITION|Das Auto steht ___ der Garage.|auf,unter,neben,in|in|in = in (enclosed space)
-PREPOSITION|Ich arbeite ___ einem Büro.|auf,unter,neben,in|in|in = in (office/room)
-PREPOSITION|Die Katze springt ___ den Baum.|auf,unter,an,neben|auf|auf = onto (movement)
-PREPOSITION|Er kommt ___ Deutschland.|auf,unter,an,aus|aus|aus = from (countries)
-PREPOSITION|Wir sitzen ___ dem Restaurant.|auf,unter,an,im|im|im = in (restaurant)
-PREPOSITION|Das Geschenk liegt ___ dem Tisch.|auf,unter,an,neben|auf|auf = on (gift on table)
-PREPOSITION|Die Blumen stehen ___ dem Fenster.|auf,unter,an,neben|auf|auf = on (flowers on windowsill)
-PREPOSITION|Das Kind spielt ___ dem Garten.|auf,unter,an,im|im|im = in (garden)
-PREPOSITION|Die Uhr hängt ___ der Wand.|auf,unter,an,neben|an|an = on (wall)
-PREPOSITION|Wir wohnen ___ dem Land.|auf,unter,an,auf|auf|auf = in/on (countryside)
-PREPOSITION|Der Hund liegt ___ dem Boden.|auf,unter,an,neben|auf|auf = on (floor)
-PREPOSITION|Sie arbeitet ___ München.|auf,unter,an,in|in|in = in (Munich)
-PREPOSITION|Das Museum befindet sich ___ dem Stadtzentrum.|auf,unter,an,im|im|im = in (city center)
-PREPOSITION|Die Schule steht ___ dem Park.|auf,unter,an,neben|neben|neben = next to (park)
-PREPOSITION|Er wartet ___ der Bushaltestelle.|auf,unter,an,an|an|an = at (bus stop)
+# Preposition Exercises – Location (B2–C2)
+PREPOSITION|Die Akten liegen ___ dem Schreibtisch des Direktors.|auf,unter,neben,in|auf|auf = расположение на поверхности
+PREPOSITION|Er lebt seit Jahren ___ Berlin-Mitte.|in,auf,an,bei|in|in = районы и города
+PREPOSITION|Das Gemälde hängt ___ der Nordwand des Saals.|auf,unter,an,neben|an|an = прикреплено к вертикальной поверхности
+PREPOSITION|Die Konferenz findet ___ dem Campus der Universität statt.|auf,in,an,bei|auf|auf = территория учреждения
+PREPOSITION|Der Oldtimer steht ___ einer privaten Garage.|auf,unter,neben,in|in|in = замкнутое пространство
+PREPOSITION|Sie arbeitet ___ einem Großraumbüro.|in,auf,bei,an|in|in = рабочее помещение
+PREPOSITION|Der Vogel setzte sich ___ den höchsten Ast.|auf,unter,an,neben|auf|auf = движение «на»
+PREPOSITION|Der Wissenschaftler stammt ___ Schweden.|aus,unter,an,von|aus|aus = происхождение
+PREPOSITION|Wir saßen ___ einem kleinen Lokal am Hafen.|in,auf,bei,an|in|in = внутри заведения
+PREPOSITION|Die Unterlagen befinden sich ___ dem Tresen.|auf,unter,an,neben|auf|auf = поверхность
+PREPOSITION|Die Pflanzen stehen ___ dem Balkon.|auf,unter,an,neben|auf|auf = платформа / плоскость
+PREPOSITION|Die Kinder spielen ___ dem Innenhof.|in,auf,an,unter|in|in = ограниченное открытое пространство
+PREPOSITION|Die Flagge hängt ___ der Fassade.|auf,unter,an,neben|an|an = закреплено на
+PREPOSITION|Viele Menschen ziehen bewusst ___ das Land.|auf,unter,an,aufs|aufs|auf das = сельская местность
+PREPOSITION|Er lag reglos ___ dem Asphalt.|auf,unter,an,neben|auf|auf = физический контакт с поверхностью
+PREPOSITION|Sie forscht ___ München an neuen Impfstoffen.|in,auf,bei,an|in|in = город
+PREPOSITION|Das Institut liegt ___ dem historischen Stadtkern.|in,auf,an,bei|in|in = центральная часть города
+PREPOSITION|Die Klinik grenzt ___ den Stadtpark.|an,unter,neben,auf|an|an = граничит с
+PREPOSITION|Er wartete geduldig ___ der Endhaltestelle.|an,auf,bei,in|an|an = фиксированная точка
 
-# Preposition Exercises - Direction
-PREPOSITION|Wir fahren ___ den Urlaub.|auf,im,in,nach|in|in = on (vacation)
-PREPOSITION|Das Flugzeug fliegt ___ Frankfurt.|auf,unter,an,nach|nach|nach = to (Frankfurt)
-PREPOSITION|Sie geht ___ die Schule.|auf,unter,an,in|in|in = to (school)
-PREPOSITION|Er kommt ___ Hause.|auf,unter,an,nach|nach|nach = home
-PREPOSITION|Wir laufen ___ den Park.|auf,unter,an,in|in|in = into (park)
-PREPOSITION|Das Auto fährt ___ die Stadt.|auf,unter,an,in|in|in = into (city)
-PREPOSITION|Sie zieht ___ den Mantel.|auf,unter,an,an|an|an = on (coat)
-PREPOSITION|Er geht ___ Arbeit.|auf,unter,an,zur|zur|zur = to (work)
-PREPOSITION|Wir fahren ___ Deutschland.|auf,unter,an,nach|nach|nach = to (Germany)
-PREPOSITION|Das Schiff fährt ___ See.|auf,unter,an,in|in|in = to (sea)
-PREPOSITION|Sie geht ___ den Supermarkt.|auf,unter,an,in|in|in = to (supermarket)
-PREPOSITION|Er fliegt ___ die USA.|auf,unter,an,in|in|in = to (USA)
-PREPOSITION|Wir wandern ___ die Berge.|auf,unter,an,in|in|in = into (mountains)
-PREPOSITION|Das Paket geht ___ Berlin.|auf,unter,an,nach|nach|nach = to (Berlin)
-PREPOSITION|Sie zieht ___ die Jacke.|auf,unter,an,an|an|an = on (jacket)
+# Preposition Exercises – Direction (B2–C2)
+PREPOSITION|Sie reist ___ den Nahen Osten.|in,nach,auf,an|in|in = регионы с артиклем
+PREPOSITION|Der Zug fährt ___ Zürich ohne Halt.|nach,in,zu,auf|nach|nach = город
+PREPOSITION|Die Studentin geht ___ die Vorlesung.|in,zu,auf,an|in|in = вход на мероприятие
+PREPOSITION|Er kehrte spät ___ Hause zurück.|nach,zu,in,auf|nach|nach Hause = устойчивое выражение
+PREPOSITION|Die Demonstranten zogen ___ den Platz.|auf,in,über,an|auf|auf = движение на открытую площадь
+PREPOSITION|Das Fahrzeug fährt ___ die Tiefgarage.|in,unter,auf,an|in|in = въезд в замкнутое пространство
+PREPOSITION|Sie zog ___ ihren Mantel.|an,auf,über,unter|an|an = надевать одежду
+PREPOSITION|Er begibt sich ___ die Arbeit.|in,zu,auf,an|zu|zu = абстрактное направление
+PREPOSITION|Wir fliegen ___ Kanada.|nach,in,auf,zu|nach|nach = страны без артикля
+PREPOSITION|Das Schiff stach ___ See.|in,auf,an,über|in|in See stechen = идиома
+PREPOSITION|Sie geht ___ den Sitzungssaal.|in,auf,zu,an|in|in = вход в помещение
+PREPOSITION|Er fliegt ___ die Vereinigten Arabischen Emirate.|in,nach,auf,an|in|in = страны во множественном числе
+PREPOSITION|Die Gruppe wanderte ___ die Alpen.|durch,in,über,an|durch|durch = прохождение через
+PREPOSITION|Das Schreiben gelangte ___ die Redaktion.|zu,in,an,auf|an|an = официальный адресат
+PREPOSITION|Sie zog ___ die Handschuhe.|an,auf,über,unter|an|an = надевать одежду
 
-# Preposition Exercises - Time
-PREPOSITION|Ich komme ___ fünf Minuten.|auf,unter,an,in|in|in = in (five minutes)
-PREPOSITION|Wir treffen uns ___ dem Abend.|auf,unter,an,am|am|am = in the (evening)
-PREPOSITION|Das Konzert findet ___ Samstag statt.|auf,unter,an,am|am|am = on (Saturday)
-PREPOSITION|Er arbeitet ___ den Tag.|auf,unter,an,am|am|am = during the (day)
-PREPOSITION|Sie ruft ___ der Nacht an.|auf,unter,an,in|in|in = during the (night)
-PREPOSITION|Wir fahren ___ den Sommer.|auf,unter,an,im|im|im = in (summer)
-PREPOSITION|Das Festival ist ___ dem Winter.|auf,unter,an,im|im|im = in (winter)
-PREPOSITION|Ich bin ___ 1990 geboren.|auf,unter,an,im|im|im = in (1990)
-PREPOSITION|Er kommt ___ einer Stunde.|auf,unter,an,in|in|in = in (one hour)
-PREPOSITION|Wir essen ___ dem Mittag.|auf,unter,an,zum|zum|zum = at (noon)
-PREPOSITION|Das Meeting ist ___ 14 Uhr.|auf,unter,an,um|um|um = at (2 PM)
-PREPOSITION|Sie arbeitet ___ Montag bis Freitag.|auf,unter,an,von|von|von = from (Monday to Friday)
-PREPOSITION|Das Geschäft öffnet ___ 9 Uhr.|auf,unter,an,um|um|um = at (9 AM)
-PREPOSITION|Wir feiern ___ dem Wochenende.|auf,unter,an,am|am|am = at the (weekend)
-PREPOSITION|Er schläft ___ der Nacht.|auf,unter,an,in|in|in = during the (night)
+# Preposition Exercises – Time (B2–C2)
+PREPOSITION|Die Entscheidung fiel ___ weniger Minuten.|in,auf,innerhalb,an|in|in = временной промежуток
+PREPOSITION|Wir trafen uns ___ frühen Abend.|am,in,gegen,zu|am|am = конкретное время суток
+PREPOSITION|Die Sitzung findet ___ kommenden Freitag statt.|am,in,an,zu|am|am = день недели
+PREPOSITION|Er arbeitete ___ den ganzen Tag.|über,an,in,bei|über|über = длительность
+PREPOSITION|Der Vorfall ereignete sich ___ der Nacht.|in,bei,an,über|in|in = ночь
+PREPOSITION|Viele reisen ___ Sommer ins Ausland.|im,an,über,bei|im|im = время года
+PREPOSITION|Das Projekt wurde ___ Winter abgeschlossen.|im,bei,an,über|im|im = время года
+PREPOSITION|Er wurde ___ den 1990er-Jahren bekannt.|in,bei,an,auf|in|in = десятилетия
+PREPOSITION|Die Lieferung erfolgt ___ einer Stunde.|in,bei,nach,über|in|in = будущее время
+PREPOSITION|Wir essen ___ Mittag.|zu,gegen,bei,an|zu|zu Mittag = официально
+PREPOSITION|Die Pressekonferenz ist ___ 15 Uhr angesetzt.|um,gegen,bei,in|um|um = точное время
+PREPOSITION|Sie arbeitet ___ Montag bis Freitag.|von,an,ab,seit|von|von … bis
+PREPOSITION|Das Museum öffnet ___ 10 Uhr.|um,gegen,bei,in|um|um = время на часах
+PREPOSITION|Wir bleiben ___ Wochenende in der Stadt.|am,über,in,bei|über|über = на протяжении
+PREPOSITION|Er war ___ Nacht erreichbar.|in,bei,über,an|in|in = ночь
 
-# Preposition Exercises - Other Uses
-PREPOSITION|Ich interessiere mich ___ Musik.|auf,unter,an,für|für|für = for (music)
-PREPOSITION|Sie wartet ___ ihren Freund.|auf,unter,an,auf|auf|auf = for (friend)
-PREPOSITION|Wir sprechen ___ Deutsch.|auf,unter,an,auf|auf|auf = in (German)
-PREPOSITION|Er arbeitet ___ einer Bank.|auf,unter,an,bei|bei|bei = at (bank)
-PREPOSITION|Das Geschenk ist ___ mich.|auf,unter,an,für|für|für = for (me)
-PREPOSITION|Sie kommt ___ dem Flugzeug.|auf,unter,an,mit|mit|mit = by (plane)
-PREPOSITION|Wir fahren ___ dem Rad.|auf,unter,an,mit|mit|mit = by (bicycle)
-PREPOSITION|Er lernt ___ der Schule.|auf,unter,an,in|in|in = at (school)
-PREPOSITION|Das Haus gehört ___ meinen Eltern.|auf,unter,an,meinen|meinen|meinen = to (my parents)
-PREPOSITION|Sie denkt ___ ihre Familie.|auf,unter,an,an|an|an = about (her family)
-PREPOSITION|Wir lachen ___ den Witz.|auf,unter,an,über|über|über = about (the joke)
-PREPOSITION|Er freut sich ___ das Geschenk.|auf,unter,an,auf|auf|auf = about (the gift)
-PREPOSITION|Das Auto fährt ___ 100 km/h.|auf,unter,an,mit|mit|mit = at (100 km/h)
-PREPOSITION|Sie telefoniert ___ ihrer Mutter.|auf,unter,an,mit|mit|mit = with (her mother)
-PREPOSITION|Wir spielen ___ dem Computer.|auf,unter,an,am|am|am = on (computer)
+# Preposition Exercises – Abstract & Idiomatic Uses (B2–C2)
+PREPOSITION|Er interessiert sich brennend ___ Neuroethik.|für,an,über,auf|für|für = интерес к теме
+PREPOSITION|Sie wartet seit Stunden ___ eine Antwort.|auf,an,über,für|auf|auf = ожидание
+PREPOSITION|Der Vortrag wurde ___ Deutsch gehalten.|auf,in,an,bei|auf|auf = язык
+PREPOSITION|Er ist ___ einer internationalen Kanzlei tätig.|bei,in,auf,an|bei|bei = место работы
+PREPOSITION|Diese Maßnahme ist ___ alle Beteiligten verbindlich.|für,an,auf,bei|für|für = затронутая группа
+PREPOSITION|Sie reiste ___ dem Zug an.|mit,per,auf,in|mit|mit = средство передвижения
+PREPOSITION|Wir bewegen uns überwiegend ___ dem Fahrrad fort.|mit,auf,in,an|mit|mit = средство передвижения
+PREPOSITION|Er studierte ___ der Universität Heidelberg.|an,in,bei,auf|an|an = высшее образование
+PREPOSITION|Das Anwesen gehört ___ einer Stiftung.|zu,an,bei,für|zu|zu = юридическая принадлежность
+PREPOSITION|Sie denkt häufig ___ ihre Kindheit.|an,über,auf,bei|an|an = думать о
+PREPOSITION|Wir diskutierten intensiv ___ das Ergebnis.|über,an,auf,zu|über|über = тема обсуждения
+PREPOSITION|Er freut sich ___ die bevorstehende Reise.|auf,über,an,zu|auf|auf = будущее событие
+PREPOSITION|Der Wagen fuhr ___ überhöhter Geschwindigkeit.|mit,bei,auf,an|mit|mit = образ действия
+PREPOSITION|Sie sprach lange ___ ihrer Mentorin.|mit,bei,zu,über|mit|mit = взаимодействие
+PREPOSITION|Wir arbeiten derzeit ___ dem neuen System.|an,auf,in,bei|an|an = процесс работы
+

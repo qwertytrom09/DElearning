@@ -27,13 +27,18 @@ let currentDifficultyFilter = 'all';
 let currentTagFilter = 'all';
 let allCardsData = [];
 
-
 let currentPages = {
     environment: 1,
     society: 1,
     culture: 1,
     technology: 1,
-    politics: 1
+    politics: 1,
+    food: 1,
+    travel: 1,
+    health: 1,
+    business: 1,
+    education: 1,
+    arts: 1
 };
 const PAGE_SIZE = 12;
 
@@ -218,7 +223,13 @@ function generateCards() {
         'society': 'topic-society',
         'culture': 'topic-culture',
         'technology': 'topic-technology',
-        'politics': 'topic-politics'
+        'politics': 'topic-politics',
+        'food': 'topic-food',
+        'travel': 'topic-travel',
+        'health': 'topic-health',
+        'business': 'topic-business',
+        'education': 'topic-education',
+        'arts': 'topic-arts'
     };
 
     Object.keys(topics).forEach(topic => {
@@ -403,9 +414,17 @@ function updateTopicButtons() {
             'society': 'Gesellschaft',
             'culture': 'Kultur',
             'technology': 'Technologie',
-            'politics': 'Politik'
+            'politics': 'Politik',
+            'food': 'Essen & Kochen',
+            'travel': 'Reisen & Verkehr',
+            'health': 'Gesundheit & Medizin',
+            'business': 'Geschäft & Finanzen',
+            'education': 'Bildung & Wissenschaft',
+            'arts': 'Kunst & Literatur'
         }[topic];
-        btn.textContent = `${baseText} (${currentPages[topic]}/${totalPages})`;
+        if (btn) {
+            btn.textContent = `${baseText} (${currentPages[topic]}/${totalPages})`;
+        }
     });
 }
 
@@ -753,8 +772,6 @@ function closeTest() {
             trackPerfectTest();
         }
     }
-
-
 
     const testOverlay = document.querySelector('.test-overlay');
     testOverlay.classList.remove('active');
@@ -2368,6 +2385,8 @@ function getRussianMeaning(englishWord) {
     };
     return translations[englishWord.toLowerCase()] || englishWord;
 }
+
+
 
 // Start the app
 document.addEventListener('DOMContentLoaded', async function() {
