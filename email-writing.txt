@@ -89,16 +89,7 @@
 После проверки ситуации следует констатировать, что из-за технических проблем произошло …||||Nach Prüfung des Sachverhalts ist festzustellen, dass es aufgrund technischer Probleme zu … gekommen ist.|После проверки ситуации следует констатировать, что из-за технических проблем произошло …
 
 ### Häufige Probleme
-задержки в процессе / выполнении||||Verzögerungen im Ablauf|задержки в процессе / выполнении
-сбои в системе||||Störungen im System|сбои в системе
-ошибки при обработке||||Fehler bei der Verarbeitung|
-ухудшение качества услуги / работы||||Beeinträchtigung der Leistung|
-прерывание связи||||unterbrochene Kommunikation|
-неудачная обработка запроса||||nicht erfolgreiche Bearbeitung der Anfrage|
-проблемы с передачей данных||||Probleme bei der Datenübertragung|
-неожиданные сбои||||unerwartete Ausfälle|
-задержанные ответы||||Verzögerte Rückmeldungen|
-неполадки ПО / оборудования||||Funktionsstörungen der Software / Hardware|
+обычные проблемы||||Verzögerungen im Ablauf|задержки в процессе / выполнении|Störungen im System|сбои в системе|Fehler bei der Verarbeitung|ошибки при обработке|Beeinträchtigung der Leistung|ухудшение качества услуги / работы|unterbrochene Kommunikation|прерывание связи|nicht erfolgreiche Bearbeitung der Anfrage|неудачная обработка запроса|Probleme bei der Datenübertragung|проблемы с передачей данных|unerwartete Ausfälle|неожиданные сбои|Verzögerte Rückmeldungen|задержанные ответы|Funktionsstörungen der Software / Hardware|неполадки ПО / оборудования
 
 ### Lösung / Angebot
 Поэтому мы хотели бы предложить следующее решение.||||Wir möchten Ihnen daher folgende Lösung anbieten.|Поэтому мы хотели бы предложить следующее решение.
