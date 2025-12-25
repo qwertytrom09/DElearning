@@ -6,6 +6,11 @@ let perfectTestsCount = 0;
 let totalTestsCount = 0;
 let examplesViewedCount = 0;
 let sentencesListenedCount = 0;
+let exercisesCompletedCount = 0;
+let perfectExercisesCount = 0;
+let gapFillExercisesCount = 0;
+let wordOrderExercisesCount = 0;
+let prepositionExercisesCount = 0;
 
 // Achievement definitions
 function initializeAchievements() {
@@ -39,11 +44,25 @@ function initializeAchievements() {
         { id: 'example_explorer', name: 'Example Explorer', description: 'View 20 word examples', threshold: 20, type: 'examples', icon: '📖' },
         { id: 'sentence_master', name: 'Sentence Master', description: 'Listen to 50 example sentences', threshold: 50, type: 'examples', icon: '🎵' },
 
+        // Exercise achievements
+        { id: 'exercise_beginner', name: 'Exercise Beginner', description: 'Complete your first grammar exercise', threshold: 1, type: 'exercise_total', icon: '📝' },
+        { id: 'exercise_enthusiast', name: 'Exercise Enthusiast', description: 'Complete 10 grammar exercises', threshold: 10, type: 'exercise_total', icon: '🔧' },
+        { id: 'grammar_guru', name: 'Grammar Guru', description: 'Complete 25 grammar exercises', threshold: 25, type: 'exercise_total', icon: '📚' },
+        { id: 'syntax_specialist', name: 'Syntax Specialist', description: 'Complete 50 grammar exercises', threshold: 50, type: 'exercise_total', icon: '🔍' },
+        { id: 'perfect_exercises', name: 'Perfect Exercises', description: 'Complete 5 perfect grammar exercises', threshold: 5, type: 'exercise_perfect', icon: '🎯' },
+        { id: 'exercise_perfectionist', name: 'Exercise Perfectionist', description: 'Complete 10 perfect grammar exercises', threshold: 10, type: 'exercise_perfect', icon: '💎' },
+        { id: 'grammar_master', name: 'Grammar Master', description: 'Complete 25 perfect grammar exercises', threshold: 25, type: 'exercise_perfect', icon: '🏆' },
+        { id: 'gap_fill_novice', name: 'Gap-Fill Novice', description: 'Complete 5 gap-fill exercises', threshold: 5, type: 'exercise_gapfill', icon: '🧩' },
+        { id: 'word_order_wizard', name: 'Word Order Wizard', description: 'Complete 5 word-order exercises', threshold: 5, type: 'exercise_wordorder', icon: '🔀' },
+        { id: 'preposition_pro', name: 'Preposition Pro', description: 'Complete 5 preposition exercises', threshold: 5, type: 'exercise_preposition', icon: '📍' },
+
         // Hidden achievements (not visible until unlocked)
         { id: 'dedicated_learner', name: 'Dedicated Learner', description: 'Complete 100 total tests', threshold: 100, type: 'test_total', icon: '🎓', hidden: true },
         { id: 'perfection_master', name: 'Perfection Master', description: 'Complete 100 perfect tests', threshold: 100, type: 'test', icon: '💎', hidden: true },
         { id: 'audio_enthusiast_extreme', name: 'Audio Enthusiast Extreme', description: 'Listen to 500 German words', threshold: 500, type: 'listening', icon: '🎧', hidden: true },
-        { id: 'example_master', name: 'Example Master', description: 'View 100 word examples', threshold: 100, type: 'examples', icon: '�', hidden: true }
+        { id: 'example_master', name: 'Example Master', description: 'View 100 word examples', threshold: 100, type: 'examples', icon: '📚', hidden: true },
+        { id: 'exercise_legend', name: 'Exercise Legend', description: 'Complete 100 grammar exercises', threshold: 100, type: 'exercise_total', icon: '🏅', hidden: true },
+        { id: 'perfection_legend', name: 'Perfection Legend', description: 'Complete 100 perfect grammar exercises', threshold: 100, type: 'exercise_perfect', icon: '👑', hidden: true }
     ];
 }
 
@@ -62,6 +81,11 @@ function loadAchievements() {
         totalTestsCount = data.totalTestsCount || 0;
         examplesViewedCount = data.examplesViewedCount || 0;
         sentencesListenedCount = data.sentencesListenedCount || 0;
+        exercisesCompletedCount = data.exercisesCompletedCount || 0;
+        perfectExercisesCount = data.perfectExercisesCount || 0;
+        gapFillExercisesCount = data.gapFillExercisesCount || 0;
+        wordOrderExercisesCount = data.wordOrderExercisesCount || 0;
+        prepositionExercisesCount = data.prepositionExercisesCount || 0;
     }
 }
 
@@ -74,7 +98,12 @@ function saveAchievements() {
         perfectTestsCount,
         totalTestsCount,
         examplesViewedCount,
-        sentencesListenedCount
+        sentencesListenedCount,
+        exercisesCompletedCount,
+        perfectExercisesCount,
+        gapFillExercisesCount,
+        wordOrderExercisesCount,
+        prepositionExercisesCount
     };
     localStorage.setItem('germanVocabularyAchievementTracking', JSON.stringify(trackingData));
 }
@@ -114,6 +143,26 @@ function checkAchievements() {
                     currentValue = sentencesListenedCount;
                     thresholdMet = currentValue >= achievement.threshold;
                 }
+                break;
+            case 'exercise_total':
+                currentValue = exercisesCompletedCount;
+                thresholdMet = currentValue >= achievement.threshold;
+                break;
+            case 'exercise_perfect':
+                currentValue = perfectExercisesCount;
+                thresholdMet = currentValue >= achievement.threshold;
+                break;
+            case 'exercise_gapfill':
+                currentValue = gapFillExercisesCount;
+                thresholdMet = currentValue >= achievement.threshold;
+                break;
+            case 'exercise_wordorder':
+                currentValue = wordOrderExercisesCount;
+                thresholdMet = currentValue >= achievement.threshold;
+                break;
+            case 'exercise_preposition':
+                currentValue = prepositionExercisesCount;
+                thresholdMet = currentValue >= achievement.threshold;
                 break;
         }
 
@@ -195,7 +244,7 @@ function createAchievementsSection() {
         <div class="achievements-grid">
             ${achievements.map(achievement => {
                 const isUnlocked = unlockedAchievements.has(achievement.id);
-                const isSecret = ['dedicated_learner', 'perfection_master', 'audio_enthusiast_extreme', 'example_master'].includes(achievement.id);
+                const isSecret = ['dedicated_learner', 'perfection_master', 'audio_enthusiast_extreme', 'example_master', 'exercise_legend', 'perfection_legend'].includes(achievement.id);
                 const secretClass = isSecret ? ' secret' : '';
                 return `
                     <div class="achievement-card ${isUnlocked ? 'unlocked' : 'locked'}${secretClass}">
@@ -263,7 +312,7 @@ function updateAchievementsDisplay() {
         achievementCard.className = `achievement-showcase-card ${isUnlocked ? 'unlocked' : 'locked'}`;
 
         // Add special styling for secret achievements
-        const isSecret = ['dedicated_learner', 'perfection_master', 'audio_enthusiast_extreme', 'example_master'].includes(achievement.id);
+        const isSecret = ['dedicated_learner', 'perfection_master', 'audio_enthusiast_extreme', 'example_master', 'exercise_legend', 'perfection_legend'].includes(achievement.id);
         const secretClass = isSecret ? ' secret' : '';
         const justUnlockedClass = isSecret && isUnlocked ? ' just-unlocked' : '';
 
@@ -280,6 +329,30 @@ function updateAchievementsDisplay() {
                 </div>
             </div>
         `;
+
+        // Update currentValue for exercise achievements
+        switch (achievement.type) {
+            case 'exercise_total':
+                currentValue = exercisesCompletedCount;
+                break;
+            case 'exercise_perfect':
+                currentValue = perfectExercisesCount;
+                break;
+            case 'exercise_gapfill':
+                currentValue = gapFillExercisesCount;
+                break;
+            case 'exercise_wordorder':
+                currentValue = wordOrderExercisesCount;
+                break;
+            case 'exercise_preposition':
+                currentValue = prepositionExercisesCount;
+                break;
+        }
+
+        // Update the progress bar with the correct currentValue
+        const updatedProgressPercent = Math.min((currentValue / achievement.threshold) * 100, 100);
+        achievementCard.querySelector('.progress-fill').style.width = `${updatedProgressPercent}%`;
+        achievementCard.querySelector('.progress-text').textContent = isSecret && !isUnlocked ? '???/???' : `${Math.min(currentValue, achievement.threshold)}/${achievement.threshold}`;
 
         achievementCard.className += secretClass + justUnlockedClass;
 
@@ -378,6 +451,36 @@ function trackExamplesViewed() {
 
 function trackSentenceListened() {
     sentencesListenedCount++;
+    saveAchievements();
+    checkAchievements();
+}
+
+function trackExerciseCompleted() {
+    exercisesCompletedCount++;
+    saveAchievements();
+    checkAchievements();
+}
+
+function trackPerfectExercise() {
+    perfectExercisesCount++;
+    saveAchievements();
+    checkAchievements();
+}
+
+function trackGapFillExercise() {
+    gapFillExercisesCount++;
+    saveAchievements();
+    checkAchievements();
+}
+
+function trackWordOrderExercise() {
+    wordOrderExercisesCount++;
+    saveAchievements();
+    checkAchievements();
+}
+
+function trackPrepositionExercise() {
+    prepositionExercisesCount++;
     saveAchievements();
     checkAchievements();
 }

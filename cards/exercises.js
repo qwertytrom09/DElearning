@@ -164,10 +164,10 @@ function startGapFillExercise() {
     `;
 
     // Add event listeners
-    testContent.querySelector('.close-test').addEventListener('click', closeTest);
+    testContent.querySelector('.close-test').addEventListener('click', () => closeExercise(true));
     testContent.querySelector('.check-answer-btn').addEventListener('click', checkGapFillAnswer);
     testContent.querySelector('.next-exercise-btn').addEventListener('click', startGapFillExercise);
-    testContent.querySelector('.finish-exercise-btn').addEventListener('click', closeTest);
+    testContent.querySelector('.finish-exercise-btn').addEventListener('click', () => closeExercise(false));
 }
 
 function checkGapFillAnswer() {
@@ -259,10 +259,10 @@ function startWordOrderExercise() {
     initializeDragAndDrop();
 
     // Add event listeners
-    testContent.querySelector('.close-test').addEventListener('click', closeTest);
+    testContent.querySelector('.close-test').addEventListener('click', () => closeExercise(true));
     testContent.querySelector('.check-order-btn').addEventListener('click', checkWordOrder);
     testContent.querySelector('.next-exercise-btn').addEventListener('click', startWordOrderExercise);
-    testContent.querySelector('.finish-exercise-btn').addEventListener('click', closeTest);
+    testContent.querySelector('.finish-exercise-btn').addEventListener('click', () => closeExercise(false));
 }
 
 function initializeDragAndDrop() {
@@ -466,12 +466,12 @@ function startPrepositionExercise() {
     `;
 
     // Add event listeners
-    testContent.querySelector('.close-test').addEventListener('click', closeTest);
+    testContent.querySelector('.close-test').addEventListener('click', () => closeExercise(true));
     document.querySelectorAll('.preposition-option').forEach(btn => {
         btn.addEventListener('click', selectPreposition);
     });
     testContent.querySelector('.next-exercise-btn').addEventListener('click', startPrepositionExercise);
-    testContent.querySelector('.finish-exercise-btn').addEventListener('click', closeTest);
+    testContent.querySelector('.finish-exercise-btn').addEventListener('click', () => closeExercise(false));
 }
 
 function selectPreposition(e) {
@@ -535,4 +535,46 @@ function selectPreposition(e) {
     nextBtn.style.display = 'inline-block';
     finishBtn.style.display = 'inline-block';
     document.querySelector('.exercise-score').textContent = `Счёт: ${exerciseScore}`;
+}
+
+function closeExercise(isCancel = false) {
+    // Track exercise completion if not cancelled
+    if (!isCancel && currentExerciseType) {
+        // Track total exercises completed
+        if (typeof trackExerciseCompleted === 'function') {
+            trackExerciseCompleted();
+        }
+
+        // Track perfect exercise if score > 0 (meaning they got it correct)
+        if (exerciseScore > 0 && typeof trackPerfectExercise === 'function') {
+            trackPerfectExercise();
+        }
+
+        // Track specific exercise types
+        if (typeof trackGapFillExercise === 'function' && currentExerciseType === 'gap-fill-dynamic') {
+            trackGapFillExercise();
+        } else if (typeof trackWordOrderExercise === 'function' && currentExerciseType === 'word-order') {
+            trackWordOrderExercise();
+        } else if (typeof trackPrepositionExercise === 'function' && currentExerciseType === 'preposition') {
+            trackPrepositionExercise();
+        }
+
+        // Also track as total test for backwards compatibility
+        if (typeof trackTotalTest === 'function') {
+            trackTotalTest();
+        }
+
+        // Track as perfect test if exercise was completed perfectly
+        if (exerciseScore > 0 && typeof trackPerfectTest === 'function') {
+            trackPerfectTest();
+        }
+    }
+
+    const testOverlay = document.querySelector('.test-overlay');
+    testOverlay.classList.remove('active');
+
+    // Reset exercise state
+    currentExerciseType = null;
+    currentExercise = null;
+    exerciseScore = 0;
 }

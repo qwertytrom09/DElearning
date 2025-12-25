@@ -70,6 +70,11 @@ function loadDictionary() {
     }
     updateDictionaryDisplay();
     hideDictionaryWords();
+
+    // Check achievements after dictionary is loaded
+    if (typeof checkAchievements === 'function') {
+        checkAchievements();
+    }
 }
 
 function saveDictionary() {
