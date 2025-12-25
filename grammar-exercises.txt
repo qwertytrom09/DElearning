@@ -63,16 +63,16 @@ WORD_ORDER|Ich höre Musik an.|Ich höre Musik an.|Я слушаю музыку
 WORD_ORDER|Sie ruft ihre Mutter an.|Sie ruft ihre Mutter an.|Она звонит своей матери
 
 # Preposition Exercises – Location (B2–C2)
-PREPOSITION|Die Akten liegen ___ dem Schreibtisch des Direktors.|auf,unter,neben,in|auf|auf = расположение на поверхности
-PREPOSITION|Er lebt seit Jahren ___ Berlin-Mitte.|in,auf,an,bei|in|in = районы и города
-PREPOSITION|Das Gemälde hängt ___ der Nordwand des Saals.|auf,unter,an,neben|an|an = прикреплено к вертикальной поверхности
-PREPOSITION|Die Konferenz findet ___ dem Campus der Universität statt.|auf,in,an,bei|auf|auf = территория учреждения
-PREPOSITION|Der Oldtimer steht ___ einer privaten Garage.|auf,unter,neben,in|in|in = замкнутое пространство
-PREPOSITION|Sie arbeitet ___ einem Großraumbüro.|in,auf,bei,an|in|in = рабочее помещение
-PREPOSITION|Der Vogel setzte sich ___ den höchsten Ast.|auf,unter,an,neben|auf|auf = движение «на»
-PREPOSITION|Der Wissenschaftler stammt ___ Schweden.|aus,unter,an,von|aus|aus = происхождение
-PREPOSITION|Wir saßen ___ einem kleinen Lokal am Hafen.|in,auf,bei,an|in|in = внутри заведения
-PREPOSITION|Die Unterlagen befinden sich ___ dem Tresen.|auf,unter,an,neben|auf|auf = поверхность
+PREPOSITION|Die Akten liegen ___ dem Schreibtisch des Direktors.|auf,unter,neben,in|auf|auf = расположение на поверхности (auf используется для указания расположения предметов на горизонтальной поверхности)
+PREPOSITION|Er lebt seit Jahren ___ Berlin-Mitte.|in,auf,an,bei|in|in = районы и города (in используется для районов городов с определённым артиклем)
+PREPOSITION|Das Gemälde hängt ___ der Nordwand des Saals.|auf,unter,an,neben|an|an = прикреплено к вертикальной поверхности (an используется когда что-то прикреплено или прислонено к вертикальной поверхности)
+PREPOSITION|Die Konferenz findet ___ dem Campus der Universität statt.|auf,in,an,bei|auf|auf = территория учреждения (auf используется для территории учебных заведений, больниц и т.д.)
+PREPOSITION|Der Oldtimer steht ___ einer privaten Garage.|auf,unter,neben,in|in|in = замкнутое пространство (in используется для замкнутых пространств как гараж, лифт и т.д.)
+PREPOSITION|Sie arbeitet ___ einem Großraumbüro.|in,auf,bei,an|in|in = рабочее помещение (in используется для указания места работы или помещения)
+PREPOSITION|Der Vogel setzte sich ___ den höchsten Ast.|auf,unter,an,neben|auf|auf = движение «на» (auf используется для движения на возвышенные объекты)
+PREPOSITION|Der Wissenschaftler stammt ___ Schweden.|aus,unter,an,von|aus|aus = происхождение (aus используется для указания страны или места происхождения)
+PREPOSITION|Wir saßen ___ einem kleinen Lokal am Hafen.|in,auf,bei,an|in|in = внутри заведения (in используется для нахождения внутри зданий и помещений)
+PREPOSITION|Die Unterlagen befinden sich ___ dem Tresen.|auf,unter,an,neben|auf|auf = поверхность (auf используется для расположения на плоских поверхностях)
 PREPOSITION|Die Pflanzen stehen ___ dem Balkon.|auf,unter,an,neben|auf|auf = платформа / плоскость
 PREPOSITION|Die Kinder spielen ___ dem Innenhof.|in,auf,an,unter|in|in = ограниченное открытое пространство
 PREPOSITION|Die Flagge hängt ___ der Fassade.|auf,unter,an,neben|an|an = закреплено на
@@ -133,4 +133,3 @@ PREPOSITION|Er freut sich ___ die bevorstehende Reise.|auf,über,an,zu|auf|auf =
 PREPOSITION|Der Wagen fuhr ___ überhöhter Geschwindigkeit.|mit,bei,auf,an|mit|mit = образ действия
 PREPOSITION|Sie sprach lange ___ ihrer Mentorin.|mit,bei,zu,über|mit|mit = взаимодействие
 PREPOSITION|Wir arbeiten derzeit ___ dem neuen System.|an,auf,in,bei|an|an = процесс работы
-

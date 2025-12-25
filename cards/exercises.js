@@ -428,6 +428,15 @@ function startPrepositionExercise() {
 
     currentExerciseType = 'preposition';
     currentExercise = prepositionExercises[Math.floor(Math.random() * prepositionExercises.length)];
+
+    // Shuffle the preposition options using Fisher-Yates algorithm for better randomization
+    const options = [...currentExercise.options];
+    for (let i = options.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [options[i], options[j]] = [options[j], options[i]];
+    }
+    currentExercise.options = options;
+
     exerciseScore = 0;
 
     const testOverlay = document.querySelector('.test-overlay');
@@ -436,8 +445,8 @@ function startPrepositionExercise() {
     const testContent = testOverlay.querySelector('.test-content');
     testContent.innerHTML = `
         <button class="close-test">×</button>
-        <h2>Preposition Exercise</h2>
-        <p>Choose the correct preposition to complete the sentence.</p>
+        <h2>Упражнение на предлоги</h2>
+        <p>Выберите правильный предлог для завершения предложения.</p>
         <div class="exercise-container">
             <div class="exercise-text">
                 ${currentExercise.sentence}
@@ -448,11 +457,11 @@ function startPrepositionExercise() {
             <div class="exercise-feedback" style="display: none;"></div>
         </div>
         <div class="exercise-progress">
-            <span class="exercise-score">Score: ${exerciseScore}</span>
+            <span class="exercise-score">Счёт: ${exerciseScore}</span>
         </div>
         <div class="exercise-controls">
-            <button class="next-exercise-btn" style="display: none;">Next Exercise</button>
-            <button class="finish-exercise-btn" style="display: none;">Finish</button>
+            <button class="next-exercise-btn" style="display: none;">Следующее упражнение</button>
+            <button class="finish-exercise-btn" style="display: none;">Завершить</button>
         </div>
     `;
 
@@ -475,10 +484,23 @@ function selectPreposition(e) {
     // Disable all options
     options.forEach(opt => opt.disabled = true);
 
+    // Create the complete sentence with the correct preposition
+    const completeSentence = currentExercise.sentence.replace('___', currentExercise.correctAnswer);
+    console.log('Debug:', { sentence: currentExercise.sentence, correctAnswer: currentExercise.correctAnswer, completeSentence });
+
+    // Use explanations directly from the exercise data (now includes detailed Russian explanations)
+
     if (selectedOption === currentExercise.correctAnswer) {
         exerciseScore++;
         e.target.classList.add('correct');
-        feedback.innerHTML = `<div class="success-message">✓ Correct! ${currentExercise.explanation}</div>`;
+        feedback.innerHTML = `
+            <div class="success-message">
+                ✓ Correct! ${currentExercise.explanation}
+                <div class="sentence-audio-inline">
+                    <button class="sentence-audio-btn" data-sentence="${completeSentence}">🔊</button>
+                </div>
+            </div>
+        `;
         feedback.className = 'exercise-feedback success';
     } else {
         e.target.classList.add('incorrect');
@@ -488,12 +510,29 @@ function selectPreposition(e) {
                 opt.classList.add('correct');
             }
         });
-        feedback.innerHTML = `<div class="error-message">✗ Incorrect. The correct preposition is "${currentExercise.correctAnswer}". ${currentExercise.explanation}</div>`;
+        feedback.innerHTML = `
+            <div class="success-message">
+                ✗ Incorrect. The correct preposition is "${currentExercise.correctAnswer}". ${currentExercise.explanation}
+                <div class="sentence-audio-inline">
+                    <button class="sentence-audio-btn" data-sentence="${completeSentence}">🔊</button>
+                </div>
+            </div>
+        `;
         feedback.className = 'exercise-feedback error';
     }
 
     feedback.style.display = 'block';
+
+    // Add audio button event listeners
+    const audioBtn = feedback.querySelector('.sentence-audio-btn');
+    if (audioBtn) {
+        audioBtn.addEventListener('click', function() {
+            const sentence = this.getAttribute('data-sentence');
+            speakSentence(sentence, this);
+        });
+    }
+
     nextBtn.style.display = 'inline-block';
     finishBtn.style.display = 'inline-block';
-    document.querySelector('.exercise-score').textContent = `Score: ${exerciseScore}`;
+    document.querySelector('.exercise-score').textContent = `Счёт: ${exerciseScore}`;
 }
