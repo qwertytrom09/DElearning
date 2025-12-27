@@ -1,18 +1,19 @@
-// Global variables for cards
-let currentPages = {
-    environment: 1,
-    society: 1,
-    culture: 1,
-    technology: 1,
-    politics: 1,
-    food: 1,
-    travel: 1,
-    health: 1,
-    business: 1,
-    education: 1,
-    arts: 1
-};
-const PAGE_SIZE = 12;
+// Global variables for cards - using window object to avoid conflicts
+if (!window.currentPages) {
+    window.currentPages = {
+        environment: 1,
+        society: 1,
+        culture: 1,
+        technology: 1,
+        politics: 1,
+        food: 1,
+        travel: 1,
+        health: 1,
+        business: 1,
+        education: 1,
+        arts: 1
+    };
+}
 
 function generateCards() {
     const topics = window.vocabularyData;
@@ -44,7 +45,7 @@ function generateCards() {
 
         // Populate if active
         if (topic === 'environment') {
-            populateContainer(container, topics[topic], currentPages[topic], PAGE_SIZE, topic);
+            populateContainer(container, topics[topic], window.currentPages[topic], PAGE_SIZE, topic);
         }
 
         // Replace existing container
@@ -156,18 +157,18 @@ function createPagination(topic, totalWords, pageSize) {
     const prevBtn = document.createElement('button');
     prevBtn.textContent = 'Previous';
     prevBtn.className = 'pagination-btn prev-btn';
-    prevBtn.disabled = currentPages[topic] === 1;
-    prevBtn.addEventListener('click', () => changePage(topic, currentPages[topic] - 1, pageSize));
+    prevBtn.disabled = window.currentPages[topic] === 1;
+    prevBtn.addEventListener('click', () => changePage(topic, window.currentPages[topic] - 1, pageSize));
 
     const pageInfo = document.createElement('span');
     pageInfo.className = 'page-info';
-    pageInfo.textContent = `${currentPages[topic]} / ${totalPages}`;
+    pageInfo.textContent = `${window.currentPages[topic]} / ${totalPages}`;
 
     const nextBtn = document.createElement('button');
     nextBtn.textContent = 'Next';
     nextBtn.className = 'pagination-btn next-btn';
-    nextBtn.disabled = currentPages[topic] === totalPages;
-    nextBtn.addEventListener('click', () => changePage(topic, currentPages[topic] + 1, pageSize));
+    nextBtn.disabled = window.currentPages[topic] === totalPages;
+    nextBtn.addEventListener('click', () => changePage(topic, window.currentPages[topic] + 1, pageSize));
 
     div.appendChild(prevBtn);
     div.appendChild(pageInfo);
@@ -177,7 +178,7 @@ function createPagination(topic, totalWords, pageSize) {
 }
 
 function changePage(topic, newPage, pageSize) {
-    currentPages[topic] = newPage;
+    window.currentPages[topic] = newPage;
     const container = document.querySelector(`.topic-${topic}`);
     populateContainer(container, window.vocabularyData[topic], newPage, pageSize, topic);
     updatePagination(container, topic, window.vocabularyData[topic].length, pageSize);
@@ -194,13 +195,13 @@ function changePage(topic, newPage, pageSize) {
 function updatePagination(container, topic, totalWords, pageSize) {
     const totalPages = Math.ceil(totalWords / pageSize);
     const pageInfo = container.querySelector('.page-info');
-    pageInfo.textContent = `${currentPages[topic]} / ${totalPages}`;
+    pageInfo.textContent = `${window.currentPages[topic]} / ${totalPages}`;
 
     const prevBtn = container.querySelector('.prev-btn');
-    prevBtn.disabled = currentPages[topic] === 1;
+    prevBtn.disabled = window.currentPages[topic] === 1;
 
     const nextBtn = container.querySelector('.next-btn');
-    nextBtn.disabled = currentPages[topic] === totalPages;
+    nextBtn.disabled = window.currentPages[topic] === totalPages;
 }
 
 function updateTopicButtons() {
@@ -221,7 +222,7 @@ function updateTopicButtons() {
             'arts': 'Kunst & Literatur'
         }[topic];
         if (btn) {
-            btn.textContent = `${baseText} (${currentPages[topic]}/${totalPages})`;
+            btn.textContent = `${baseText} (${window.currentPages[topic]}/${totalPages})`;
         }
     });
 }

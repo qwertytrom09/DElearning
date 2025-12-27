@@ -1,7 +1,4 @@
 // Global variables for dictionary
-let dictionary = [];
-let selectedDates = new Set();
-let expandedDateGroups = new Set();
 
 function loadDictionary() {
     const saved = localStorage.getItem('germanVocabularyDictionary');

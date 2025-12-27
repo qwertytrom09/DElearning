@@ -27,6 +27,16 @@
 Экологическая нагрузка|Die Umweltbelastung|Environmental burden||Die Umweltbelastung nimmt kontinuierlich zu.|Экологическая нагрузка постоянно увеличивается.|Wir müssen die Umweltbelastung mindern.|Мы должны уменьшить экологическую нагрузку.
 Экологический баланс|Die ökologische Bilanz|Ecological balance||Die ökologische Bilanz zeigt den Umweltimpact.|Экологический баланс показывает воздействие на окружающую среду.|Unternehmen erstellen ökologische Bilanzen.|Компании составляют экологические балансы.
 
+# NEW: Psychology & Emotions Topic
+Эмоциональный интеллект|Die emotionale Intelligenz|Emotional intelligence||Die emotionale Intelligenz ist wichtig für die Kommunikation.|Эмоциональный интеллект важен для коммуникации.|Wir entwickeln unsere emotionale Intelligenz.|Мы развиваем свой эмоциональный интеллект.
+Психологическая устойчивость|Die psychische Resilienz|Psychological resilience||Die psychische Resilienz hilft bei Stress.|Психологическая устойчивость помогает при стрессе.|Die psychische Resilienz ist trainierbar.|Психологическая устойчивость тренируема.
+Когнитивный диссонанс|Die kognitive Dissonanz|Cognitive dissonance||Die kognitive Dissonanz entsteht bei Widersprüchen.|Когнитивный диссонанс возникает при противоречиях.|Die kognitive Dissonanz motiviert zur Veränderung.|Когнитивный диссонанс мотивирует к изменениям.
+Эмпатия|Die Empathie|Empathy||Die Empathie ermöglicht Verständnis.|Эмпатия позволяет понимание.|Empathie ist die Basis für Mitgefühl.|Эмпатия является основой для сочувствия.
+Мотивация|Die Motivation|Motivation||Die Motivation treibt uns an.|Мотивация движет нами.|Die intrinsische Motivation kommt von innen.|Внутренняя мотивация приходит изнутри.
+Самооценка|Das Selbstwertgefühl|Self-esteem||Das Selbstwertgefühl beeinflusst unser Verhalten.|Самооценка влияет на наше поведение.|Ein gesundes Selbstwertgefühl ist wichtig.|Здоровая самооценка важна.
+Социальная тревога|Die soziale Angst|Social anxiety||Die soziale Angst behindert die Kommunikation.|Социальная тревога препятствует коммуникации.|Die soziale Angst ist behandelbar.|Социальная тревога лечится.
+Позитивная психология|Die positive Psychologie|Positive psychology||Die positive Psychologie fokussiert auf Stärken.|Позитивная психология фокусируется на сильных сторонах.|Die positive Psychologie fördert das Wohlbefinden.|Позитивная психология способствует благополучию.
+
 # Society Topic
 Социальное неравенство|Die soziale Ungleichheit|Social inequality||Die soziale Ungleichheit ist ein ernstes Problem.|Социальное неравенство является серьезной проблемой.|Wir kämpfen gegen soziale Ungleichheit.|Мы боремся против социального неравенства.
 Интеграция|Die Integration|Integration||Die Integration von Migranten ist wichtig.|Интеграция мигрантов важна.|Die erfolgreiche Integration braucht Zeit.|Успешная интеграция требует времени.

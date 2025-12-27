@@ -1,5 +1,5 @@
 // Global variables for vocabulary
-let examplesData = {};
+window.examplesData = {};
 
 // Temporary UI functions (will be replaced by ui.js)
 function showLoadingState(message = 'Loading...') {
@@ -139,7 +139,7 @@ function parseVocabulary(text) {
     Object.keys(topics).forEach(topic => {
         topics[topic].forEach(word => {
             if (word.examples && word.examples.length > 0) {
-                examplesData[word.russian] = word.examples;
+                window.examplesData[word.russian] = word.examples;
             }
         });
     });

@@ -1,8 +1,4 @@
 // Global variables for tests
-let selectedRussianWord = null;
-let testWords = [];
-let correctMatches = 0;
-let mistakeCount = 0;
 
 function startTest() {
     const testOverlay = document.querySelector('.test-overlay');

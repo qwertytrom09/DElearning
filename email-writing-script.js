@@ -1,8 +1,6 @@
 // Email Writing Script - Separate functionality for email writing tips
 let emailTipsData = {};
 let emailTipsSections = {};
-let germanVoice = null;
-let voicesLoaded = false;
 
 // Load email writing tips and initialize
 async function loadEmailWritingTips() {
@@ -120,87 +118,54 @@ function parseEmailWritingTips(text) {
 }
 
 function generateEmailWritingCards() {
-    const container = document.querySelector('.email-cards');
-    if (!container) {
-        console.error('Email cards container not found');
-        return;
-    }
-    container.innerHTML = '';
+    // Define which sections belong to which topic
+    const topicSections = {
+        'environment': ['greetings', 'opening-phrases', 'main-content', 'closing-phrases', 'useful-vocabulary', 'useful-phrases', 'formal-complaints', 'job-applications', 'thank-you-notes', 'business-email-templates', 'beschwerde'],
+        'beschwerde': ['beschwerde']
+    };
 
-    Object.keys(emailTipsSections).forEach(sectionKey => {
-        const sectionName = sectionKey.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-        const sectionData = emailTipsSections[sectionKey];
+    Object.keys(topicSections).forEach(topic => {
+        const container = document.querySelector(`.email-cards.topic-${topic}`);
+        if (!container) {
+            console.error(`Email cards container for topic ${topic} not found`);
+            return;
+        }
+        container.innerHTML = '';
 
-        let sectionHtml = `
-            <div class="email-section">
-                <h3>${sectionName}</h3>
-        `;
+        topicSections[topic].forEach(sectionKey => {
+            if (!emailTipsSections[sectionKey]) return;
 
-        // Handle subsections
-        Object.keys(sectionData).forEach(subsectionKey => {
-            const subsectionData = sectionData[subsectionKey];
+            const sectionName = sectionKey.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+            const sectionData = emailTipsSections[sectionKey];
 
-            // Check if subsectionData is an array (old structure) or object (new structure)
-            if (Array.isArray(subsectionData)) {
-                // Old structure: subsectionData is an array of tips
-                if (subsectionData.length > 0) {
-                    // Create a subsection container
-                    sectionHtml += `<div class="subsection-container">`;
+            let sectionHtml = `
+                <div class="email-section">
+                    <h3>${sectionName}</h3>
+            `;
 
-                    // Add subsection heading if it's not empty
-                    if (subsectionKey !== '') {
-                        const subsectionName = subsectionKey.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-                        sectionHtml += `<h4 class="subsection-heading">${subsectionName}</h4>`;
-                    }
+            // Handle subsections
+            Object.keys(sectionData).forEach(subsectionKey => {
+                const subsectionData = sectionData[subsectionKey];
 
-                    sectionHtml += `<div class="email-tips-grid">`;
+                // Check if subsectionData is an array (old structure) or object (new structure)
+                if (Array.isArray(subsectionData)) {
+                    // Old structure: subsectionData is an array of tips
+                    if (subsectionData.length > 0) {
+                        // Create a subsection container
+                        sectionHtml += `<div class="subsection-container">`;
 
-                    subsectionData.forEach((tip, index) => {
-                        const uniqueIndex = subsectionKey ? `${subsectionKey}-${index}` : index;
-                        sectionHtml += `
-                            <div class="email-tip-card" data-section="${sectionKey}" data-subsection="${subsectionKey}" data-subsubsection="" data-index="${index}">
-                                <div class="card-inner">
-                                    <div class="card-front">
-                                        <h4>${tip.russian}</h4>
-                                        <p>${tip.german}</p>
-                                    </div>
-                                    <div class="card-back">
-                                        <h4>${tip.russian}</h4>
-                                        <p>${tip.german}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                    });
-
-                    sectionHtml += `</div></div>`; // Close subsection-container
-                }
-            } else if (typeof subsectionData === 'object') {
-                // New structure: subsectionData is an object with subsubsections
-                if (subsectionKey !== '') {
-                    const subsectionName = subsectionKey.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-                    sectionHtml += `<div class="subsection-container"><h4 class="subsection-heading">${subsectionName}</h4>`;
-                } else {
-                    sectionHtml += `<div class="subsection-container">`;
-                }
-
-                // Handle subsubsections
-                Object.keys(subsectionData).forEach(subsubsectionKey => {
-                    const subsubsectionData = subsectionData[subsubsectionKey];
-
-                    if (Array.isArray(subsubsectionData) && subsubsectionData.length > 0) {
-                        // Add subsubsection heading if it's not empty
-                        if (subsubsectionKey !== '') {
-                            const subsubsectionName = subsubsectionKey.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-                            sectionHtml += `<h5 class="subsubsection-heading">${subsubsectionName}</h5>`;
+                        // Add subsection heading if it's not empty
+                        if (subsectionKey !== '') {
+                            const subsectionName = subsectionKey.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                            sectionHtml += `<h4 class="subsection-heading">${subsectionName}</h4>`;
                         }
 
                         sectionHtml += `<div class="email-tips-grid">`;
 
-                        subsubsectionData.forEach((tip, index) => {
-                            const uniqueIndex = subsubsectionKey ? `${subsubsectionKey}-${index}` : index;
+                        subsectionData.forEach((tip, index) => {
+                            const uniqueIndex = subsectionKey ? `${subsectionKey}-${index}` : index;
                             sectionHtml += `
-                                <div class="email-tip-card" data-section="${sectionKey}" data-subsection="${subsectionKey}" data-subsubsection="${subsubsectionKey}" data-index="${index}">
+                                <div class="email-tip-card" data-section="${sectionKey}" data-subsection="${subsectionKey}" data-subsubsection="" data-index="${index}">
                                     <div class="card-inner">
                                         <div class="card-front">
                                             <h4>${tip.russian}</h4>
@@ -215,21 +180,87 @@ function generateEmailWritingCards() {
                             `;
                         });
 
-                        sectionHtml += `</div>`;
+                        sectionHtml += `</div></div>`; // Close subsection-container
                     }
-                });
+                } else if (typeof subsectionData === 'object') {
+                    // New structure: subsectionData is an object with subsubsections
+                    if (subsectionKey !== '') {
+                        const subsectionName = subsectionKey.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                        sectionHtml += `<div class="subsection-container"><h4 class="subsection-heading">${subsectionName}</h4>`;
+                    } else {
+                        sectionHtml += `<div class="subsection-container">`;
+                    }
 
-                sectionHtml += `</div>`; // Close subsection-container
-            }
+                    // Handle subsubsections
+                    Object.keys(subsectionData).forEach(subsubsectionKey => {
+                        const subsubsectionData = subsectionData[subsubsectionKey];
+
+                        if (Array.isArray(subsubsectionData) && subsubsectionData.length > 0) {
+                            // Add subsubsection heading if it's not empty
+                            if (subsubsectionKey !== '') {
+                                const subsubsectionName = subsubsectionKey.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                                sectionHtml += `<h5 class="subsubsection-heading">${subsubsectionName}</h5>`;
+                            }
+
+                            sectionHtml += `<div class="email-tips-grid">`;
+
+                            subsubsectionData.forEach((tip, index) => {
+                                const uniqueIndex = subsubsectionKey ? `${subsubsectionKey}-${index}` : index;
+                                sectionHtml += `
+                                    <div class="email-tip-card" data-section="${sectionKey}" data-subsection="${subsectionKey}" data-subsubsection="${subsubsectionKey}" data-index="${index}">
+                                        <div class="card-inner">
+                                            <div class="card-front">
+                                                <h4>${tip.russian}</h4>
+                                                <p>${tip.german}</p>
+                                            </div>
+                                            <div class="card-back">
+                                                <h4>${tip.russian}</h4>
+                                                <p>${tip.german}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                            });
+
+                            sectionHtml += `</div>`;
+                        }
+                    });
+
+                    sectionHtml += `</div>`; // Close subsection-container
+                }
+            });
+
+            sectionHtml += `</div>`;
+
+            container.insertAdjacentHTML('beforeend', sectionHtml);
         });
-
-        sectionHtml += `</div>`;
-
-        container.insertAdjacentHTML('beforeend', sectionHtml);
     });
 }
 
 function initializeEmailWritingCards() {
+    // Topic switching functionality
+    const topicButtons = document.querySelectorAll('.topic-btn');
+    const emailCardsContainers = document.querySelectorAll('.email-cards');
+
+    topicButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const topic = this.getAttribute('data-topic');
+
+            // Update button active state
+            topicButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+
+            // Update container active state
+            emailCardsContainers.forEach(container => {
+                container.classList.remove('active');
+            });
+            const selectedContainer = document.querySelector(`.email-cards.topic-${topic}`);
+            if (selectedContainer) {
+                selectedContainer.classList.add('active');
+            }
+        });
+    });
+
     const emailCards = document.querySelectorAll('.email-tip-card');
     emailCards.forEach(card => {
         card.addEventListener('click', function(e) {
@@ -244,9 +275,11 @@ function initializeEmailWritingCards() {
                 emailTipsSections[sectionKey][subsectionKey][subsubsectionKey]) {
                 // Three-level structure
                 tip = emailTipsSections[sectionKey][subsectionKey][subsubsectionKey][parseInt(tipIndex)];
-            } else if (emailTipsSections[sectionKey] && emailTipsSections[sectionKey][subsectionKey]) {
+            } else if (subsectionKey && emailTipsSections[sectionKey] &&
+                      emailTipsSections[sectionKey][subsectionKey] &&
+                      emailTipsSections[sectionKey][subsectionKey]['']) {
                 // Two-level structure
-                tip = emailTipsSections[sectionKey][subsectionKey][parseInt(tipIndex)];
+                tip = emailTipsSections[sectionKey][subsectionKey][''][parseInt(tipIndex)];
             } else {
                 // Fallback
                 tip = emailTipsSections[sectionKey][''][parseInt(tipIndex)];
@@ -328,18 +361,18 @@ function showExamplesModal(tip) {
 function initializeVoices() {
     if ('speechSynthesis' in window) {
         let voices = speechSynthesis.getVoices();
-        germanVoice = voices.find(voice => voice.lang === 'de-DE' && voice.localService);
-        if (!germanVoice) {
-            germanVoice = voices.find(voice => voice.lang.startsWith('de'));
+        window.germanVoice = voices.find(voice => voice.lang === 'de-DE' && voice.localService);
+        if (!window.germanVoice) {
+            window.germanVoice = voices.find(voice => voice.lang.startsWith('de'));
         }
-        if (!germanVoice) {
-            germanVoice = voices.find(voice =>
+        if (!window.germanVoice) {
+            window.germanVoice = voices.find(voice =>
                 voice.name.toLowerCase().includes('german') ||
                 voice.name.toLowerCase().includes('deutsch') ||
                 voice.name.toLowerCase().includes('deutsche')
             );
         }
-        voicesLoaded = true;
+        window.voicesLoaded = true;
     }
 }
 
@@ -351,9 +384,9 @@ function speakText(text) {
         utterance.rate = 0.8;
         utterance.pitch = 1.1;
         utterance.volume = 0.9;
-        if (germanVoice) {
-            utterance.voice = germanVoice;
-            utterance.lang = germanVoice.lang;
+        if (window.germanVoice) {
+            utterance.voice = window.germanVoice;
+            utterance.lang = window.germanVoice.lang;
         }
         speechSynthesis.speak(utterance);
     } else {

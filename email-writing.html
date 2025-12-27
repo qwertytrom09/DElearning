@@ -10,9 +10,17 @@
 <div class="email-header">
     <h2>E-Mail Schreiben - Nützliche Ausdrücke</h2>
     <p>Hier finden Sie hilfreiche Phrasen und Wörter für das Schreiben von E-Mails auf Deutsch</p>
-    <button class="back-to-vocab-btn">← Zurück zum Wortschatz</button>
+        <nav class="topic-nav">
+            <button class="topic-btn active" data-topic="environment">Basic sentences</button>
+            <button class="topic-btn" data-topic="beschwerde">Beschwerde</button>
+        </nav>
+        <button class="back-to-vocab-btn">← Zurück zum Wortschatz</button>
 </div>
-<div class="email-cards">
+
+<div class="email-cards topic-environment active">
+    <!-- Cards will be generated dynamically from email-writing.txt -->
+</div>
+<div class="email-cards topic-beschwerde">
     <!-- Cards will be generated dynamically from email-writing.txt -->
 </div>
     <script src="email-writing-script.js"></script>

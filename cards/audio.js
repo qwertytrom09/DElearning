@@ -1,6 +1,4 @@
 // Global variables for audio
-let germanVoice = null;
-let voicesLoaded = false;
 let speechQueue = [];
 let isSpeaking = false;
 
@@ -8,18 +6,18 @@ let isSpeaking = false;
 function initializeVoices() {
     if ('speechSynthesis' in window) {
         const voices = speechSynthesis.getVoices();
-        germanVoice = voices.find(voice => voice.lang === 'de-DE' && voice.localService);
-        if (!germanVoice) {
-            germanVoice = voices.find(voice => voice.lang.startsWith('de'));
+        window.germanVoice = voices.find(voice => voice.lang === 'de-DE' && voice.localService);
+        if (!window.germanVoice) {
+            window.germanVoice = voices.find(voice => voice.lang.startsWith('de'));
         }
-        if (!germanVoice) {
-            germanVoice = voices.find(voice =>
+        if (!window.germanVoice) {
+            window.germanVoice = voices.find(voice =>
                 voice.name.toLowerCase().includes('german') ||
                 voice.name.toLowerCase().includes('deutsch') ||
                 voice.name.toLowerCase().includes('deutsche')
             );
         }
-        voicesLoaded = true;
+        window.voicesLoaded = true;
     }
 }
 
@@ -71,9 +69,9 @@ function createUtterance(text, isSentence = false) {
     utterance.pitch = isSentence ? 1.1 : 1.2;
     utterance.volume = 0.9;
 
-    if (germanVoice) {
-        utterance.voice = germanVoice;
-        utterance.lang = germanVoice.lang;
+    if (window.germanVoice) {
+        utterance.voice = window.germanVoice;
+        utterance.lang = window.germanVoice.lang;
     }
 
     return utterance;
@@ -191,8 +189,8 @@ function handleExamplesClick(event) {
     event.stopPropagation();
     const button = event.target;
     const word = button.getAttribute('data-word');
-    if (!word || !examplesData[word]) return;
-    showExamplesModal(word, examplesData[word]);
+    if (!word || !window.examplesData[word]) return;
+    showExamplesModal(word, window.examplesData[word]);
     // Track examples viewed achievement
     if (typeof trackExamplesViewed === 'function') {
         trackExamplesViewed();

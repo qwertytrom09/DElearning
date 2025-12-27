@@ -62,6 +62,58 @@ WORD_ORDER|Er gibt den Schlüssel ab.|Er gibt den Schlüssel ab.|Он сдаёт
 WORD_ORDER|Ich höre Musik an.|Ich höre Musik an.|Я слушаю музыку
 WORD_ORDER|Sie ruft ihre Mutter an.|Sie ruft ihre Mutter an.|Она звонит своей матери
 
+# NEW: Verb Conjugation Exercises
+VERB_CONJUGATION|arbeiten|ich arbeite,du arbeitest,er/sie/es arbeitet,wir arbeiten,ihr arbeitet,sie/Sie arbeiten|arbeiten|to work
+VERB_CONJUGATION|machen|ich mache,du machst,er/sie/es macht,wir machen,ihr macht,sie/Sie machen|machen|to make/do
+VERB_CONJUGATION|gehen|ich gehe,du gehst,er/sie/es geht,wir gehen,ihr geht,sie/Sie gehen|gehen|to go
+VERB_CONJUGATION|kommen|ich komme,du kommst,er/sie/es kommt,wir kommen,ihr kommt,sie/Sie kommen|kommen|to come
+VERB_CONJUGATION|essen|ich esse,du isst,er/sie/es isst,wir essen,ihr esst,sie/Sie essen|essen|to eat
+VERB_CONJUGATION|sprechen|ich spreche,du sprichst,er/sie/es spricht,wir sprechen,ihr sprecht,sie/Sie sprechen|sprechen|to speak
+VERB_CONJUGATION|lesen|ich lese,du liest,er/sie/es liest,wir lesen,ihr lest,sie/Sie lesen|lesen|to read
+VERB_CONJUGATION|sehen|ich sehe,du siehst,er/sie/es sieht,wir sehen,ihr seht,sie/Sie sehen|sehen|to see
+VERB_CONJUGATION|haben|ich habe,du hast,er/sie/es hat,wir haben,ihr habt,sie/Sie haben|haben|to have
+VERB_CONJUGATION|sein|ich bin,du bist,er/sie/es ist,wir sind,ihr seid,sie/Sie sind|sein|to be
+
+# NEW: Noun Gender Exercises
+NOUN_GENDER|der Hund|der,die,das|der|Masculine noun - male animals/people/objects
+NOUN_GENDER|die Katze|der,die,das|die|Feminine noun - female animals/people/objects ending in -e
+NOUN_GENDER|das Haus|der,die,das|das|Neuter noun - diminutives (-chen/-lein) or abstract concepts
+NOUN_GENDER|der Mann|der,die,das|der|Masculine noun - male person
+NOUN_GENDER|die Frau|der,die,das|die|Feminine noun - female person
+NOUN_GENDER|das Kind|der,die,das|das|Neuter noun - young beings or abstract concepts
+NOUN_GENDER|der Apfel|der,die,das|der|Masculine noun - days of week, months, weather, directions
+NOUN_GENDER|die Sonne|der,die,das|die|Feminine noun - nouns ending in -ung, -schaft, -keit, -heit
+NOUN_GENDER|das Wasser|der,die,das|das|Neuter noun - metals, colors, most nouns ending in -chen/-lein
+NOUN_GENDER|der Baum|der,die,das|der|Masculine noun - trees and metals
+NOUN_GENDER|die Blume|der,die,das|die|Feminine noun - flowers and nouns ending in -in (feminine)
+NOUN_GENDER|das Auto|der,die,das|das|Neuter noun - foreign words, especially ending in -ment/-um
+NOUN_GENDER|der Bruder|der,die,das|der|Masculine noun - male family members
+NOUN_GENDER|die Schwester|der,die,das|die|Feminine noun - female family members
+NOUN_GENDER|das Buch|der,die,das|das|Neuter noun - nouns from verbs ending in -chen/-lein
+
+# NEW: Case Exercises (Nominative, Accusative, Dative)
+CASE|Nominative|Wer ist das? Das ___ der Lehrer.|ist|Nominative case - subject of the sentence
+CASE|Accusative|Ich sehe ___ Mann.|den|Accusative case - direct object (masculine)
+CASE|Dative|Ich gebe ___ Buch dem Studenten.|das|Dative case - indirect object (neuter)
+CASE|Accusative|Die Frau kauft ___ Auto.|das|Accusative case - direct object (neuter)
+CASE|Dative|Das Buch gehört ___ Studentin.|der|Dative case - possession with gehören (feminine)
+CASE|Accusative|Wir besuchen ___ Museum.|das|Accusative case - direct object after certain verbs (neuter)
+CASE|Dative|Er hilft ___ Frau.|der|Dative case - indirect object after helfen (feminine)
+CASE|Accusative|Ich trinke ___ Kaffee.|den|Accusative case - direct object (masculine)
+CASE|Dative|Die Katze liegt ___ dem Sofa.|auf|Prepositions requiring dative case
+
+# NEW: Adjective Ending Exercises
+ADJECTIVE|Der ___ Mann ist groß.|alte|Nominative masculine with definite article
+ADJECTIVE|Die ___ Frau ist schön.|junge|Nominative feminine with definite article
+ADJECTIVE|Das ___ Kind ist klein.|nette|Nominative neuter with definite article
+ADJECTIVE|Ein ___ Mann ist stark.|starker|Nominative masculine with indefinite article
+ADJECTIVE|Eine ___ Frau ist klug.|kluge|Nominative feminine with indefinite article
+ADJECTIVE|Ein ___ Kind ist süß.|süßes|Nominative neuter with indefinite article
+ADJECTIVE|Die ___ Männer sind groß.|alten|Nominative plural with definite article
+ADJECTIVE|Ich habe ein ___ Auto.|neues|Accusative neuter with indefinite article
+ADJECTIVE|Er gibt der ___ Frau einen Kuss.|schönen|Dative feminine with definite article
+ADJECTIVE|Das ist ein ___ Geschenk.|tolles|Nominative neuter predicate (no article)
+
 # Preposition Exercises – Location (B2–C2)
 PREPOSITION|Die Akten liegen ___ dem Schreibtisch des Direktors.|auf,unter,neben,in|auf|auf = расположение на поверхности (auf используется для указания расположения предметов на горизонтальной поверхности)
 PREPOSITION|Er lebt seit Jahren ___ Berlin-Mitte.|in,auf,an,bei|in|in = районы и города (in используется для районов городов с определённым артиклем)

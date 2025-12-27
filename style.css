@@ -1,15 +1,22 @@
-/* Reset and base styles */
-* {
+/* Reset and base styles - optimized for performance */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     color: #333;
+    /* Optimize text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Optimize scrolling on mobile */
+    -webkit-overflow-scrolling: touch;
 }
 
 header {
@@ -134,6 +141,17 @@ header p {
     display: grid;
     animation: fadeInUp 0.8s ease-out;
     animation-fill-mode: both;
+}
+
+/* Email cards container */
+.email-cards {
+    display: none;
+    animation: fadeInUp 0.8s ease-out;
+    animation-fill-mode: both;
+}
+
+.email-cards.active {
+    display: block;
 }
 
 /* Staggered card animations */

@@ -109,6 +109,9 @@ function saveAchievements() {
 }
 
 function checkAchievements() {
+    // Guard against calling before achievements are initialized
+    if (!achievements || !achievements.length) return;
+
     let newAchievements = [];
     let majorAchievements = [];
 
@@ -120,7 +123,7 @@ function checkAchievements() {
 
         switch (achievement.type) {
             case 'vocabulary':
-                currentValue = dictionary.length;
+                currentValue = window.dictionary ? window.dictionary.length : 0;
                 thresholdMet = currentValue >= achievement.threshold;
                 break;
             case 'listening':
@@ -268,7 +271,7 @@ function updateAchievementsDisplay() {
     const unlockedAchievementsStat = document.getElementById('unlocked-achievements-stat');
     const achievementProgressStat = document.getElementById('achievement-progress-stat');
 
-    totalWordsStat.textContent = dictionary.length;
+    totalWordsStat.textContent = window.dictionary ? window.dictionary.length : 0;
     unlockedAchievementsStat.textContent = unlockedAchievements.size;
 
     const progressPercent = achievements.length > 0 ? Math.round((unlockedAchievements.size / achievements.length) * 100) : 0;
@@ -287,7 +290,7 @@ function updateAchievementsDisplay() {
         let currentValue = 0;
         switch (achievement.type) {
             case 'vocabulary':
-                currentValue = dictionary.length;
+                currentValue = window.dictionary ? window.dictionary.length : 0;
                 break;
             case 'listening':
                 currentValue = listeningCount;

@@ -89,7 +89,7 @@
 После проверки ситуации следует констатировать, что из-за технических проблем произошло …||||Nach Prüfung des Sachverhalts ist festzustellen, dass es aufgrund technischer Probleme zu … gekommen ist.|После проверки ситуации следует констатировать, что из-за технических проблем произошло …
 
 ### Häufige Probleme
-обычные проблемы||||Verzögerungen im Ablauf|задержки в процессе / выполнении|Störungen im System|сбои в системе|Fehler bei der Verarbeitung|ошибки при обработке|Beeinträchtigung der Leistung|ухудшение качества услуги / работы|unterbrochene Kommunikation|прерывание связи|nicht erfolgreiche Bearbeitung der Anfrage|неудачная обработка запроса|Probleme bei der Datenübertragung|проблемы с передачей данных|unerwartete Ausfälle|неожиданные сбои|Verzögerte Rückmeldungen|задержанные ответы|Funktionsstörungen der Software / Hardware|неполадки ПО / оборудования
+     частые проблемы     ||||Verzögerungen im Ablauf|задержки в процессе / выполнении|Störungen im System|сбои в системе|Fehler bei der Verarbeitung|ошибки при обработке|Beeinträchtigung der Leistung|ухудшение качества услуги / работы|unterbrochene Kommunikation|прерывание связи|nicht erfolgreiche Bearbeitung der Anfrage|неудачная обработка запроса|Probleme bei der Datenübertragung|проблемы с передачей данных|unerwartete Ausfälle|неожиданные сбои|Verzögerte Rückmeldungen|задержанные ответы|Funktionsstörungen der Software / Hardware|неполадки ПО / оборудования
 
 ### Lösung / Angebot
 Поэтому мы хотели бы предложить следующее решение.||||Wir möchten Ihnen daher folgende Lösung anbieten.|Поэтому мы хотели бы предложить следующее решение.
@@ -99,18 +99,7 @@
 В целях возмещения ущерба мы предлагаем Вам …||||Zur Wiedergutmachung bieten wir Ihnen … an.|В целях возмещения ущерба мы предлагаем Вам …
 
 ### Entschädigung
-скидку||||einen Preisnachlass|
-частичный возврат средств||||eine teilweise Rückerstattung|
-ваучер / сертификат||||einen Gutschein|
-бесплатную замену услуги||||eine kostenfreie Ersatzleistung|
-бесплатное изменение бронирования||||eine kostenlose Umbuchung|
-полный возврат средств||||eine vollständige Rückerstattung|
-продление услуги||||eine Verlängerung der Leistung|
-возмещение понесённых расходов||||eine Erstattung der entstandenen Kosten|
-денежную компенсацию||||eine finanzielle Entschädigung|
-полное возмещение затрат||||eine vollständige Kostenerstattung|
-замену услуги без доплаты||||eine Ersatzleistung ohne zusätzliche Kosten|
-соразмерную компенсацию||||einen angemessenen Ausgleich|
+     частые варианты     ||||einen Preisnachlass|скидку|eine teilweise Rückerstattung|частичный возврат средств|einen Gutschein|ваучер / сертификат|eine kostenfreie Ersatzleistung|бесплатную замену услуги|eine kostenlose Umbuchung|бесплатное изменение бронирования|eine vollständige Rückerstattung|полный возврат средств|eine Verlängerung der Leistung|продление услуги|eine Erstattung der entstandenen Kosten|возмещение понесённых расходов|eine finanzielle Entschädigung|денежную компенсацию|eine vollständige Kostenerstattung|полное возмещение затрат|eine Ersatzleistung ohne zusätzliche Kosten|замену услуги без доплаты|einen angemessenen Ausgleich|соразмерную компенсацию
 
 ### Abschluss
 Благодарим за Ваше понимание.||||Vielen Dank für Ihr Verständnis.|Благодарим за Ваше понимание.
