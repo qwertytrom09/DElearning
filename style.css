@@ -1486,6 +1486,133 @@ header p {
     transform: rotateY(180deg) translateY(-2px);
 }
 
+/* Email Example Cards */
+.email-example-card {
+    background-color: transparent;
+    perspective: 1200px;
+    height: 280px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.email-example-card:hover {
+    transform: translateY(-8px);
+}
+
+.email-example-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.email-example-card .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.email-example-card .card-front,
+.email-example-card .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 18px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.email-example-card .card-front {
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    color: #333;
+    border: 2px solid rgba(52, 152, 219, 0.2);
+}
+
+.email-example-card .card-front:hover {
+    border-color: rgba(52, 152, 219, 0.4);
+    transform: translateY(-2px);
+}
+
+.email-example-card .card-back {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: rotateY(180deg);
+    border: 2px solid rgba(102, 126, 234, 0.3);
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.email-example-card .card-back:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: rotateY(180deg) translateY(-2px);
+}
+
+.email-body {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-align: left;
+    white-space: pre-line;
+    margin-bottom: 1rem;
+}
+
+/* Email Example Modal Content */
+.email-example-content {
+    text-align: left;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.email-body-text {
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.email-example-content .speak-btn {
+    display: block;
+    margin: 0 auto;
+    width: 45px;
+    height: 45px;
+    font-size: 1.4rem;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    border: 2px solid rgba(52, 152, 219, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.email-example-content .speak-btn:hover {
+    background: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
+    border-color: rgba(52, 152, 219, 0.5);
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.email-example-content .speak-btn:active {
+    transform: translateY(0) scale(1);
+}
+
 .email-tip-front h4 {
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
