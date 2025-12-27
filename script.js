@@ -12,6 +12,15 @@ let correctMatches = 0;
 let mistakeCount = 0;
 let expandedDateGroups = new Set();
 
+// Function to sanitize topic names for CSS classes
+function sanitizeTopicForCSS(topic) {
+    return topic
+        .toLowerCase()
+        .replace(/[^a-z0-9\-_]/g, '-') // Replace special chars with hyphens
+        .replace(/-+/g, '-') // Replace multiple hyphens with single
+        .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
+}
+
 
 
 // Current exercise state
@@ -224,7 +233,7 @@ function generateCards() {
     };
 
     Object.keys(topics).forEach(topic => {
-        const className = topicClassMap[topic];
+        const className = topicClassMap[topic] || `topic-${sanitizeTopicForCSS(topic)}`;
         const active = topic === 'environment' ? ' active' : '';
 
         // Create container element
@@ -371,7 +380,8 @@ function createPagination(topic, totalWords, pageSize) {
 
 function changePage(topic, newPage, pageSize) {
     currentPages[topic] = newPage;
-    const container = document.querySelector(`.topic-${topic}`);
+    const sanitizedTopic = sanitizeTopicForCSS(topic);
+    const container = document.querySelector(`.topic-${sanitizedTopic}`);
     populateContainer(container, window.vocabularyData[topic], newPage, pageSize, topic);
     updatePagination(container, topic, window.vocabularyData[topic].length, pageSize);
     updateTopicButtons();
@@ -1339,7 +1349,8 @@ function initializeApp() {
             cardContainers.forEach(container => {
                 container.classList.remove('active');
             });
-            const selectedContainer = document.querySelector(`.topic-${topic}`);
+            const sanitizedTopic = sanitizeTopicForCSS(topic);
+            const selectedContainer = document.querySelector(`.topic-${sanitizedTopic}`);
             if (selectedContainer) {
                 selectedContainer.classList.add('active');
                 // Populate if not populated
@@ -1656,7 +1667,8 @@ function initializeHeaderButtons() {
                 const activeTopicBtn = document.querySelector('.topic-btn.active');
                 if (activeTopicBtn) {
                     const topic = activeTopicBtn.getAttribute('data-topic');
-                    const selectedContainer = document.querySelector(`.topic-${topic}`);
+                    const sanitizedTopic = sanitizeTopicForCSS(topic);
+                    const selectedContainer = document.querySelector(`.topic-${sanitizedTopic}`);
                     if (selectedContainer) {
                         selectedContainer.classList.add('active');
                     }
@@ -1830,7 +1842,8 @@ function updateFilteredCards(filteredCards) {
     if (currentSearchTerm) {
         // When searching, show all topics that have results
         Object.keys(groupedByTopic).forEach(topic => {
-            const container = document.querySelector(`.topic-${topic}`);
+            const sanitizedTopic = sanitizeTopicForCSS(topic);
+            const container = document.querySelector(`.topic-${sanitizedTopic}`);
             if (container && groupedByTopic[topic].length > 0) {
                 const fragment = document.createDocumentFragment();
                 groupedByTopic[topic].forEach(word => {
@@ -1852,7 +1865,8 @@ function updateFilteredCards(filteredCards) {
     } else {
         // Normal topic view
         const activeTopic = document.querySelector('.topic-btn.active').getAttribute('data-topic');
-        const activeContainer = document.querySelector(`.topic-${activeTopic}`);
+        const sanitizedActiveTopic = sanitizeTopicForCSS(activeTopic);
+        const activeContainer = document.querySelector(`.topic-${sanitizedActiveTopic}`);
 
         if (activeContainer && groupedByTopic[activeTopic]) {
             const fragment = document.createDocumentFragment();
